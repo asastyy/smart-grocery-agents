@@ -1,0 +1,71 @@
+[
+  {
+    "id": "omelette",
+    "name": "Tomato omelette",
+    "ingredients": [
+      {
+        "item": "eggs",
+        "qty": 2,
+        "unit": "portion"
+      },
+      {
+        "item": "tomato",
+        "qty": 1,
+        "unit": "portion"
+      },
+      {
+        "item": "cheese",
+        "qty": 1,
+        "unit": "portion"
+      }
+    ],
+    "tags": [
+      "vegetarian"
+    ]
+  },
+  {
+    "id": "rice_bowl",
+    "name": "Rice and bean bowl",
+    "ingredients": [
+      {
+        "item": "rice",
+        "qty": 1,
+        "unit": "portion"
+      },
+      {
+        "item": "beans",
+        "qty": 1,
+        "unit": "portion"
+      },
+      {
+        "item": "tomato",
+        "qty": 1,
+        "unit": "portion"
+      }
+    ],
+    "tags": [
+      "vegetarian",
+      "vegan"
+    ]
+  },
+  {
+    "id": "salad",
+    "name": "Spinach tomato salad",
+    "ingredients": [
+      {
+        "item": "spinach",
+        "qty": 1,
+        "unit": "portion"
+      },
+      {
+        "item": "tomato",
+        "qty": 1,
+        "unit": "portion"
+      }
+    ],
+    "tags": [
+      "vegetarian",
+      "vegan"
+    ]
+  }
+]
