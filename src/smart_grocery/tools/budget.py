@@ -20,12 +20,20 @@ def evaluate_menu(request: PlanningRequest, recipes: list[Recipe], recipe_ids: l
         for ingredient in r.ingredients: needed[(ingredient.item, ingredient.unit)] += ingredient.qty
     pantry = {s.lower().strip() for s in request.pantry}
     shopping = []
+    incomplete = False
     for (item,unit),qty in sorted(needed.items()):
+        if unit != "portion":
+            issues.append(f"Unsupported unit for {item}: {unit}; expected portion")
+            incomplete = True
+            continue
         if item in pantry: continue # MVP treats pantry items as unbounded; see CONTRACTS
         if item not in price:
-            issues.append(f"Unknown price for {item}")
+            issues.append(f"Unknown price for {item}; missing quantity: {qty} {unit}")
+            incomplete = True
             continue
         shopping.append(ShoppingLine(item=item, quantity=qty, unit=unit, unit_price=price[item], cost=round(qty*price[item],2)))
     total = round(sum(s.cost for s in shopping),2)
+    if incomplete:
+        issues.append("Shopping list and total_cost are incomplete; resolve missing prices or unsupported units before accepting this menu")
     if total > request.budget: issues.append(f"Budget exceeded: {total} > {request.budget}")
     return PlanningResult(recipe_ids=recipe_ids, shopping=shopping, total_cost=total, currency=request.currency, valid=not issues, issues=issues)
