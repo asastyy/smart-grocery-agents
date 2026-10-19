@@ -1,0 +1,11 @@
+{
+  "pantry": [
+    "eggs",
+    "tomato"
+  ],
+  "budget": 15,
+  "days": 2,
+  "servings": 1,
+  "diet": "vegan",
+  "currency": "EUR"
+}

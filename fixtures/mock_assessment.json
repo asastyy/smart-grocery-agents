@@ -1,0 +1,33 @@
+{
+  "recipe_ids": [
+    "omelette",
+    "rice_bowl"
+  ],
+  "shopping": [
+    {
+      "item": "beans",
+      "quantity": 1.0,
+      "unit": "portion",
+      "unit_price": 1.1,
+      "cost": 1.1
+    },
+    {
+      "item": "cheese",
+      "quantity": 1.0,
+      "unit": "portion",
+      "unit_price": 1.5,
+      "cost": 1.5
+    },
+    {
+      "item": "rice",
+      "quantity": 1.0,
+      "unit": "portion",
+      "unit_price": 0.9,
+      "cost": 0.9
+    }
+  ],
+  "total_cost": 3.5,
+  "currency": "EUR",
+  "valid": true,
+  "issues": []
+}
