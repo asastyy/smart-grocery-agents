@@ -16,7 +16,7 @@ User enters pantry ingredients, budget, diet and number of days. The system retr
 The LLM is used for **planning and revising** a menu from retrieved recipe candidates, not inventing prices or performing arithmetic. The model is accessed via an OpenAI-compatible API (provider and model chosen using `LLM_BASE_URL` and `LLM_MODEL`). The default `MOCK_LLM=true` allows an offline runnable scaffold; **mock mode is not the LLM functionality required at proposal**.
 
 ## Current status
-Starter scaffold with a working deterministic offline pipeline and tests. `planner.py` contains a model-backed planning mode; finish and verify its structured output and agent revision prior to proposal. This is not yet a complete multi-agent system.
+The deterministic validator now calls a separate LLM critic for invalid menus in live mode. Critic recommendations are appended to `issues` and passed to the planner by the existing bounded revision loop. Calculations and validity remain authoritative Python outputs. The critic integration is tested with simulated API responses; real provider calls and model-backed planning still require end-to-end verification before proposal. See `docs/CRITIC.md` for setup and integration details.
 
 ## Local setup
 ```bash
@@ -24,8 +24,11 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-streamlit run app.py
+PYTHONPATH=src streamlit run app.py
 ```
+
+Local startup does not load `.env` automatically: export its variables in your shell.
+Docker reads `.env` through `--env-file`. Windows instructions are in `docs/ROLE_3.md`.
 
 ## Docker
 ```bash
