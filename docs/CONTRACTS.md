@@ -31,3 +31,11 @@
 - plan_meals(request, candidates, feedback=None) -> {"meals": [...], "reasoning_summary": "..."}
 - evaluate_plan(request, plan, catalog) -> {"valid": bool, "total_cost": float, "shopping_list": [...], "violations": [...], "feedback": "..."}
 - run_workflow(request) -> {"plan": ..., "assessment": ..., "agent_trace": [...]}
+
+## Уточнение assessment для интеграционного PR
+
+`total_cost`: число или null, если полная стоимость неизвестна.
+`priced_subtotal`: сумма только корректно оценённых позиций.
+В `shopping_list` поля `unit_price` и `cost` могут быть null; такие строки
+нельзя скрывать или представлять как бесплатные покупки. Нарушения содержат
+причину. Это уточнение подлежит командному ревью вместе с интеграцией.

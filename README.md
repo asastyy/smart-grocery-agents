@@ -51,6 +51,15 @@ streamlit run app.py
 
 ## LLM configuration
 
+For the Food.com integration preview, Gemini was tested locally with
+`gemini-3.5-flash-lite` and the OpenAI-compatible endpoint
+`https://generativelanguage.googleapis.com/v1beta/openai/`. Set `MOCK_LLM=false`,
+`LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` and optionally `CRITIC_MODEL` in your
+local `.env`, then run `python -m streamlit run app_foodcom.py`.
+See `docs/CRITIC.md` for the exact configuration and live smoke test.
+The Groq configuration below is the earlier planner-specific setup.
+
+
 Copy `.env.example` to `.env`. The checked-in default is offline mock mode and
 requires no key. For a live demo, the planner was verified with Groq and
 `qwen/qwen3.8-27b`:
@@ -76,6 +85,9 @@ All tests run without a live key. To verify the live provider, set
 above.
 
 ## Docker
+
+The current Docker command starts the legacy `app.py`. Packaging the Food.com
+preview with the role 4 UI remains an integration task.
 ```bash
 docker build -t smart-grocery .
 docker run --rm -p 8501:8501 --env-file .env smart-grocery
