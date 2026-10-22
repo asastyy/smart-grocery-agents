@@ -13,7 +13,7 @@ OLD_RECIPES = [
     Recipe(id="salad", name="Green salad", ingredients=[], tags=["vegan"]),
 ]
 FIXTURES_DIR = Path(__file__).resolve().parents[1] / "fixtures"
-NEW_CANDIDATES = json.loads((FIXTURES_DIR / "mock_candidates.json").read_text(encoding="utf-8"))
+NEW_CANDIDATES = json.loads((FIXTURES_DIR / "planner_candidates.json").read_text(encoding="utf-8"))
 
 
 def test_normalizes_both_recipe_contracts():

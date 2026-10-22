@@ -44,6 +44,17 @@ def critique_plan(request: PlanningRequest, recipes: list[Recipe],
                   assessment: PlanningResult) -> list[str]:
     if assessment.valid:
         return []
+    single = request.model_copy(update={"days": 1})
+    candidates = []
+    for recipe in recipes:
+        estimate = evaluate_menu(single, recipes, [recipe.id])
+        candidates.append({"recipe": recipe.model_dump(), "assessment": estimate.model_dump()})
+    return critique_context(request.model_dump(), assessment.model_dump(), candidates,
+                            {r.id for r in recipes}, len(assessment.issues))
+
+
+def critique_context(request_data, assessment_data, candidates, allowed, issue_count):
+    """Shared API boundary for legacy and Food.com contracts."""
     if os.getenv("MOCK_LLM", "true").lower() == "true":
         return ["Critic [mock]: revise the menu using the deterministic issues; no LLM call was made."]
     key = os.getenv("LLM_API_KEY")
@@ -51,15 +62,10 @@ def critique_plan(request: PlanningRequest, recipes: list[Recipe],
     if not key or not model:
         return ["Critic unavailable: configure LLM_API_KEY and LLM_MODEL (or CRITIC_MODEL); deterministic issues remain authoritative."]
 
-    single = request.model_copy(update={"days": 1})
-    candidates = []
-    for recipe in recipes:
-        estimate = evaluate_menu(single, recipes, [recipe.id])
-        candidates.append({"recipe": recipe.model_dump(), "assessment": estimate.model_dump()})
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": json.dumps({"request": request.model_dump(),
-         "assessment": assessment.model_dump(), "candidates": candidates}, ensure_ascii=False)},
+        {"role": "user", "content": json.dumps({"request": request_data,
+         "assessment": assessment_data, "candidates": candidates}, ensure_ascii=False)},
     ]
     try:
         with OpenAI(api_key=key, base_url=os.getenv("LLM_BASE_URL") or None,
@@ -74,9 +80,8 @@ def critique_plan(request: PlanningRequest, recipes: list[Recipe],
                     if not content:
                         raise ValueError("Empty response")
                     critique = Critique.model_validate_json(content)
-                    allowed = {r.id for r in recipes}
                     for advice in critique.advice:
-                        if advice.issue_index >= len(assessment.issues):
+                        if advice.issue_index >= issue_count:
                             raise ValueError("Unknown issue")
                         if not set(advice.candidate_ids) <= allowed:
                             raise ValueError("Unknown candidate")

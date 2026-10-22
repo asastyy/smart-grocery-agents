@@ -1,0 +1,9 @@
+{
+  "pantry": [],
+  "budget": 25,
+  "currency": "CU",
+  "days": 3,
+  "people": 2,
+  "diet": ["vegetarian"],
+  "max_cook_minutes": 30
+}

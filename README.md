@@ -1,5 +1,14 @@
 # Smart Grocery Agents
 
+## Food.com integration preview (roles 1–3)
+
+This branch integrates PRs #1, #3 and #4 without merging them into main.
+Run `python scripts/run_foodcom.py` for the prepared 150-recipe dataset, or
+`python -m streamlit run app_foodcom.py` for the Russian integration preview.
+The default mock mode makes no external API calls. See `docs/ROLE_3_FOODCOM.md`
+for request/assessment contracts, validation, dependencies and data limitations.
+The original `app.py` remains a separate legacy demo using example recipes.
+
 Multi-agent meal planning and grocery optimization from a pantry, budget and dietary constraints.
 
 ## Team
