@@ -1,17 +1,41 @@
-# Frozen interface v0.1 — changes only by team agreement
+# CONTRACTS (заморожены 10.10)
 
-Input: `PlanningRequest` {pantry: list[str], budget: float, days: int, servings: int, diet: str, currency: str}
+## Recipe format (источник истины)
 
-Recipe: `Recipe` {id: str, name: str, ingredients: list[Ingredient], tags: list[str]}; Ingredient {item: str, qty: float, unit: str}; initial unit is `portion` for simpler MVP matching
+    {
+      "recipe_id": "r001",
+      "title": "Egg fried rice",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": ["vegetarian"],
+      "ingredients": [
+        {"ingredient_id": "rice", "quantity": 200, "unit": "g"},
+        {"ingredient_id": "egg",  "quantity": 2,   "unit": "pcs"}
+      ]
+    }
 
-Output: `PlanningResult` {recipe_ids: list[str], shopping: list[ShoppingLine], total_cost: float, currency: str, valid: bool, issues: list[str]}
+Правила:
+- ingredient_id — snake_case, только из data/ingredients.csv
+- unit — только g | ml | pcs
+- tags MVP: "vegetarian" (обяз.), "high_protein" (опц.)
+- recipe_id стабильный: r001..rNNN, уникальный
+- Цены в рецепте НЕ хранятся — только data/prices.csv
+- Неизвестный ингредиент или единица → рецепт отбрасывается
 
-Module APIs:
-- `search_recipes(request: PlanningRequest) -> list[Recipe]`
-- `propose_menu(request: PlanningRequest, recipes: list[Recipe], feedback: list[str] | None = None) -> list[str]`
-- `evaluate_menu(request: PlanningRequest, recipes: list[Recipe], recipe_ids: list[str]) -> PlanningResult`
-- `run_workflow(request: PlanningRequest) -> PlanningResult`
+## Слоты MVP
+1 обед + 1 ужин в день (согласовано 10.10)
 
-No module changes Pydantic types without PR review by all four contributors. Each module must have a unit test using `examples/request.json`.
+## Функции
 
-Current approximation: the pantry is boolean availability and recipe quantities are in illustrative portions. Real unit conversion, depletion across meals and accurate servings scaling are final-defense scope. Do not claim that the cost is a real retail price.
+- search_recipes(request) -> {"candidates": [recipe, ...]}
+- plan_meals(request, candidates, feedback=None) -> {"meals": [...], "reasoning_summary": "..."}
+- evaluate_plan(request, plan, catalog) -> {"valid": bool, "total_cost": float, "shopping_list": [...], "violations": [...], "feedback": "..."}
+- run_workflow(request) -> {"plan": ..., "assessment": ..., "agent_trace": [...]}
+
+## Уточнение assessment для интеграционного PR
+
+`total_cost`: число или null, если полная стоимость неизвестна.
+`priced_subtotal`: сумма только корректно оценённых позиций.
+В `shopping_list` поля `unit_price` и `cost` могут быть null; такие строки
+нельзя скрывать или представлять как бесплатные покупки. Нарушения содержат
+причину. Это уточнение подлежит командному ревью вместе с интеграцией.

@@ -1,0 +1,16 @@
+{
+  "candidates": [
+    {
+      "recipe_id": "r001",
+      "title": "Cabbage soup",
+      "tags": ["vegetarian"],
+      "cook_minutes": 30
+    },
+    {
+      "recipe_id": "r002",
+      "title": "Rice bowl",
+      "tags": ["vegetarian"],
+      "cook_minutes": 20
+    }
+  ]
+}

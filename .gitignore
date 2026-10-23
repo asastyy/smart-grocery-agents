@@ -3,3 +3,12 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .env
+data/raw/
+*.parquet
+*.zip
+.ipynb_checkpoints/
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.test-tmp*/

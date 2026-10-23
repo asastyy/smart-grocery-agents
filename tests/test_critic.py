@@ -8,7 +8,7 @@ from smart_grocery.agents import critic
 from smart_grocery.agents.validator import validate_plan
 from smart_grocery.schemas.models import PlanningRequest
 from smart_grocery.tools.budget import evaluate_menu
-from smart_grocery.tools.recipes import search_recipes
+from smart_grocery.tools.legacy_recipes import search_recipes
 from smart_grocery.workflow import runner
 
 
@@ -140,3 +140,24 @@ def test_revision_loop_is_bounded(api, monkeypatch):
     monkeypatch.setattr(runner, "propose_menu", lambda *args: ["omelette"])
     assert not runner.run_workflow(invalid_request()).valid
     assert len(calls) == 2
+
+
+def test_foodcom_critic_uses_new_assessment_without_changing_numbers(api):
+    from smart_grocery.agents.validator import validate_foodcom_plan
+    from smart_grocery.tools.budget_v2 import evaluate_plan
+    from smart_grocery.tools.recipes import search_recipes, load_prices
+    req = {"pantry": [], "budget": 0, "currency": "CU", "days": 1,
+           "people": 2, "diet": ["vegetarian"], "max_cook_minutes": 30}
+    candidates = search_recipes(req)["candidates"][:2]
+    rid = candidates[0]["recipe_id"]
+    calls = api([GOOD.replace("salad", rid)])
+    cat = {"recipes": candidates, "prices": load_prices()}
+    plan = {"meals": [{"day": 1, "slot": slot, "recipe_id": rid, "servings": 2}
+                      for slot in ("lunch", "dinner")]}
+    baseline = evaluate_plan(req, plan, cat)
+    result = validate_foodcom_plan(req, plan, cat)
+    assert result["violations"] == baseline["violations"]
+    assert result["shopping_list"] == baseline["shopping_list"]
+    assert result["total_cost"] == baseline["total_cost"]
+    assert "Critic [LLM" in result["feedback"]
+    assert len(calls) == 1

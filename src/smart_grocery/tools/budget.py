@@ -1,4 +1,5 @@
 import json
+from smart_grocery.tools.budget_v2 import evaluate_plan  # Food.com public contract
 from collections import defaultdict
 from pathlib import Path
 from smart_grocery.schemas.models import PlanningRequest, PlanningResult, Recipe, ShoppingLine

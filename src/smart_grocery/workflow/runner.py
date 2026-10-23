@@ -1,5 +1,5 @@
 from smart_grocery.schemas.models import PlanningRequest, PlanningResult
-from smart_grocery.tools.recipes import search_recipes
+from smart_grocery.tools.legacy_recipes import search_recipes
 from smart_grocery.agents.planner import propose_menu
 from smart_grocery.agents.validator import validate_plan
 

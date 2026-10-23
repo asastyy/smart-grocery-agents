@@ -1,5 +1,14 @@
 # Smart Grocery Agents
 
+## Food.com integration preview (roles 1–3)
+
+This branch integrates PRs #1, #3 and #4 without merging them into main.
+Run `python scripts/run_foodcom.py` for the prepared 150-recipe dataset, or
+`python -m streamlit run app_foodcom.py` for the Russian integration preview.
+The default mock mode makes no external API calls. See `docs/ROLE_3_FOODCOM.md`
+for request/assessment contracts, validation, dependencies and data limitations.
+The original `app.py` remains a separate legacy demo using example recipes.
+
 Multi-agent meal planning and grocery optimization from a pantry, budget and dietary constraints.
 
 ## Team
@@ -13,24 +22,72 @@ Multi-agent meal planning and grocery optimization from a pantry, budget and die
 ## MVP (proposal)
 User enters pantry ingredients, budget, diet and number of days. The system retrieves recipes, proposes a menu, validates ingredients and computes a shopping list and cost. If validation fails, planner revises its proposal once.
 
-The LLM is used for **planning and revising** a menu from retrieved recipe candidates, not inventing prices or performing arithmetic. The model is accessed via an OpenAI-compatible API (provider and model chosen using `LLM_BASE_URL` and `LLM_MODEL`). The default `MOCK_LLM=true` allows an offline runnable scaffold; **mock mode is not the LLM functionality required at proposal**.
+The LLM is used for **planning and revising** a menu from retrieved recipe candidates, not inventing prices or performing arithmetic. The model is accessed via an OpenAI-compatible API (provider and model chosen using `LLM_BASE_URL` and `LLM_MODEL`). The default `MOCK_LLM=true` allows an offline runnable scaffold.
 
 ## Current status
-The deterministic validator now calls a separate LLM critic for invalid menus in live mode. Critic recommendations are appended to `issues` and passed to the planner by the existing bounded revision loop. Calculations and validity remain authoritative Python outputs. The critic integration is tested with simulated API responses; real provider calls and model-backed planning still require end-to-end verification before proposal. See `docs/CRITIC.md` for setup and integration details.
+The Meal Planner supports strict JSON output, one retry for invalid model output, and a deterministic candidate-only fallback. It accepts both the starter and Food.com candidate formats. The full v2 integration remains a team task.
 
 ## Local setup
+
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+Copy-Item .env.example .env
+streamlit run app.py
+```
+
+macOS/Linux:
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-PYTHONPATH=src streamlit run app.py
+streamlit run app.py
 ```
 
-Local startup does not load `.env` automatically: export its variables in your shell.
-Docker reads `.env` through `--env-file`. Windows instructions are in `docs/ROLE_3.md`.
+## LLM configuration
+
+For the Food.com integration preview, Gemini was tested locally with
+`gemini-3.5-flash-lite` and the OpenAI-compatible endpoint
+`https://generativelanguage.googleapis.com/v1beta/openai/`. Set `MOCK_LLM=false`,
+`LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` and optionally `CRITIC_MODEL` in your
+local `.env`, then run `python -m streamlit run app_foodcom.py`.
+See `docs/CRITIC.md` for the exact configuration and live smoke test.
+The Groq configuration below is the earlier planner-specific setup.
+
+
+Copy `.env.example` to `.env`. The checked-in default is offline mock mode and
+requires no key. For a live demo, the planner was verified with Groq and
+`qwen/qwen3.8-27b`:
+
+```dotenv
+MOCK_LLM=false
+LLM_API_KEY=your_groq_key
+LLM_BASE_URL=https://api.groq.com/openai/v1
+LLM_MODEL=qwen/qwen3.8-27b
+```
+
+Keep `.env` local: it is ignored by Git and must never contain a committed key.
+
+## Verify the planner
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m pytest -q
+```
+
+All tests run without a live key. To verify the live provider, set
+`MOCK_LLM=false` in `.env` and start the application with the configuration
+above.
 
 ## Docker
+
+The current Docker command starts the legacy `app.py`. Packaging the Food.com
+preview with the role 4 UI remains an integration task.
 ```bash
 docker build -t smart-grocery .
 docker run --rm -p 8501:8501 --env-file .env smart-grocery
