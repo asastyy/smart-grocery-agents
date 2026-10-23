@@ -22,10 +22,10 @@ Planner выбирает меню только из найденных реце�
 
 | Роль | Участник | GitHub | Зона ответственности |
 |---|---|---|---|
-| Data & Recipe Search | Максим — уточнить полное ФИО | [@jeweller9](https://github.com/jeweller9) | данные и поиск рецептов |
-| Meal Planner | Рита — уточнить полное ФИО | [@marritau](https://github.com/marritau) | LLM-планировщик |
-| Shopping & Validator | Александра Федорова | [@fedorova-av](https://github.com/fedorova-av) | корзина, Python-проверка и LLM-критик |
-| Integration & UI | Анастасия Сергеева | [@asastyy](https://github.com/asastyy) | workflow, Streamlit, Docker и тестирование |
+| Data & Recipe Search | Афонин Максим Константинович | [@jeweller9](https://github.com/jeweller9) | данные и поиск рецептов |
+| Meal Planner | Уразметова Маргарита Руслановна | [@marritau](https://github.com/marritau) | LLM-планировщик |
+| Shopping & Validator | Федорова Александра Вадимовна | [@fedorova-av](https://github.com/fedorova-av) | корзина, Python-проверка и LLM-критик |
+| Integration & UI | Сергеева Анастасия Вадимовна | [@asastyy](https://github.com/asastyy) | workflow, Streamlit, Docker и тестирование |
 
 ## Как работает MVP
 
