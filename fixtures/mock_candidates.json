@@ -1,71 +1,7244 @@
-[
-  {
-    "id": "omelette",
-    "name": "Tomato omelette",
-    "ingredients": [
-      {
-        "item": "eggs",
-        "qty": 2,
-        "unit": "portion"
-      },
-      {
-        "item": "tomato",
-        "qty": 1,
-        "unit": "portion"
-      },
-      {
-        "item": "cheese",
-        "qty": 1,
-        "unit": "portion"
-      }
-    ],
-    "tags": [
-      "vegetarian"
-    ]
-  },
-  {
-    "id": "rice_bowl",
-    "name": "Rice and bean bowl",
-    "ingredients": [
-      {
-        "item": "rice",
-        "qty": 1,
-        "unit": "portion"
-      },
-      {
-        "item": "beans",
-        "qty": 1,
-        "unit": "portion"
-      },
-      {
-        "item": "tomato",
-        "qty": 1,
-        "unit": "portion"
-      }
-    ],
-    "tags": [
-      "vegetarian",
-      "vegan"
-    ]
-  },
-  {
-    "id": "salad",
-    "name": "Spinach tomato salad",
-    "ingredients": [
-      {
-        "item": "spinach",
-        "qty": 1,
-        "unit": "portion"
-      },
-      {
-        "item": "tomato",
-        "qty": 1,
-        "unit": "portion"
-      }
-    ],
-    "tags": [
-      "vegetarian",
-      "vegan"
-    ]
-  }
-]
+{
+  "candidates": [
+    {
+      "recipe_id": "r074",
+      "title": "Rice & Spinach Bake",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "spinach",
+          "quantity": 10.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheddar_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rosemary",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "worcestershire_sauce",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r041",
+      "title": "Simple Broccoli Quiche",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mozzarella_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 5.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r115",
+      "title": "Deep-Fried Eggplant (Aubergine)",
+      "servings": 10,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "eggplant",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "all_purpose_flour",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r078",
+      "title": "Tomato salad with fried onions",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yellow_onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dill",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r128",
+      "title": "German Pancake",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r129",
+      "title": "Rice With Vegetables",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "celery",
+          "quantity": 12.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "soy_sauce",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r024",
+      "title": "Rice and Sour Cream--So Good",
+      "servings": 10,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "monterey_jack_cheese",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sour_cream",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_chily",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rice",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheddar_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r133",
+      "title": "Buttered Parmesan Rice",
+      "servings": 6,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "water",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rice",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r104",
+      "title": "Heroes in the Seaweed",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vinegar",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r023",
+      "title": "Ann's Squash Custard",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "egg",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_chili",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "squash",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tortilla_chip",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r022",
+      "title": "Collin's Beer Batter",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "egg",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "beer",
+          "quantity": 12.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 12.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "nutmeg",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "baking_powder",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r010",
+      "title": "Vegetarian Zucchini Patties",
+      "servings": 4,
+      "cook_minutes": 16,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 3.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.12,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r014",
+      "title": "Baked Pasta with Asparagus (Pasta al Forno con Asparagi)",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "penne_pasta",
+          "quantity": 14.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "asparagu",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "ricotta_cheese",
+          "quantity": 10.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 3.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r109",
+      "title": "Mexican Rice",
+      "servings": 6,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "rice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_chily",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sharp_cheddar_cheese",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "monterey_jack_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sour_cream",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_powder",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin",
+          "quantity": 0.75,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r139",
+      "title": "Addicting Broccoli Casserole",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mayonnaise",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r050",
+      "title": "Slightly Sourdough Pancakes",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "egg",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "all_purpose_flour",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yogurt",
+          "quantity": 0.67,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "baking_powder",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 4.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r056",
+      "title": "Scottish Toast",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "oat",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vanilla_extract",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "canola_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "powdered_sugar",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "confectioners_sugar",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r028",
+      "title": "Turmeric Fried Rice",
+      "servings": 4,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "basmati_rice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "canola_oil",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "turmeric",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chili_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r059",
+      "title": "Apple Dapple French Toast Cobbler",
+      "servings": 8,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "french_baguette",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "baking_powder",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vanilla_extract",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tart_apple",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "brown_sugar",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cornstarch",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cinnamon",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "maple_syrup",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r124",
+      "title": "Eggplant (Aubergine) and Zucchini Cake",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "eggplant",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 900.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil_leave",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mozzarella_cheese",
+          "quantity": 350.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r086",
+      "title": "Unbelievably Delicious Macaroni Pie",
+      "servings": 8,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "macaroni",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheddar_cheese",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "evaporated_milk",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "scallion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chili_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r111",
+      "title": "Crustless Vegetable Pie (Stove Top)",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cauliflower",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pea",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "feta_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "thyme",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "paprika",
+          "quantity": 3.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r067",
+      "title": "Spicy Red Snapper",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "red_snapper_fillet",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bell_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dry_white_wine",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cayenne_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rice",
+          "quantity": 0.12,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r135",
+      "title": "Herby Sun-Dried Tomato Risotto",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "ginger",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "spring_onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rice",
+          "quantity": 5.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "coriander",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sun_dried_tomato",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_olive",
+          "quantity": 20.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r117",
+      "title": "Zucchini Appetizers",
+      "servings": 2,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bisquick_baking_mix",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "seasoning_salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "marjoram",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 4.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r057",
+      "title": "Company Huevos Rancheros",
+      "servings": 6,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "white_wine",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sharp_cheddar_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "ripe_olive",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r070",
+      "title": "Crustless Zucchini Pizza",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yellow_onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_paste",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_chili_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mozzarella_cheese",
+          "quantity": 12.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r123",
+      "title": "Saute Spinach with Garlic",
+      "servings": 4,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "spinach",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r140",
+      "title": "Yellow Squash Saute",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r106",
+      "title": "Parslied New Potatoes",
+      "servings": 4,
+      "cook_minutes": 13,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "new_potato",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r073",
+      "title": "Cheesy Creamy Corn",
+      "servings": 10,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "corn",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cream_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r127",
+      "title": "Honey Glazed Carrots",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "honey",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sesame_seed",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r046",
+      "title": "Margaret's Milder Tasting Sauerkraut",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "sauerkraut",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "potato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r037",
+      "title": "Smart Alec Pork Neck Bones Spaghetti - Pressure Cooker Style",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "pasta",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r032",
+      "title": "Sesame, Carrots and Mushrooms",
+      "servings": 4,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sesame_seed",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r039",
+      "title": "Green beans with garlic butter",
+      "servings": 4,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 9.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r040",
+      "title": "Sauteed Fresh Corn",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "corn",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "kosher_salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r049",
+      "title": "&quot;Creamed&quot; Spinach",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "spinach",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yogurt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r150",
+      "title": "Garlicky Green Beans",
+      "servings": 4,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r089",
+      "title": "Broccoli With Sesame Seeds",
+      "servings": 4,
+      "cook_minutes": 12,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "sesame_seed",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "kosher_salt",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_pepper_flake",
+          "quantity": 1.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r008",
+      "title": "Green Beans with Fresh Dill",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 9.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vegetable_broth",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dill",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r043",
+      "title": "Green Beans Almondine",
+      "servings": 6,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r005",
+      "title": "Zucchini Squash With Parmesan",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r035",
+      "title": "Stewed Okra and Tomatoes",
+      "servings": 6,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "okra",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r071",
+      "title": "Spinach And Chickpeas",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "spinach",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chickpea",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 0.33,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r090",
+      "title": "Sweet Macaroni",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "elbow_macaroni",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cottage_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cinnamon",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r137",
+      "title": "Mom's Broccoli & Green Olive Salad",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_olive",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mayonnaise",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "hard_boiled_egg",
+          "quantity": 7.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r017",
+      "title": "Homemade Sauerkraut",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "water",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vinegar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 6.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r087",
+      "title": "Baked Macaroni and Cheese-Amish",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "elbow_macaroni",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 2.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "velveeta_cheese",
+          "quantity": 8.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r113",
+      "title": "Grilled Honey Mustard Onions For Burgers",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "honey",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dry_mustard",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r077",
+      "title": "Marijuana Carrots",
+      "servings": 4,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cilantro",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r088",
+      "title": "Real Good Pickled Beets",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "beet",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vinegar",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "brown_sugar",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r101",
+      "title": "Spinach, Dill Dip",
+      "servings": 1,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "sour_cream",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mayonnaise",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dill",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "spinach",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r138",
+      "title": "Zucchini Couscous",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "boiling_water",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "couscou",
+          "quantity": 0.67,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r051",
+      "title": "Quick and Light Fettuccine Primavera",
+      "servings": 6,
+      "cook_minutes": 12,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "fettuccine",
+          "quantity": 12.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r103",
+      "title": "Sirloin Steak with Tomatoes and Garlic (for 1 double for 2)",
+      "servings": 1,
+      "cook_minutes": 12,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "garlic",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_wine",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "seasoning_salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r009",
+      "title": "Asparagus With Shallots",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "asparagu",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "shallot",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r045",
+      "title": "Warm Green Bean Salad with Pine Nuts and Basil",
+      "servings": 6,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pine_nut",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil_leave",
+          "quantity": 18.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r126",
+      "title": "Angel Hair Pasta In Garlic Sauce",
+      "servings": 6,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r069",
+      "title": "Vegetarian Fried Green Tomatoes",
+      "servings": 4,
+      "cook_minutes": 19,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_tomato",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yellow_cornmeal",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "brown_sugar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r134",
+      "title": "Mother-in-law's Carrots",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r025",
+      "title": "Salsa Enchiladas",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "salsa",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cottage_cheese",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheddar_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour_tortilla",
+          "quantity": 8.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r001",
+      "title": "Cabbage Soup",
+      "servings": 4,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "tomato_juice",
+          "quantity": 46.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r044",
+      "title": "Cabbage with Cumin",
+      "servings": 4,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_cabbage",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin_seed",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sea_salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r082",
+      "title": "Turnip 'n' Peas 'n' Shrooms",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_pea",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r121",
+      "title": "Baked Grated Carrots",
+      "servings": 4,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dry_sherry",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r034",
+      "title": "Deviled Green Beans",
+      "servings": 6,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "prepared_mustard",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vinegar",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r085",
+      "title": "Asparagus, Fish Dinner Parcels",
+      "servings": 4,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "asparagus_spear",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 16.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dill",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tarragon",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r099",
+      "title": "Peas braised with cucumber",
+      "servings": 6,
+      "cook_minutes": 11,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "cucumber",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chive",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r122",
+      "title": "Two Step Tasty Tofu Scramble",
+      "servings": 4,
+      "cook_minutes": 14,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "firm_tofu",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_chili_powder",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r003",
+      "title": "Fried Green Tomatoes",
+      "servings": 6,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_tomato",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r052",
+      "title": "Stuffed Zucchini",
+      "servings": 6,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r102",
+      "title": "Green Beans in Tomato Salsa",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_paste",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r145",
+      "title": "Basil Green Beans",
+      "servings": 4,
+      "cook_minutes": 17,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "spring_onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil_leave",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r055",
+      "title": "Eggplant (Aubergine) Parmigiana",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "eggplant",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 5.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r058",
+      "title": "Colcannon",
+      "servings": 6,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "potato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "leek",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mace",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r092",
+      "title": "Savory Feta-Filled Shells",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "spinach",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "ricotta_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "feta_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_powder",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "macaroni",
+          "quantity": 12.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "alfredo_sauce",
+          "quantity": 1.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r108",
+      "title": "Savory Breaded Tomatoes",
+      "servings": 8,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "tomato",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chive",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 4.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r120",
+      "title": "Eggplant (Aubergine) Mexicana",
+      "servings": 6,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "eggplant",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chili_powder",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r136",
+      "title": "Quick Fix Cabbage",
+      "servings": 6,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "paprika",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vinegar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r143",
+      "title": "Zucchini - Yellow Squash Bake",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "plum_tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "roma_tomato",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r019",
+      "title": "Stuffed Mushrooms",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "broth",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r029",
+      "title": "Green Rice Chile Bake",
+      "servings": 6,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "monterey_jack_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sour_cream",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_chily",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "long_grain_rice",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheddar_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r075",
+      "title": "Honey Glazed Carrots",
+      "servings": 4,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "shallot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "honey",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r091",
+      "title": "Bow Tie Pasta and Broccoli Alfredo",
+      "servings": 4,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "bow_tie_pasta",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "broccoli_floret",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil_leave",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "alfredo_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r095",
+      "title": "Rosemary-Parmesan Acorn Squash Wedges",
+      "servings": 4,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "acorn_squash",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rosemary",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r063",
+      "title": "Sweet Pickle Sticks",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "cider_vinegar",
+          "quantity": 7.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery_seed",
+          "quantity": 9.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "turmeric",
+          "quantity": 9.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mustard_seed",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cucumber",
+          "quantity": 6.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r033",
+      "title": "Szechuan Green Beans",
+      "servings": 6,
+      "cook_minutes": 12,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "garlic",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "ginger",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_pepper_flake",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "soy_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r020",
+      "title": "Brussels Sprouts 'n Potatoes",
+      "servings": 5,
+      "cook_minutes": 13,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "potato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "brussels_sprout",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bay_leaf",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r006",
+      "title": "Harvard Beets (Sweet Sour Red Beets)",
+      "servings": 3,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "sugar",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cornstarch",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vinegar",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "beet",
+          "quantity": 3.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r011",
+      "title": "Stuffed Zucchini II",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "corn",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cottage_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r094",
+      "title": "Carrots Piedmontese",
+      "servings": 6,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vinegar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chive",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r114",
+      "title": "Big John's B B Q Portabella Mushrooms",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "soy_sauce",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mozzarella_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "portabella_mushroom",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r149",
+      "title": "Boozy Onions",
+      "servings": 4,
+      "cook_minutes": 22,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dry_white_wine",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "corn_syrup",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "clove",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r064",
+      "title": "Perfect Pilaf Rice",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "basmati_rice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 5.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "turmeric",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bay_leaf",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "clove",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cinnamon",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r061",
+      "title": "Greek Broccoli and Tomatoes",
+      "servings": 8,
+      "cook_minutes": 26,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "feta_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_olive",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r027",
+      "title": "hot mushroom dip",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sour_cream",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r130",
+      "title": "Pumpkin and Tomato Soup",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "pumpkin",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_paste",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "ginger",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r080",
+      "title": "Aunt Marie's Peas",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pea",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pimiento",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.12,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r015",
+      "title": "Onion Tomato Blush",
+      "servings": 6,
+      "cook_minutes": 12,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 10.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 5.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_chili_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "coriander_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 3.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r031",
+      "title": "Brussels Sprouts and Carrots",
+      "servings": 2,
+      "cook_minutes": 12,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "brussels_sprout",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "thyme",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "low_fat_milk",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "skim_milk",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery_seed",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r062",
+      "title": "Peasant Pizza With Goat Cheese",
+      "servings": 6,
+      "cook_minutes": 12,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "cream_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "feta",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "plum_tomato",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "orange_bell_pepper",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r065",
+      "title": "Mommies Sauteed Mushrooms",
+      "servings": 2,
+      "cook_minutes": 12,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "white_mushroom",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "heavy_cream",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "italian_parsley",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r004",
+      "title": "Easy Mushroom Stroganoff",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yellow_onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "white_mushroom",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "all_purpose_flour",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dry_white_wine",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sour_cream",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "linguine",
+          "quantity": 8.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r021",
+      "title": "Spaghetti alla Checca",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "pasta",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mozzarella_cheese",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "marjoram",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "thyme",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r125",
+      "title": "Italian-Style Spinach",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "spinach",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pine_nut",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "nutmeg",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r054",
+      "title": "Western Macaroni",
+      "servings": 5,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "hamburger",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "kernel_corn",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_paste",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r072",
+      "title": "Zucchini Enchiladas",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bell_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chili_powder",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour_tortilla",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "monterey_jack_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheddar_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r047",
+      "title": "Palaver",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "spinach",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "clove",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "ginger",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cardamom",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cayenne_pepper",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sea_salt",
+          "quantity": 0.12,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r079",
+      "title": "Indian Spiced Rice",
+      "servings": 8,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "margarine",
+          "quantity": 1.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "long_grain_rice",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garam_masala",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 2.67,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r018",
+      "title": "Walnut Garlic Rice",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "long_grain_rice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "walnut",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bay_leave",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vinegar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "soy_sauce",
+          "quantity": 1.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r068",
+      "title": "Macaroni Dandy Salad",
+      "servings": 2,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "elbow_macaroni",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "miracle_whip",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery_seed",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pimiento",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pepper",
+          "quantity": 3.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r116",
+      "title": "Spicy Carrot Sticks",
+      "servings": 4,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 5.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "seasoning_salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cayenne_pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "thyme",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "paprika",
+          "quantity": 0.12,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r030",
+      "title": "To Die For Potatoes",
+      "servings": 1,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "potato",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pea",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bell_pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheddar_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r048",
+      "title": "Eggplant (Aubergine) Tart",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "eggplant",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "plum_tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "caper",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "thyme",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r097",
+      "title": "Spaghetti with Tomatoes Garlic and Feta Cheese",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "kalamata_olive",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_olive",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "feta_cheese",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "caper",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "spaghetti",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 3.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r119",
+      "title": "Marinated Mushrooms",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_wine_vinegar",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "peppercorn",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bay_leaf",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r131",
+      "title": "Tri Color Pepper Salad",
+      "servings": 8,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_bell_pepper",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bell_pepper",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yellow_bell_pepper",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "plum_tomato",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r144",
+      "title": "Creole Hot Green Beans",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "water",
+          "quantity": 2.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "white_vinegar",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sugar",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mustard_seed",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bay_leave",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tabasco_sauce",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r146",
+      "title": "Monterey Fondue",
+      "servings": 4,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "monterey_jack_cheese",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dry_mustard",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "worcestershire_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tabasco_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r012",
+      "title": "Hamburgers Diane",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "margarine",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "worcestershire_sauce",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r042",
+      "title": "Thanksgiving Faux Meatloaf",
+      "servings": 6,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rolled_oat",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tofu",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "soy_sauce",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "ketchup",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dijon_mustard",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_powder",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r053",
+      "title": "Harvest Minestrone",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "water",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "potato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_kidney_bean",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_pepper_flake",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r100",
+      "title": "Mushrooms in Sour Cream and Dill",
+      "servings": 6,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "button_mushroom",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dill",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sherry_wine",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sour_cream",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r107",
+      "title": "Thai-Style Potato and Spinach Soup",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "shallot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_chily",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "potato",
+          "quantity": 750.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tabasco_sauce",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chili_sauce",
+          "quantity": 100.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "coriander_leave",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r083",
+      "title": "Old Fashioned Cream of Tomato Soup",
+      "servings": 2,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bay_leaf",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "clove",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r110",
+      "title": "Easy Vegetable-Herb Rice",
+      "servings": 2,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basmati_rice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dill_weed",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil_flavored_cooking_spray",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r036",
+      "title": "New Orleans Chili Con Carne With Beans",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "stewed_tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "kielbasa",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chili_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cayenne_pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "kidney_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r132",
+      "title": "Quick Raisin Pudding",
+      "servings": 6,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "brown_sugar",
+          "quantity": 1.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "all_purpose_flour",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "baking_powder",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "raisin",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "nutmeg",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "boiling_water",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r148",
+      "title": "Four Cheese Stuffed Mushrooms",
+      "servings": 12,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 12.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "white_wine",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "provolone_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mozzarella_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "romano_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r066",
+      "title": "Vegetarian Okra Curry",
+      "servings": 4,
+      "cook_minutes": 18,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "okra",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "canola_oil",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yellow_onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 7.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "coriander_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "turmeric",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r096",
+      "title": "Summer Veggie Medley",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cracked_pepper",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "swiss_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mozzarella_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r141",
+      "title": "Low fat Creamy Pasta Primavera",
+      "servings": 2,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "fettuccine",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pea",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "low_fat_yogurt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "low_fat_cottage_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r016",
+      "title": "Creamy Pesto Pasta Italiana",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "basil",
+          "quantity": 12.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cream_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cottage_cheese",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "dry_white_wine",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "vegetable_broth",
+          "quantity": 0.33,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r098",
+      "title": "Spaghetti With Creamy Spinach and Tarragon",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "spinach",
+          "quantity": 10.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "scallion",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tarragon",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "spaghetti",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cream_cheese",
+          "quantity": 5.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r105",
+      "title": "White Bean and Parmesan Soup with Pesto",
+      "servings": 2,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "prosciutto",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cannellini_bean",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmigiano_reggiano_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pesto_sauce",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r112",
+      "title": "Fill-Me-Up Veggie Soup",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "carrot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "broth",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_cabbage",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r002",
+      "title": "Borscht",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "beet",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "brown_sugar",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "bay_leaf",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "rosemary",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r007",
+      "title": "Italian Cabbage &amp; Bean Soup",
+      "servings": 12,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_cabbage",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "white_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r118",
+      "title": "Fiesta Chicken Casserole",
+      "servings": 6,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "light_sour_cream",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_chily",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "paprika",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "corn_tortilla",
+          "quantity": 9.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "monterey_jack_cheese",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salsa",
+          "quantity": 4.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r147",
+      "title": "Asparagus Guacamole",
+      "servings": 12,
+      "cook_minutes": 10,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "asparagus_spear",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yogurt",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano_leave",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cayenne",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r026",
+      "title": "Winter Veggies with pecans & Maple Syrup",
+      "servings": 8,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "pecan",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsnip",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "turnip",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "maple_syrup",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "thyme",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "orange",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r038",
+      "title": "Spinach Gratin",
+      "servings": 12,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "yellow_onion",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "nutmeg",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "heavy_cream",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "spinach",
+          "quantity": 5.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "kosher_salt",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "gruyere_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r013",
+      "title": "Chickpea Zucchini Curry",
+      "servings": 4,
+      "cook_minutes": 20,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "pasta",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chickpea",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_paste",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "curry_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "scallion",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r076",
+      "title": "Italian Pasta Stir-Fry",
+      "servings": 6,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "linguine",
+          "quantity": 8.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano_leave",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.12,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.25,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r142",
+      "title": "Noodles and Mushrooms in Poppy Seed Sauce",
+      "servings": 2,
+      "cook_minutes": 15,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_clove",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "butter",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_juice",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cayenne_pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pasta",
+          "quantity": 0.75,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sour_cream",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "nonfat_yogurt",
+          "quantity": 0.33,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "lemon_zest",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "poppy_seed",
+          "quantity": 2.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r060",
+      "title": "ILI (-CH)",
+      "servings": 4,
+      "cook_minutes": 25,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "yellow_onion",
+          "quantity": 1.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "mushroom",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pinto_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "worcestershire_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsley",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r093",
+      "title": "Leona's Cabbage Soup",
+      "servings": 10,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "tomato",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 5.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "celery",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "zucchini",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cauliflower",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "green_bean",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "worcestershire_sauce",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tabasco_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "water",
+          "quantity": 3.0,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r081",
+      "title": "Butternut Curry Soup",
+      "servings": 6,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "water",
+          "quantity": 6.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 3.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "chickpea",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "corn",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "carrot",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parsnip",
+          "quantity": 4.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "scallion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cabbage",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "red_wine",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic_paste",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cumin_powder",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "coriander_powder",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "sage",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "black_pepper",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "recipe_id": "r084",
+      "title": "Tortellini Casserole",
+      "servings": 2,
+      "cook_minutes": 30,
+      "tags": [
+        "vegetarian",
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "butter",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "garlic",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "onion",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "flour",
+          "quantity": 0.25,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_sauce",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "tomato_paste",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "thyme",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "basil",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "oregano",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "salt",
+          "quantity": 0.5,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "pepper",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "broccoli",
+          "quantity": 1.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "cheddar_cheese",
+          "quantity": 2.0,
+          "unit": "pcs"
+        },
+        {
+          "ingredient_id": "parmesan_cheese",
+          "quantity": 0.5,
+          "unit": "pcs"
+        }
+      ]
+    }
+  ]
+}

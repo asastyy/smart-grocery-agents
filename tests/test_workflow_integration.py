@@ -5,7 +5,7 @@ import pytest
 
 from smart_grocery.schemas.models import PlanningRequest, PlanningResult
 from smart_grocery.workflow import runner
-from smart_grocery.tools import budget, recipes
+from smart_grocery.tools import budget, legacy_recipes
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -59,7 +59,7 @@ def test_revised_plan_is_checked_by_actual_validator(monkeypatch):
 
 
 def test_empty_search_is_explained(monkeypatch):
-    monkeypatch.setattr(recipes, "DATA", ROOT / "fixtures" / "recipes_empty.json")
+    monkeypatch.setattr(legacy_recipes, "DATA", ROOT / "fixtures" / "recipes_empty.json")
     run = runner.run_workflow_with_trace(request("request_no_match"))
     assert run.result is None
     assert run.error == "No eligible recipes"

@@ -1,0 +1,504 @@
+ingredient_id,canonical_name,aliases,base_unit,category
+water,water,water,pcs,other
+salt,salt,salt,pcs,spice
+sugar,sugar,sugar,pcs,other
+pepper,pepper,pepper,pcs,spice
+flour,flour,flour,pcs,grain
+rice,rice,rice,pcs,grain
+egg,egg,egg,pcs,protein
+onion,onion,onion,pcs,vegetable
+garlic,garlic,garlic,pcs,vegetable
+tomato,tomato,tomato,pcs,vegetable
+potato,potato,potato,pcs,vegetable
+carrot,carrot,carrot,pcs,vegetable
+pasta,pasta,pasta,pcs,grain
+oil,oil,oil,ml,fat
+olive_oil,olive oil,olive oil,pcs,fat
+vegetable_oil,vegetable oil,vegetable oil,ml,fat
+milk,milk,milk,pcs,dairy
+butter,butter,butter,pcs,other
+cheese,cheese,cheese,pcs,protein
+soy_sauce,soy sauce,soy sauce,pcs,sauce
+lemon,lemon,lemon,pcs,fruit
+banana,banana,banana,pcs,fruit
+apple,apple,apple,pcs,fruit
+bread,bread,bread,g,grain
+oat,oat,oat,pcs,grain
+lentil,lentil,lentil,pcs,protein
+chickpea,chickpea,chickpea,pcs,protein
+bean,bean,bean,g,protein
+spinach,spinach,spinach,pcs,vegetable
+mushroom,mushroom,mushroom,pcs,vegetable
+bell_pepper,bell pepper,bell pepper,pcs,spice
+cucumber,cucumber,cucumber,pcs,vegetable
+lettuce,lettuce,lettuce,pcs,vegetable
+broccoli,broccoli,broccoli,pcs,vegetable
+zucchini,zucchini,zucchini,pcs,vegetable
+corn,corn,corn,pcs,vegetable
+pea,pea,pea,pcs,vegetable
+honey,honey,honey,pcs,sauce
+curry_powder,curry powder,curry powder,pcs,other
+cumin,cumin,cumin,pcs,spice
+paprika,paprika,paprika,pcs,spice
+basil,basil,basil,pcs,spice
+oregano,oregano,oregano,pcs,spice
+tomato_paste,tomato paste,tomato paste,pcs,sauce
+coconut_milk,coconut milk,coconut milk,pcs,dairy
+peanut,peanut,peanut,pcs,protein
+tofu,tofu,tofu,pcs,protein
+cabbage,cabbage,cabbage,pcs,vegetable
+pumpkin,pumpkin,pumpkin,pcs,vegetable
+avocado,avocado,avocado,pcs,fruit
+yogurt,yogurt,yogurt,pcs,protein
+noodle,noodle,noodle,g,grain
+couscous,couscous,couscous,g,grain
+baking_powder,baking powder,baking powder,pcs,other
+vanilla,vanilla,vanilla,pcs,spice
+cinnamon,cinnamon,cinnamon,pcs,spice
+almond,almond,almond,g,protein
+walnut,walnut,walnut,pcs,protein
+garlic_clove,garlic clove,garlic clove,pcs,vegetable
+all_purpose_flour,all-purpose flour,all-purpose flour,pcs,grain
+baking_soda,baking soda,baking soda,pcs,other
+brown_sugar,brown sugar,brown sugar,pcs,other
+black_pepper,black pepper,black pepper,pcs,spice
+parmesan_cheese,parmesan cheese,parmesan cheese,pcs,protein
+lemon_juice,lemon juice,lemon juice,pcs,fruit
+parsley,parsley,parsley,pcs,other
+margarine,margarine,margarine,pcs,other
+vanilla_extract,vanilla extract,vanilla extract,pcs,spice
+nutmeg,nutmeg,nutmeg,pcs,other
+sour_cream,sour cream,sour cream,pcs,other
+ginger,ginger,ginger,pcs,spice
+pecan,pecan,pecan,pcs,other
+mayonnaise,mayonnaise,mayonnaise,pcs,other
+cream_cheese,cream cheese,cream cheese,pcs,protein
+green_onion,green onion,green onion,pcs,vegetable
+granulated_sugar,granulated sugar,granulated sugar,pcs,other
+cheddar_cheese,cheddar cheese,cheddar cheese,pcs,protein
+kosher_salt,kosher salt,kosher salt,pcs,spice
+garlic_powder,garlic powder,garlic powder,pcs,vegetable
+wheat_flour,wheat flour,wheat flour,pcs,grain
+canola_oil,canola oil,canola oil,pcs,fat
+cilantro,cilantro,cilantro,pcs,other
+raisin,raisin,raisin,pcs,other
+red_onion,red onion,red onion,pcs,vegetable
+thyme,thyme,thyme,pcs,spice
+cayenne_pepper,cayenne pepper,cayenne pepper,pcs,spice
+red_pepper_flake,red pepper flake,red pepper flake,pcs,spice
+buttermilk,buttermilk,buttermilk,pcs,dairy
+red_bell_pepper,red bell pepper,red bell pepper,pcs,spice
+chocolate_chip,chocolate chip,chocolate chip,pcs,other
+heavy_cream,heavy cream,heavy cream,pcs,other
+chili_powder,chili powder,chili powder,pcs,spice
+clove,clove,clove,pcs,other
+shallot,shallot,shallot,pcs,other
+celery,celery,celery,pcs,other
+shortening,shortening,shortening,pcs,other
+light_brown_sugar,light brown sugar,light brown sugar,pcs,other
+mozzarella_cheese,mozzarella cheese,mozzarella cheese,pcs,protein
+white_sugar,white sugar,white sugar,pcs,other
+dijon_mustard,dijon mustard,dijon mustard,pcs,other
+chive,chive,chive,pcs,other
+cornstarch,cornstarch,cornstarch,pcs,vegetable
+powdered_sugar,powdered sugar,powdered sugar,pcs,other
+sea_salt,sea salt,sea salt,pcs,spice
+scallion,scallion,scallion,pcs,other
+worcestershire_sauce,worcestershire sauce,worcestershire sauce,pcs,sauce
+lime_juice,lime juice,lime juice,pcs,fruit
+green_bean,green bean,green bean,pcs,protein
+warm_water,warm water,warm water,pcs,other
+rosemary,rosemary,rosemary,pcs,other
+active_dry_yeast,active dry yeast,active dry yeast,pcs,other
+feta_cheese,feta cheese,feta cheese,pcs,protein
+green_pepper,green pepper,green pepper,pcs,spice
+blueberry,blueberry,blueberry,pcs,other
+cranberry,cranberry,cranberry,pcs,other
+vinegar,vinegar,vinegar,pcs,sauce
+turmeric,turmeric,turmeric,pcs,spice
+black_bean,black bean,black bean,pcs,protein
+dill,dill,dill,pcs,other
+cornmeal,cornmeal,cornmeal,pcs,vegetable
+peanut_butter,peanut butter,peanut butter,pcs,protein
+vegetable_broth,vegetable broth,vegetable broth,pcs,other
+red_wine_vinegar,red wine vinegar,red wine vinegar,pcs,sauce
+lemon_zest,lemon zest,lemon zest,pcs,fruit
+rolled_oat,rolled oat,rolled oat,pcs,grain
+asparagu,asparagu,asparagu,pcs,other
+maple_syrup,maple syrup,maple syrup,pcs,sauce
+green_bell_pepper,green bell pepper,green bell pepper,pcs,spice
+sharp_cheddar_cheese,sharp cheddar cheese,sharp cheddar cheese,pcs,protein
+dry_white_wine,dry white wine,dry white wine,pcs,other
+allspice,allspice,allspice,pcs,other
+pine_nut,pine nut,pine nut,pcs,other
+green_chily,green chily,green chily,pcs,other
+monterey_jack_cheese,monterey jack cheese,monterey jack cheese,pcs,protein
+tomato_sauce,tomato sauce,tomato sauce,pcs,sauce
+skim_milk,skim milk,skim milk,pcs,dairy
+yellow_onion,yellow onion,yellow onion,pcs,vegetable
+coriander,coriander,coriander,pcs,other
+cauliflower,cauliflower,cauliflower,pcs,other
+white_wine,white wine,white wine,pcs,other
+onion_powder,onion powder,onion powder,pcs,vegetable
+white_pepper,white pepper,white pepper,pcs,spice
+cider_vinegar,cider vinegar,cider vinegar,pcs,sauce
+salsa,salsa,salsa,pcs,other
+eggplant,eggplant,eggplant,pcs,protein
+applesauce,applesauce,applesauce,pcs,sauce
+confectioners_sugar,confectioners sugar,confectioners sugar,pcs,other
+basil_leave,basil leave,basil leave,pcs,spice
+artichoke_heart,artichoke heart,artichoke heart,pcs,other
+cherry_tomato,cherry tomato,cherry tomato,pcs,vegetable
+evaporated_milk,evaporated milk,evaporated milk,pcs,dairy
+molass,molass,molass,pcs,other
+half_and_half,half-and-half,half-and-half,pcs,other
+ricotta_cheese,ricotta cheese,ricotta cheese,pcs,protein
+leek,leek,leek,pcs,other
+white_vinegar,white vinegar,white vinegar,pcs,sauce
+dry_mustard,dry mustard,dry mustard,pcs,other
+boiling_water,boiling water,boiling water,pcs,fat
+coconut,coconut,coconut,pcs,other
+strawberry,strawberry,strawberry,pcs,other
+black_olive,black olive,black olive,pcs,other
+cumin_seed,cumin seed,cumin seed,pcs,spice
+dark_brown_sugar,dark brown sugar,dark brown sugar,pcs,other
+caper,caper,caper,pcs,other
+oatmeal,oatmeal,oatmeal,pcs,grain
+spaghetti,spaghetti,spaghetti,pcs,other
+elbow_macaroni,elbow macaroni,elbow macaroni,pcs,other
+bay_leaf,bay leaf,bay leaf,pcs,other
+cinnamon_stick,cinnamon stick,cinnamon stick,pcs,spice
+flat_leaf_parsley,flat leaf parsley,flat leaf parsley,pcs,other
+sesame_seed,sesame seed,sesame seed,pcs,other
+broccoli_floret,broccoli floret,broccoli floret,pcs,vegetable
+cayenne,cayenne,cayenne,pcs,other
+white_wine_vinegar,white wine vinegar,white wine vinegar,pcs,sauce
+yellow_cornmeal,yellow cornmeal,yellow cornmeal,pcs,vegetable
+bread_flour,bread flour,bread flour,pcs,grain
+sweetened_condensed_milk,sweetened condensed milk,sweetened condensed milk,pcs,dairy
+tabasco_sauce,tabasco sauce,tabasco sauce,pcs,sauce
+russet_potato,russet potato,russet potato,pcs,vegetable
+mustard_seed,mustard seed,mustard seed,pcs,other
+plum_tomato,plum tomato,plum tomato,pcs,vegetable
+light_corn_syrup,light corn syrup,light corn syrup,pcs,sauce
+flour_tortilla,flour tortilla,flour tortilla,pcs,grain
+hard_boiled_egg,hard-boiled egg,hard-boiled egg,pcs,fat
+mustard,mustard,mustard,pcs,other
+quick_cooking_oat,quick-cooking oat,quick-cooking oat,pcs,grain
+firm_tofu,firm tofu,firm tofu,pcs,protein
+soymilk,soymilk,soymilk,pcs,dairy
+pineapple,pineapple,pineapple,pcs,fruit
+linguine,linguine,linguine,pcs,other
+pure_vanilla_extract,pure vanilla extract,pure vanilla extract,pcs,spice
+coarse_salt,coarse salt,coarse salt,pcs,spice
+sun_dried_tomato,sun-dried tomato,sun-dried tomato,pcs,vegetable
+parmigiano_reggiano_cheese,parmigiano-reggiano cheese,parmigiano-reggiano cheese,pcs,protein
+sage,sage,sage,pcs,other
+mashed_potato,mashed potato,mashed potato,pcs,vegetable
+date,date,date,pcs,other
+tarragon,tarragon,tarragon,pcs,other
+corn_kernel,corn kernel,corn kernel,pcs,vegetable
+dry_yeast,dry yeast,dry yeast,pcs,other
+puff_pastry,puff pastry,puff pastry,pcs,other
+seasoning_salt,seasoning salt,seasoning salt,pcs,spice
+blue_cheese,blue cheese,blue cheese,pcs,protein
+old_fashioned_oat,old fashioned oat,old fashioned oat,pcs,grain
+unsweetened_applesauce,unsweetened applesauce,unsweetened applesauce,pcs,sauce
+swiss_cheese,swiss cheese,swiss cheese,pcs,protein
+prosciutto,prosciutto,prosciutto,pcs,other
+caster_sugar,caster sugar,caster sugar,pcs,other
+cocoa_powder,cocoa powder,cocoa powder,pcs,other
+unbleached_all_purpose_flour,unbleached all-purpose flour,unbleached all-purpose flour,pcs,grain
+orange,orange,orange,pcs,fruit
+brussels_sprout,brussels sprout,brussels sprout,pcs,other
+dill_weed,dill weed,dill weed,pcs,other
+bay_leave,bay leave,bay leave,pcs,other
+quinoa,quinoa,quinoa,pcs,grain
+basmati_rice,basmati rice,basmati rice,pcs,grain
+kalamata_olive,kalamata olive,kalamata olive,pcs,other
+lime,lime,lime,pcs,fruit
+pecan_halve,pecan halve,pecan halve,pcs,other
+of_mint,of mint,of mint,pcs,other
+beer,beer,beer,pcs,other
+cashew,cashew,cashew,pcs,other
+flax_seed,flax seed,flax seed,pcs,other
+celery_seed,celery seed,celery seed,pcs,other
+orange_zest,orange zest,orange zest,pcs,fruit
+brown_rice,brown rice,brown rice,pcs,grain
+cardamom,cardamom,cardamom,pcs,other
+pumpkin_puree,pumpkin puree,pumpkin puree,pcs,vegetable
+roma_tomato,roma tomato,roma tomato,pcs,vegetable
+romano_cheese,romano cheese,romano cheese,pcs,protein
+egg_substitute,egg substitute,egg substitute,pcs,protein
+thyme_leave,thyme leave,thyme leave,pcs,spice
+apple_cider_vinegar,apple cider vinegar,apple cider vinegar,pcs,sauce
+lemon_rind,lemon rind,lemon rind,pcs,fruit
+granny_smith_apple,granny smith apple,granny smith apple,pcs,fruit
+lemon_peel,lemon peel,lemon peel,pcs,fruit
+orzo_pasta,orzo pasta,orzo pasta,pcs,grain
+italian_parsley,italian parsley,italian parsley,pcs,other
+splenda_sugar_substitute,splenda sugar substitute,splenda sugar substitute,pcs,other
+quick_oat,quick oat,quick oat,pcs,grain
+wheat_germ,wheat germ,wheat germ,pcs,other
+yukon_gold_potato,yukon gold potato,yukon gold potato,pcs,vegetable
+raspberry,raspberry,raspberry,pcs,other
+lemon_zest_of,lemon zest of,lemon zest of,pcs,fruit
+gingerroot,gingerroot,gingerroot,pcs,spice
+nonfat_milk,nonfat milk,nonfat milk,pcs,dairy
+marjoram,marjoram,marjoram,pcs,other
+ketchup,ketchup,ketchup,pcs,other
+baking_potato,baking potato,baking potato,pcs,vegetable
+basil_leaf,basil leaf,basil leaf,pcs,spice
+herb,herb,herb,pcs,other
+turmeric_powder,turmeric powder,turmeric powder,pcs,spice
+celery_rib,celery rib,celery rib,pcs,other
+golden_raisin,golden raisin,golden raisin,pcs,other
+graham_cracker_crumb,graham cracker crumb,graham cracker crumb,pcs,other
+white_flour,white flour,white flour,pcs,grain
+rice_vinegar,rice vinegar,rice vinegar,pcs,grain
+garbanzo_bean,garbanzo bean,garbanzo bean,pcs,protein
+gruyere_cheese,gruyere cheese,gruyere cheese,pcs,protein
+pesto_sauce,pesto sauce,pesto sauce,pcs,sauce
+kidney_bean,kidney bean,kidney bean,pcs,protein
+pumpkin_pie_spice,pumpkin pie spice,pumpkin pie spice,pcs,vegetable
+white_chocolate_chip,white chocolate chip,white chocolate chip,pcs,other
+grape_tomato,grape tomato,grape tomato,pcs,vegetable
+red_wine,red wine,red wine,pcs,other
+button_mushroom,button mushroom,button mushroom,pcs,vegetable
+new_potato,new potato,new potato,pcs,vegetable
+vegetable_shortening,vegetable shortening,vegetable shortening,pcs,other
+creamy_peanut_butter,creamy peanut butter,creamy peanut butter,pcs,protein
+coarse_black_pepper,coarse black pepper,coarse black pepper,pcs,spice
+cottage_cheese,cottage cheese,cottage cheese,pcs,protein
+fettuccine,fettuccine,fettuccine,pcs,other
+panko_breadcrumb,panko breadcrumb,panko breadcrumb,pcs,grain
+spring_onion,spring onion,spring onion,pcs,vegetable
+penne_pasta,penne pasta,penne pasta,pcs,grain
+icing_sugar,icing sugar,icing sugar,pcs,other
+white_rice,white rice,white rice,pcs,grain
+asiago_cheese,asiago cheese,asiago cheese,pcs,protein
+coconut_oil,coconut oil,coconut oil,pcs,fat
+velveeta_cheese,velveeta cheese,velveeta cheese,pcs,protein
+portabella_mushroom,portabella mushroom,portabella mushroom,pcs,vegetable
+garam_masala,garam masala,garam masala,pcs,other
+flaked_coconut,flaked coconut,flaked coconut,pcs,other
+hamburger,hamburger,hamburger,pcs,other
+cream_of_tartar,cream of tartar,cream of tartar,pcs,other
+red_chili_powder,red chili powder,red chili powder,pcs,spice
+corn_tortilla,corn tortilla,corn tortilla,pcs,grain
+ghee,ghee,ghee,pcs,other
+low_fat_milk,low-fat milk,low-fat milk,pcs,dairy
+2_low_fat_milk,2 low-fat milk,2 low-fat milk,pcs,dairy
+corn_syrup,corn syrup,corn syrup,pcs,sauce
+couscou,couscou,couscou,pcs,other
+yellow_bell_pepper,yellow bell pepper,yellow bell pepper,pcs,spice
+poppy_seed,poppy seed,poppy seed,pcs,other
+prepared_mustard,prepared mustard,prepared mustard,pcs,other
+mango,mango,mango,pcs,other
+macaroni,macaroni,macaroni,pcs,other
+beet,beet,beet,pcs,other
+mint,mint,mint,pcs,other
+pancetta,pancetta,pancetta,pcs,other
+asparagus_spear,asparagus spear,asparagus spear,pcs,vegetable
+heavy_whipping_cream,heavy whipping cream,heavy whipping cream,pcs,other
+pear,pear,pear,pcs,vegetable
+pinto_bean,pinto bean,pinto bean,pcs,protein
+tahini,tahini,tahini,pcs,other
+dry_sherry,dry sherry,dry sherry,pcs,other
+wheat_pastry_flour,wheat pastry flour,wheat pastry flour,pcs,grain
+cannellini_bean,cannellini bean,cannellini bean,pcs,protein
+fennel_seed,fennel seed,fennel seed,pcs,other
+currant,currant,currant,pcs,other
+green_chili_pepper,green chili pepper,green chili pepper,pcs,spice
+hazelnut,hazelnut,hazelnut,pcs,other
+cherry,cherry,cherry,pcs,other
+unbleached_flour,unbleached flour,unbleached flour,pcs,grain
+cauliflower_floret,cauliflower floret,cauliflower floret,pcs,other
+pure_maple_syrup,pure maple syrup,pure maple syrup,pcs,sauce
+monterey_jack_pepper_cheese,monterey jack pepper cheese,monterey jack pepper cheese,pcs,protein
+green_pea,green pea,green pea,pcs,vegetable
+parsnip,parsnip,parsnip,pcs,other
+1_low_fat_milk,1 low-fat milk,1 low-fat milk,pcs,dairy
+penne,penne,penne,pcs,other
+apple_cider,apple cider,apple cider,pcs,fruit
+splenda_granular,splenda granular,splenda granular,pcs,other
+kernel_corn,kernel corn,kernel corn,pcs,vegetable
+gorgonzola,gorgonzola,gorgonzola,pcs,other
+green_olive,green olive,green olive,pcs,other
+black_peppercorn,black peppercorn,black peppercorn,pcs,spice
+kale,kale,kale,pcs,other
+feta,feta,feta,pcs,other
+table_salt,table salt,table salt,pcs,spice
+parsley_flake,parsley flake,parsley flake,pcs,other
+self_rising_flour,self-rising flour,self-rising flour,pcs,grain
+pimiento,pimiento,pimiento,pcs,other
+sunflower_seed,sunflower seed,sunflower seed,pcs,other
+oregano_leave,oregano leave,oregano leave,pcs,spice
+bisquick,bisquick,bisquick,pcs,other
+mint_leave,mint leave,mint leave,pcs,other
+coriander_powder,coriander powder,coriander powder,pcs,other
+coriander_leave,coriander leave,coriander leave,pcs,other
+cracked_black_pepper,cracked black pepper,cracked black pepper,pcs,spice
+baguette,baguette,baguette,pcs,other
+low_fat_yogurt,low-fat yogurt,low-fat yogurt,pcs,protein
+lime_zest,lime zest,lime zest,pcs,fruit
+fennel_bulb,fennel bulb,fennel bulb,pcs,other
+brandy,brandy,brandy,pcs,other
+lemon_wedge,lemon wedge,lemon wedge,pcs,fruit
+long_grain_rice,long grain rice,long grain rice,pcs,grain
+sherry_wine,sherry wine,sherry wine,pcs,other
+chili_pepper,chili pepper,chili pepper,pcs,spice
+cumin_powder,cumin powder,cumin powder,pcs,spice
+caraway_seed,caraway seed,caraway seed,pcs,other
+nonfat_yogurt,nonfat yogurt,nonfat yogurt,pcs,protein
+tomato_juice,tomato juice,tomato juice,pcs,vegetable
+provolone_cheese,provolone cheese,provolone cheese,pcs,protein
+powdered_milk,powdered milk,powdered milk,pcs,dairy
+sea_scallop,sea scallop,sea scallop,pcs,other
+white_mushroom,white mushroom,white mushroom,pcs,vegetable
+mussel,mussel,mussel,pcs,other
+miracle_whip,miracle whip,miracle whip,pcs,other
+stewed_tomato,stewed tomato,stewed tomato,pcs,vegetable
+american_cheese,american cheese,american cheese,pcs,protein
+artichoke,artichoke,artichoke,pcs,other
+parsley_leave,parsley leave,parsley leave,pcs,other
+halibut_fillet,halibut fillet,halibut fillet,pcs,other
+pecorino_romano_cheese,pecorino romano cheese,pecorino romano cheese,pcs,protein
+mustard_powder,mustard powder,mustard powder,pcs,other
+clam,clam,clam,pcs,other
+tomato_puree,tomato puree,tomato puree,pcs,vegetable
+light_sour_cream,light sour cream,light sour cream,pcs,other
+barbecue_sauce,barbecue sauce,barbecue sauce,pcs,sauce
+angel_hair_pasta,angel hair pasta,angel hair pasta,pcs,grain
+tart_apple,tart apple,tart apple,pcs,fruit
+light_mayonnaise,light mayonnaise,light mayonnaise,pcs,other
+half_and_half_cream,half-and-half cream,half-and-half cream,pcs,other
+low_fat_buttermilk,low-fat buttermilk,low-fat buttermilk,pcs,dairy
+rhubarb,rhubarb,rhubarb,pcs,other
+golden_syrup,golden syrup,golden syrup,pcs,sauce
+cilantro_leave,cilantro leave,cilantro leave,pcs,other
+instant_yeast,instant yeast,instant yeast,pcs,other
+miniature_marshmallow,miniature marshmallow,miniature marshmallow,pcs,other
+rotini_pasta,rotini pasta,rotini pasta,pcs,grain
+phyllo_dough,phyllo dough,phyllo dough,pcs,other
+red_potato,red potato,red potato,pcs,vegetable
+green_chili,green chili,green chili,pcs,spice
+white_chocolate,white chocolate,white chocolate,pcs,other
+fettuccine_pasta,fettuccine pasta,fettuccine pasta,pcs,grain
+sweetened_flaked_coconut,sweetened flaked coconut,sweetened flaked coconut,pcs,other
+scallop,scallop,scallop,pcs,other
+self_raising_flour,self-raising flour,self-raising flour,pcs,grain
+low_sodium_soy_sauce,low sodium soy sauce,low sodium soy sauce,pcs,sauce
+bittersweet_chocolate,bittersweet chocolate,bittersweet chocolate,pcs,other
+cremini_mushroom,cremini mushroom,cremini mushroom,pcs,vegetable
+vanilla_essence,vanilla essence,vanilla essence,pcs,spice
+lemon_pepper,lemon pepper,lemon pepper,pcs,spice
+radish,radish,radish,pcs,other
+lime_juice_of,lime juice of,lime juice of,pcs,fruit
+shiitake_mushroom,shiitake mushroom,shiitake mushroom,pcs,vegetable
+creme_fraiche,creme fraiche,creme fraiche,pcs,other
+mirin,mirin,mirin,pcs,other
+broth,broth,broth,pcs,other
+nutritional_yeast,nutritional yeast,nutritional yeast,pcs,other
+red_lentil,red lentil,red lentil,pcs,protein
+tortilla_chip,tortilla chip,tortilla chip,pcs,grain
+pickling_salt,pickling salt,pickling salt,pcs,spice
+kielbasa,kielbasa,kielbasa,pcs,other
+sherry_wine_vinegar,sherry wine vinegar,sherry wine vinegar,pcs,sauce
+chocolate,chocolate,chocolate,pcs,other
+cornflour,cornflour,cornflour,pcs,grain
+okra,okra,okra,pcs,other
+catfish_fillet,catfish fillet,catfish fillet,pcs,protein
+cake_flour,cake flour,cake flour,pcs,grain
+marshmallow,marshmallow,marshmallow,pcs,other
+yellow_mustard,yellow mustard,yellow mustard,pcs,other
+egg_beaters_egg_substitute,egg beaters egg substitute,egg beaters egg substitute,pcs,protein
+arugula,arugula,arugula,pcs,other
+cool_whip,cool whip,cool whip,pcs,other
+white_bean,white bean,white bean,pcs,protein
+turnip,turnip,turnip,pcs,other
+dark_chocolate,dark chocolate,dark chocolate,pcs,other
+chili_sauce,chili sauce,chili sauce,pcs,spice
+orange_marmalade,orange marmalade,orange marmalade,pcs,fruit
+low_fat_sour_cream,low-fat sour cream,low-fat sour cream,pcs,other
+fontina_cheese,fontina cheese,fontina cheese,pcs,protein
+sugar_snap_pea,sugar snap pea,sugar snap pea,pcs,vegetable
+maraschino_cherry,maraschino cherry,maraschino cherry,pcs,other
+red_chily,red chily,red chily,pcs,other
+fig,fig,fig,pcs,other
+bisquick_baking_mix,bisquick baking mix,bisquick baking mix,pcs,other
+green_tomato,green tomato,green tomato,pcs,vegetable
+horseradish,horseradish,horseradish,pcs,other
+red_kidney_bean,red kidney bean,red kidney bean,pcs,protein
+low_fat_cottage_cheese,low fat cottage cheese,low fat cottage cheese,pcs,protein
+unsweetened_coconut,unsweetened coconut,unsweetened coconut,pcs,other
+graham_cracker,graham cracker,graham cracker,pcs,other
+olive_oil_flavored_cooking_spray,olive oil flavored cooking spray,olive oil flavored cooking spray,pcs,fat
+swiss_chard,swiss chard,swiss chard,pcs,other
+lemon_juice_and_zest_of,lemon juice and zest of,lemon juice and zest of,pcs,fruit
+sage_leave,sage leave,sage leave,pcs,other
+flax_seed_meal,flax seed meal,flax seed meal,pcs,other
+peppercorn,peppercorn,peppercorn,pcs,spice
+mace,mace,mace,pcs,other
+green_cabbage,green cabbage,green cabbage,pcs,vegetable
+dry_red_wine,dry red wine,dry red wine,pcs,other
+part_skim_mozzarella_cheese,part-skim mozzarella cheese,part-skim mozzarella cheese,pcs,protein
+curry_leave,curry leave,curry leave,pcs,other
+wonton_wrapper,wonton wrapper,wonton wrapper,pcs,other
+lump_crabmeat,lump crabmeat,lump crabmeat,pcs,other
+bow_tie_pasta,bow tie pasta,bow tie pasta,pcs,grain
+low_fat_cheddar_cheese,low-fat cheddar cheese,low-fat cheddar cheese,pcs,protein
+part_skim_ricotta_cheese,part-skim ricotta cheese,part-skim ricotta cheese,pcs,protein
+acorn_squash,acorn squash,acorn squash,pcs,vegetable
+pistachio,pistachio,pistachio,pcs,other
+arborio_rice,arborio rice,arborio rice,pcs,grain
+crunchy_peanut_butter,crunchy peanut butter,crunchy peanut butter,pcs,protein
+marshmallow_cream,marshmallow cream,marshmallow cream,pcs,other
+red_chili_pepper,red chili pepper,red chili pepper,pcs,spice
+french_baguette,french baguette,french baguette,pcs,other
+alfredo_sauce,alfredo sauce,alfredo sauce,pcs,sauce
+orange_zest_of,orange zest of,orange zest of,pcs,fruit
+english_muffin,english muffin,english muffin,pcs,other
+red_snapper_fillet,red snapper fillet,red snapper fillet,pcs,other
+saffron_thread,saffron thread,saffron thread,pcs,other
+rum,rum,rum,pcs,other
+pineapple_chunk,pineapple chunk,pineapple chunk,pcs,fruit
+sugar_substitute,sugar substitute,sugar substitute,pcs,other
+sauerkraut,sauerkraut,sauerkraut,pcs,other
+dill_pickle,dill pickle,dill pickle,pcs,other
+snow_pea,snow pea,snow pea,pcs,vegetable
+cracked_pepper,cracked pepper,cracked pepper,pcs,spice
+blackberry,blackberry,blackberry,pcs,other
+tamari,tamari,tamari,pcs,other
+crystallized_ginger,crystallized ginger,crystallized ginger,pcs,spice
+pasta_shell,pasta shell,pasta shell,pcs,grain
+polenta,polenta,polenta,pcs,other
+rigatoni_pasta,rigatoni pasta,rigatoni pasta,pcs,grain
+sun_dried_tomato_packed_in_oil,sun-dried tomato packed in oil,sun-dried tomato packed in oil,pcs,fat
+lemon_rind_of,lemon rind of,lemon rind of,pcs,fruit
+fat_free_yogurt,fat-free yogurt,fat-free yogurt,pcs,protein
+bulgur,bulgur,bulgur,pcs,grain
+phyllo_pastry,phyllo pastry,phyllo pastry,pcs,other
+red_cabbage,red cabbage,red cabbage,pcs,vegetable
+reduced_fat_sour_cream,reduced-fat sour cream,reduced-fat sour cream,pcs,other
+extra_sharp_cheddar_cheese,extra-sharp cheddar cheese,extra-sharp cheddar cheese,pcs,protein
+toasted_sesame_seed,toasted sesame seed,toasted sesame seed,pcs,other
+walnut_halve,walnut halve,walnut halve,pcs,protein
+squash,squash,squash,pcs,other
+white_potato,white potato,white potato,pcs,vegetable
+romaine_lettuce,romaine lettuce,romaine lettuce,pcs,vegetable
+orange_bell_pepper,orange bell pepper,orange bell pepper,pcs,spice
+walnut_piec,walnut piec,walnut piec,pcs,protein
+tortilla,tortilla,tortilla,pcs,grain
+fat_free_cream_cheese,fat free cream cheese,fat free cream cheese,pcs,protein
+pecan_piec,pecan piec,pecan piec,pcs,other
+sultana,sultana,sultana,pcs,other
+asafoetida_powder,asafoetida powder,asafoetida powder,pcs,other
+saffron,saffron,saffron,pcs,other
+garlic_paste,garlic paste,garlic paste,pcs,sauce
+bean_sprout,bean sprout,bean sprout,pcs,protein
+cod,cod,cod,pcs,other
+ripe_olive,ripe olive,ripe olive,pcs,other
+fat_free_sour_cream,fat free sour cream,fat free sour cream,pcs,other
+black_eyed_pea,black-eyed pea,black-eyed pea,pcs,vegetable
+dark_rum,dark rum,dark rum,pcs,other

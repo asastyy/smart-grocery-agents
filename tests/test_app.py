@@ -1,60 +1,55 @@
-import json
 from pathlib import Path
 
 from streamlit.testing.v1 import AppTest
 
-from smart_grocery.tools import budget
+from smart_grocery.workflow import foodcom
+
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def start_app(monkeypatch):
     monkeypatch.setenv("MOCK_LLM", "true")
-    app = AppTest.from_file(
-        Path(__file__).resolve().parents[1] / "app.py", default_timeout=30
-    ).run()
+    app = AppTest.from_file(ROOT / "app.py", default_timeout=30).run()
     assert not app.exception
     return app
 
 
 def test_valid_menu_display(monkeypatch):
     app = start_app(monkeypatch)
-    app.button[0].click().run()
+    app.button(key="plan_menu").click().run()
     assert not app.exception
-    assert app.success[0].value == "Valid plan"
-    assert app.metric[0].value == "3.50 EUR"
-    assert not app.error
-    assert len(app.dataframe) == 1
+    assert any("прошло Python-проверку" in item.value for item in app.success)
+    assert app.metric[0].label == "Расчётная стоимость"
+    assert len(app.dataframe[0].value) == 6
+    assert app.download_button
 
 
 def test_over_budget_is_not_success(monkeypatch):
     app = start_app(monkeypatch)
-    app.number_input[0].set_value(0.0)
-    app.button[0].click().run()
+    app.number_input(key="budget").set_value(0.0)
+    app.button(key="plan_menu").click().run()
     assert not app.exception
-    assert not app.success
-    assert app.warning
-    assert any("Budget exceeded" in error.value for error in app.error)
-    assert "unvalidated" in app.metric[0].label
+    assert not any("прошло Python-проверку" in item.value for item in app.success)
+    assert any("over_budget" in item.value for item in app.error)
+    assert app.metric[0].label == "Расчётная стоимость"
+    assert len(app.expander) >= 3
 
 
-def test_unknown_prices_show_incomplete_estimate(monkeypatch, tmp_path):
-    prices = tmp_path / "prices.json"
-    prices.write_text(json.dumps({}), encoding="utf-8")
-    monkeypatch.setattr(budget, "PRICES", prices)
+def test_unknown_prices_show_incomplete_estimate(monkeypatch):
+    monkeypatch.setattr(foodcom, "load_prices", lambda: {})
     app = start_app(monkeypatch)
-    app.button[0].click().run()
+    app.button(key="plan_menu").click().run()
     assert not app.exception
-    assert not app.success
-    assert any("Unknown price" in error.value for error in app.error)
-    assert any("incomplete" in error.value for error in app.error)
-    assert "unvalidated" in app.metric[0].label
-    assert "does not confirm" in app.info[0].value
+    assert any("missing_price" in item.value for item in app.error)
+    assert any("Полная стоимость неизвестна" in item.value for item in app.error)
+    assert app.metric[0].label == "Стоимость оценённых позиций"
 
 
-def test_no_eligible_recipes_shows_error(monkeypatch):
-    monkeypatch.setattr("smart_grocery.workflow.runner.search_recipes", lambda request: [])
+def test_no_eligible_recipes_is_explained(monkeypatch):
+    monkeypatch.setattr(foodcom, "search_recipes", lambda request: {"candidates": []})
     app = start_app(monkeypatch)
-    app.button[0].click().run()
+    app.button(key="plan_menu").click().run()
     assert not app.exception
-    assert not app.success
-    assert not app.metric
-    assert app.error[0].value == "No eligible recipes"
+    assert any("no_candidates" in item.value for item in app.error)
+    assert any("Меню не сформировано" in item.value for item in app.info)

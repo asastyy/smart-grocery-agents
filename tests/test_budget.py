@@ -5,7 +5,7 @@ import pytest
 
 from smart_grocery.schemas.models import Ingredient, PlanningRequest, Recipe
 from smart_grocery.tools import budget
-from smart_grocery.tools.recipes import search_recipes
+from smart_grocery.tools.legacy_recipes import search_recipes
 
 
 @pytest.fixture

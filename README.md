@@ -1,37 +1,36 @@
 # Smart Grocery Agents
 
-Планирование меню и списка покупок по запасам, бюджету и ограничениям питания.
-MVP связывает поиск рецептов, LLM-планировщик, Python-калькулятор и отдельного
-LLM-критика через ограниченный workflow со Streamlit-интерфейсом.
+MVP планирует обеды и ужины по запасам, бюджету, числу людей и времени
+приготовления. Поиск работает на подготовленных данных Food.com: 150 рецептов,
+503 нормализованных ингредиента и демонстрационные цены в условных единицах CU.
 
 ## Участники
 
-| Роль | ФИО | GitHub |
-|---|---|---|
-| Data & Recipe Search | TODO — заполнить команде | TODO |
-| Meal Planner | TODO — заполнить команде | TODO |
-| Shopping & Validator | TODO — заполнить команде | TODO |
-| Integration & UI | TODO — заполнить команде | TODO |
+| Роль | Участник | GitHub | Зона ответственности |
+|---|---|---|---|
+| Data & Recipe Search | Максим — уточнить полное ФИО | [@jeweller9](https://github.com/jeweller9) | данные и поиск рецептов |
+| Meal Planner | Рита — уточнить полное ФИО | [@marritau](https://github.com/marritau) | LLM-планировщик |
+| Shopping & Validator | Александра Федорова | [@fedorova-av](https://github.com/fedorova-av) | корзина, Python-проверка и LLM-критик |
+| Integration & UI | Анастасия Сергеева | [@asastyy](https://github.com/asastyy) | workflow, Streamlit, Docker и тестирование |
 
-## Текущий статус
+## Как работает MVP
 
-Работает локальный offline MVP с тремя демонстрационными рецептами, условными
-ценами и двумя попытками планирования. В этой ветке подключена реализация
-роли 3 из `feature/budget` / PR #1. Интеграция и UI описаны в
-[docs/ROLE_4.md](docs/ROLE_4.md).
+`search_recipes → LLM planner → Python validator → LLM critic → повторное планирование`
 
-Реальный провайдер и модель ещё не утверждены командой. Подготовлен вариант
-Google Gemini `gemini-3.1-flash-lite` через OpenAI-compatible API; настройка
-ниже. Планировщик выбирает ID из найденных рецептов и пересматривает выбор
-по feedback. Отдельный критик объясняет найденные Python нарушения и советует
-изменения. Цены, количества и решение о валидности вычисляются Python.
-`MOCK_LLM=true` не вызывает модель, использует фиксированное меню и не является
-демонстрацией LLM-функции для proposal. Живой вызов и успешный цикл с провайдером
-пока не подтверждены.
+- Поиск фильтрует рецепты по диете и времени приготовления.
+- Планировщик выбирает только ID из найденных кандидатов.
+- Python масштабирует количества, вычитает запасы, считает корзину и проверяет
+  бюджет, единицы, цены, диету и заполненность меню.
+- При нарушениях отдельный критик формирует рекомендации. Он не меняет расчёты.
+- Цикл ограничен двумя попытками; интерфейс показывает обе оценки.
+
+По умолчанию включён `MOCK_LLM=true`: приложение полностью работает офлайн и
+не обращается к внешней модели. Mock нужен для разработки и автотестов; для
+демонстрации LLM нужно переключить Gemini по инструкции ниже.
 
 ## Локальный запуск
 
-Python 3.11 или новее. Команды из корня репозитория:
+Нужен Python 3.11 или новее. Из корня репозитория:
 
 ```bash
 python -m venv .venv
@@ -41,92 +40,58 @@ cp .env.example .env
 python -m streamlit run app.py
 ```
 
-Windows PowerShell: вместо `source` выполнить `.\.venv\Scripts\Activate.ps1`,
-а вместо `cp` — `Copy-Item .env.example .env`.
-Открыть http://localhost:8501. `.env` загружается автоматически; экспортированные
-переменные окружения имеют приоритет. UI показывает запрос, меню по дням,
-корзину, стоимость, ошибки и историю обеих попыток; результат можно скачать JSON.
+В Windows PowerShell используйте `\.venv\Scripts\Activate.ps1` и
+`Copy-Item .env.example .env`. Откройте http://localhost:8501.
+
+## Gemini
+
+Получите ключ в [Google AI Studio](https://aistudio.google.com/apikey) и
+измените только локальный `.env`:
+
+```dotenv
+MOCK_LLM=false
+LLM_API_KEY=YOUR_LOCAL_GEMINI_KEY
+LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+LLM_MODEL=gemini-3.5-flash-lite
+CRITIC_MODEL=gemini-3.5-flash-lite
+```
+
+Ключ нельзя добавлять в Git. `CRITIC_MODEL` можно оставить пустым: тогда критик
+использует `LLM_MODEL`. После изменения `.env` перезапустите приложение.
+Подробности и smoke-тест описаны в [docs/CRITIC.md](docs/CRITIC.md).
 
 ## Docker
 
-Установить и запустить Docker Desktop / Docker Engine. Сначала создать `.env`:
+Запустите Docker Desktop, затем:
 
 ```bash
 cp .env.example .env
 docker compose up --build
 ```
 
-Открыть http://localhost:8501. Остановка: `docker compose down`.
-Альтернатива без Compose:
+Проверка: `curl --fail http://localhost:8501/_stcore/health`.
+Остановка: `docker compose down`.
 
-```bash
-docker build -t smart-grocery .
-docker run --rm -p 127.0.0.1:8501:8501 --env-file .env smart-grocery
-```
-
-Проверка сервера: `curl --fail http://localhost:8501/_stcore/health`.
-Контейнер запускается без root; `.env`, Git и `.venv` не входят в образ.
-
-## Настройка настоящей модели
-
-Создать ключ в [Google AI Studio](https://aistudio.google.com/apikey) и заполнить
-**локальный** `.env`, не добавляя ключ в Git:
-
-```dotenv
-MOCK_LLM=false
-LLM_API_KEY=YOUR_LOCAL_GEMINI_KEY
-LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
-LLM_MODEL=gemini-3.1-flash-lite
-CRITIC_MODEL=gemini-3.1-flash-lite
-```
-
-Это предложенная конфигурация; команда может выбрать другой совместимый
-провайдер. `CRITIC_MODEL` необязателен и по умолчанию равен `LLM_MODEL`.
-[Google описывает совместимость SDK](https://ai.google.dev/gemini-api/docs/openai)
-и [тарифы и free tier](https://ai.google.dev/gemini-api/docs/pricing).
-После изменения `.env` перезапустить процесс / контейнер. План живой проверки
-и критерии успешности — в [docs/ROLE_4.md](docs/ROLE_4.md).
-
-## Тесты и примеры
+## Проверки
 
 ```bash
 python -m pytest -q
-python scripts/run_demo.py fixtures/request_basic.json
-python scripts/run_demo.py fixtures/request_over_budget.json
+python scripts/check_data.py
+python scripts/run_foodcom.py
 ```
 
-Базовый пример: меню `omelette`, `rice_bowl`, стоимость 3.50 EUR, `valid=true`.
-Нулевой бюджет: `valid=false`, причина `Budget exceeded`, рекомендации критика,
-две попытки. CLI возвращает код 0 только для валидного итога, 1 для ошибки
-workflow / невалидного итога, 2 для неправильного входного JSON.
+Шаблон GitHub Actions лежит в `docs/github-tests.yml`. Чтобы включить CI, его
+нужно перенести в `.github/workflows/tests.yml` с GitHub-токеном, имеющим право
+`workflow`.
 
-Интеграционные тесты проверяют пересмотр, передачу feedback, неизвестный ID,
-отсутствие рецептов, пропущенные цены, сбои модулей и сохранение истории.
-Streamlit AppTest проверяет интерфейс. Шаблон GitHub Actions в `docs/github-tests.yml` запускает тесты,
-сборку контейнера и HTTP health check. Для включения CI перенести его в
-`.github/workflows/tests.yml` через доступ с правом workflow. Сейчас CI
-не активирован: текущий GitHub-токен не разрешает создавать workflows.
+## Ограничения данных
 
-## Архитектура и границы
+Цены в CU синтетические и не являются ценами магазинов. Исходный набор не
+содержит инструкций приготовления. Часть количеств обозначена `pcs`, поэтому
+интерфейс явно показывает единицы и предупреждение о качестве данных. Если цены
+или единицы несовместимы, итоговая стоимость остаётся неизвестной, а Python
+возвращает отдельное нарушение.
 
-`search_recipes → propose_menu → validate_plan → [feedback → propose_menu → validate_plan]`
-
-- `src/smart_grocery/schemas/models.py` и `docs/CONTRACTS.md`: действующие общие схемы.
-- `tools/recipes.py`: поиск, роль 1.
-- `agents/planner.py`: планировщик, роль 2.
-- `tools/budget.py`, `agents/validator.py`, `agents/critic.py`: роль 3.
-- `workflow/runner.py`, `app.py`, Docker, CI: роль 4.
-
-`run_workflow` сохраняет `PlanningResult`. Отдельный `run_workflow_with_trace`
-даёт UI результат с историей без изменения общих схем. LangGraph для одного
-ограниченного цикла не требуется. Сбой настоящей модели не переключает UI
-на mock и не показывает предыдущий невалидный план как принятый.
-
-Текущий каталог использует EUR и условные portions. Pantry означает доступность
-продукта без ограничения количества. Масштабирование на нескольких человек
-калькулятором пока не поддерживается; UI фиксирует одного человека. Это учебная
-оценка, не реальные магазинные цены. Расширение данных до 30–100 рецептов,
-согласование модели, живой прогон и заполнение участников остаются задачами
-владельцев модулей / команды перед proposal.
-
-Курс и требования: https://github.com/AlgazinovAleksandr/LLM-Agents-Course/blob/main/GROUP_PROJECT.md
+Контракты: [docs/CONTRACTS.md](docs/CONTRACTS.md). Интеграция роли 4:
+[docs/ROLE_4.md](docs/ROLE_4.md). Требования курса:
+https://github.com/AlgazinovAleksandr/LLM-Agents-Course/blob/main/GROUP_PROJECT.md
