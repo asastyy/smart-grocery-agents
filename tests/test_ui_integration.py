@@ -17,13 +17,13 @@ def test_result_survives_rerun_and_labels_saved_inputs(monkeypatch):
     app.button(key="add_pantry").click().run()
     assert not app.exception
     assert app.metric[0].value == original_cost
-    assert any("Параметры изменены" in item.value for item in app.warning)
+    assert any("предыдущих параметров" in item.value for item in app.caption)
 
     app.number_input(key="budget").set_value(0.0)
     app.button(key="plan_menu").click().run()
-    assert not any("прошло Python-проверку" in item.value for item in app.success)
-    assert any("over_budget" in item.value for item in app.error)
-    assert any("Попытка 2" in item.label for item in app.expander)
+    assert not any("Меню прошло проверку" in item.value for item in app.success)
+    assert any("Бюджет превышен" in item.value for item in app.markdown)
+    assert any("Попытка 2" in item.value for item in app.markdown)
 
 
 def test_live_missing_key_shows_actionable_error(monkeypatch):

@@ -109,6 +109,8 @@ python scripts/run_foodcom.py
 
 Контракты: [docs/CONTRACTS.md](docs/CONTRACTS.md). Интеграция роли 4:
 [docs/ROLE_4.md](docs/ROLE_4.md). Сценарий Project Proposal:
-[docs/PROJECT_PROPOSAL.md](docs/PROJECT_PROPOSAL.md). Проверка требований:
+[docs/PROJECT_PROPOSAL.md](docs/PROJECT_PROPOSAL.md). Готовая презентация:
+[docs/Smart_Grocery_Agents_Project_Proposal.pptx](docs/Smart_Grocery_Agents_Project_Proposal.pptx).
+Проверка требований:
 [docs/COURSE_REQUIREMENTS_AUDIT.md](docs/COURSE_REQUIREMENTS_AUDIT.md). Требования курса:
 https://github.com/AlgazinovAleksandr/LLM-Agents-Course/blob/main/GROUP_PROJECT.md

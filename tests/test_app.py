@@ -19,8 +19,8 @@ def test_valid_menu_display(monkeypatch):
     app = start_app(monkeypatch)
     app.button(key="plan_menu").click().run()
     assert not app.exception
-    assert any("прошло Python-проверку" in item.value for item in app.success)
-    assert app.metric[0].label == "Расчётная стоимость"
+    assert any("Меню прошло проверку" in item.value for item in app.success)
+    assert app.metric[0].label == "Стоимость"
     assert len(app.dataframe[0].value) == 6
     assert app.download_button
 
@@ -30,10 +30,10 @@ def test_over_budget_is_not_success(monkeypatch):
     app.number_input(key="budget").set_value(0.0)
     app.button(key="plan_menu").click().run()
     assert not app.exception
-    assert not any("прошло Python-проверку" in item.value for item in app.success)
-    assert any("over_budget" in item.value for item in app.error)
-    assert app.metric[0].label == "Расчётная стоимость"
-    assert len(app.expander) >= 3
+    assert not any("Меню прошло проверку" in item.value for item in app.success)
+    assert any("Бюджет превышен" in item.value for item in app.markdown)
+    assert app.metric[0].label == "Стоимость"
+    assert len(app.expander) >= 2
 
 
 def test_unknown_prices_show_incomplete_estimate(monkeypatch):
@@ -41,9 +41,9 @@ def test_unknown_prices_show_incomplete_estimate(monkeypatch):
     app = start_app(monkeypatch)
     app.button(key="plan_menu").click().run()
     assert not app.exception
-    assert any("missing_price" in item.value for item in app.error)
-    assert any("Полная стоимость неизвестна" in item.value for item in app.error)
-    assert app.metric[0].label == "Стоимость оценённых позиций"
+    assert any("нет цены" in item.value for item in app.markdown)
+    assert any("нет сопоставимой цены" in item.value for item in app.caption)
+    assert app.metric[0].label == "Оценённая часть"
 
 
 def test_no_eligible_recipes_is_explained(monkeypatch):
@@ -51,5 +51,5 @@ def test_no_eligible_recipes_is_explained(monkeypatch):
     app = start_app(monkeypatch)
     app.button(key="plan_menu").click().run()
     assert not app.exception
-    assert any("no_candidates" in item.value for item in app.error)
+    assert any("Подходящие рецепты не найдены" in item.value for item in app.markdown)
     assert any("Меню не сформировано" in item.value for item in app.info)
