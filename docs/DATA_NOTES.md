@@ -20,7 +20,7 @@ RecipeNLG — резерв. USDA / Open Prices — после MVP.
 |---|---|
 | data/raw/recipes.csv | сырой датасет, НЕ коммитится |
 | data/ingredients.csv | единый словарь: id, canonical_name, aliases, base_unit |
-| data/recipes.jsonl | 50-100 очищенных рецептов из Food.com |
+| data/recipes.jsonl | 150 подготовленных рецептов из Food.com в текущем MVP |
 | data/prices.csv | цены в CU (демо), unit == base_unit |
 | scripts/build_from_foodcom.py | воспроизводимая очистка |
 | fixtures/mock_candidates.json | мок для ролей 2 и 3 |

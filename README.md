@@ -1,51 +1,60 @@
-# Smart Grocery Agents
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="Smart Grocery Agents — меню и покупки с учётом ваших условий" width="100%">
+</p>
 
-MVP планирует обеды и ужины по запасам, бюджету, числу людей и времени
-приготовления. Поиск работает на подготовленных данных Food.com: 150 рецептов,
-503 нормализованных ингредиента и демонстрационные цены в условных единицах CU.
+<p align="center">
+  <a href="#быстрый-запуск"><strong>Запустить</strong></a> ·
+  <a href="#как-это-работает"><strong>Архитектура</strong></a> ·
+  <a href="docs/README.md"><strong>Документация</strong></a> ·
+  <a href="https://docs.google.com/presentation/d/1QU-fQJcm-VKNGzv8_Ejyq7r1cKUuGAjGJn_jeBWml0M/edit"><strong>Презентация</strong></a>
+</p>
 
-## Проблема и зачем здесь LLM
+<p align="center">
+  <img alt="Python 3.11+" src="https://img.shields.io/badge/Python-3.11%2B-1f6f5b?style=flat">
+  <img alt="Streamlit" src="https://img.shields.io/badge/UI-Streamlit-1f6f5b?style=flat">
+  <img alt="Google Gemini" src="https://img.shields.io/badge/LLM-Google%20Gemini-1f6f5b?style=flat">
+  <a href="LICENSE"><img alt="Лицензия MIT" src="https://img.shields.io/badge/License-MIT-1f6f5b?style=flat"></a>
+</p>
 
-Пользователю трудно вручную сопоставить запасы, бюджет, ограничения питания,
-время приготовления и десятки подходящих рецептов. Обычные фильтры хорошо
-отсекают неподходящие варианты, но не составляют связное меню и не умеют
-пересматривать выбор по содержательным замечаниям.
+**Smart Grocery Agents** составляет меню и список покупок по домашним запасам,
+бюджету, ограничениям питания и времени приготовления. Gemini выбирает блюда
+и предлагает исправления, Python рассчитывает корзину и проверяет условия.
 
-Проект использует Google Gemini `gemini-3.5-flash-lite` в двух ролях. Meal
-Planner выбирает меню только из найденных рецептов, а Critic объясняет нарушения
-и формирует рекомендации для следующей попытки. LLM не считает стоимость и не
-решает, валидно ли меню: количества, pantry, цены, единицы и бюджет проверяет
-детерминированный Python-код. Такое разделение использует сильную сторону LLM —
-выбор и текстовое объяснение — и оставляет проверяемую арифметику инструментам.
+> **Учебный MVP.** Приложение запускается локально. Цены демонстрационные,
+> в условных единицах CU. Общедоступная версия на сервере пока не опубликована.
 
-## Участники
+## Возможности
 
-| Роль | Участник | GitHub | Зона ответственности |
-|---|---|---|---|
-| Data & Recipe Search | Афонин Максим Константинович | [@jeweller9](https://github.com/jeweller9) | данные и поиск рецептов |
-| Meal Planner | Уразметова Маргарита Руслановна | [@marritau](https://github.com/marritau) | LLM-планировщик |
-| Shopping & Validator | Федорова Александра Вадимовна | [@fedorova-av](https://github.com/fedorova-av) | корзина, Python-проверка и LLM-критик |
-| Integration & UI | Сергеева Анастасия Вадимовна | [@asastyy](https://github.com/asastyy) | workflow, Streamlit, Docker и тестирование |
+| Вы задаёте | Получаете |
+|---|---|
+| Продукты, которые уже есть дома | Покупки с учётом запасов |
+| Число дней и людей | Обеды и ужины с расчётом порций |
+| Бюджет, диету и время | Подбор допустимых рецептов и проверку меню |
+| Изменённые ограничения | Повторный расчёт и историю попыток |
 
-## Как работает MVP
+![Smart Grocery Agents: стоимость, проверка и меню по дням в демонстрационном режиме](docs/assets/app-preview.png)
 
-`search_recipes → LLM planner → Python validator → LLM critic → повторное планирование`
+*Превью демонстрационного режима: внешняя модель не вызывается.*
 
-- Поиск фильтрует рецепты по диете и времени приготовления.
-- Планировщик выбирает только ID из найденных кандидатов.
-- Python масштабирует количества, вычитает запасы, считает корзину и проверяет
-  бюджет, единицы, цены, диету и заполненность меню.
-- При нарушениях отдельный критик формирует рекомендации. Он не меняет расчёты.
-- Цикл ограничен двумя попытками; интерфейс показывает обе оценки.
+## Быстрый запуск
 
-По умолчанию включён `MOCK_LLM=true`: приложение полностью работает офлайн и
-не обращается к внешней модели. Mock нужен для разработки и автотестов. Полный
-live-цикл с Gemini проверен 23 октября 2026; протокол находится в
-[docs/ROLE_4_VALIDATION.md](docs/ROLE_4_VALIDATION.md).
+Нужны Git и запущенный Docker Desktop. Подготовленные данные включены
+в репозиторий; для первого запуска API-ключ не требуется.
 
-## Локальный запуск
+```bash
+git clone https://github.com/asastyy/smart-grocery-agents.git
+cd smart-grocery-agents
+cp .env.example .env
+docker compose up --build
+```
 
-Нужен Python 3.11 или новее. Из корня репозитория:
+Откройте **[localhost:8501](http://localhost:8501)**. По умолчанию включён
+демонстрационный режим (`MOCK_LLM=true`). Остановка: `docker compose down`.
+
+<details>
+<summary><strong>Запуск без Docker · Python 3.11+</strong></summary>
+
+Из корня скачанного репозитория:
 
 ```bash
 python -m venv .venv
@@ -55,62 +64,138 @@ cp .env.example .env
 python -m streamlit run app.py
 ```
 
-В Windows PowerShell используйте `\.venv\Scripts\Activate.ps1` и
-`Copy-Item .env.example .env`. Откройте http://localhost:8501.
+В Windows PowerShell активация: `.\.venv\Scripts\Activate.ps1`.
+Для копирования настроек используйте `Copy-Item .env.example .env`.
+Та же команда копирования подходит для Docker в Windows.
 
-## Gemini
+</details>
 
-Получите ключ в [Google AI Studio](https://aistudio.google.com/apikey) и
-измените только локальный `.env`:
+### Подключить Gemini
+
+Получите ключ в [Google AI Studio](https://aistudio.google.com/apikey)
+и заполните локальный `.env`. Текущая конфигурация команды использует
+Google Gemini `gemini-3.5-flash-lite` через совместимый с OpenAI API интерфейс.
 
 ```dotenv
 MOCK_LLM=false
 LLM_API_KEY=YOUR_LOCAL_GEMINI_KEY
 LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
 LLM_MODEL=gemini-3.5-flash-lite
-CRITIC_MODEL=gemini-3.5-flash-lite
+CRITIC_MODEL=
 ```
 
-Ключ нельзя добавлять в Git. `CRITIC_MODEL` можно оставить пустым: тогда критик
-использует `LLM_MODEL`. После изменения `.env` перезапустите приложение.
-Подробности и smoke-тест описаны в [docs/CRITIC.md](docs/CRITIC.md).
+Пустой `CRITIC_MODEL` означает ту же модель, что у планировщика. После изменения
+`.env` перезапустите Streamlit или контейнер (`docker compose up --force-recreate`).
+Экспортированные переменные окружения имеют приоритет над `.env`.
 
-## Docker
+Ключ хранится только локально. `.env` исключён из Git, `.env.example` содержит
+шаблон. [Настройка и проверка критика →](docs/CRITIC.md)
 
-Запустите Docker Desktop, затем:
+## Как это работает
 
-```bash
-cp .env.example .env
-docker compose up --build
+```mermaid
+flowchart LR
+    U["Запасы и ограничения"] --> S["Поиск рецептов"]
+    S --> P["Планировщик · Gemini"]
+    P --> V["Корзина и проверка · Python"]
+    V -->|"Условия выполнены"| R["Меню и покупки"]
+    V -->|"Нарушения"| C["Критик · Gemini"]
+    C -->|"Одна повторная попытка"| P
+    V -->|"Лимит попыток"| E["Результат с нарушениями"]
 ```
 
-Проверка: `curl --fail http://localhost:8501/_stcore/health`.
-Остановка: `docker compose down`.
+1. **Поиск** отбирает рецепты по диете и времени.
+2. **Планировщик** выбирает ID из кандидатов. Ответ проверяется по схеме.
+3. **Python** рассчитывает порции, вычитает запасы, проверяет стоимость,
+   единицы, бюджет и заполненность меню.
+4. **Критик** получает нарушения и рекомендует изменить выбор. Цикл ограничен
+   двумя попытками; обе видны в истории.
+
+### Зачем здесь LLM
+
+Фильтры находят допустимые рецепты. LLM составляет меню из кандидатов
+и пересматривает его по текстовым замечаниям. Планировщик и критик выполняют
+разные роли; расчёты и итог проверки принадлежат Python.
+
+Для короткого цикла достаточно обычного Python.
+[Модули, границы ответственности и обработка сбоев →](docs/ARCHITECTURE.md)
+
+## Данные и границы MVP
+
+| Рецепты Food.com | Нормализованные ингредиенты | Демонстрационные цены |
+|:---:|:---:|:---:|
+| **150** | **503** | **503** |
+
+- Цены в CU синтетические и не отражают цены магазинов.
+- Часть количеств задана в штуках (`pcs`). Пошаговых инструкций приготовления
+  в исходном наборе нет.
+- Неизвестные цены и несовместимые единицы дают отдельное нарушение.
+  Неполная стоимость отображается явно.
+- В демонстрационном режиме API не вызывается. Для показа LLM-функции
+  включите Gemini.
+
+[Источник, подготовка и пересборка данных →](docs/DATA_NOTES.md)
+
+## Структура проекта
+
+```text
+smart-grocery-agents/
+├── app.py                 # интерфейс Streamlit
+├── src/smart_grocery/
+│   ├── agents/            # планировщик, проверка, критик
+│   ├── tools/             # поиск и расчёт корзины
+│   ├── schemas/           # модели данных
+│   └── workflow/          # цикл планирования и проверки
+├── data/                  # подготовленные рецепты, ингредиенты и цены
+├── fixtures/              # запросы и ответы для проверок
+├── tests/                 # модульные и интеграционные тесты
+├── scripts/               # подготовка данных и запуск сценариев
+├── examples/              # небольшие примеры данных
+├── docs/                  # документация и материалы защиты
+├── Dockerfile
+├── compose.yaml
+└── .env.example
+```
 
 ## Проверки
+
+После установки Python-зависимостей из корня проекта:
 
 ```bash
 python -m pytest -q
 python scripts/check_data.py
-python scripts/run_foodcom.py
+MOCK_LLM=true python scripts/run_foodcom.py
 ```
 
-Шаблон GitHub Actions лежит в `docs/github-tests.yml`. Чтобы включить CI, его
-нужно перенести в `.github/workflows/tests.yml` с GitHub-токеном, имеющим право
-`workflow`.
+Последняя подтверждённая проверка к защите: **91 тест**, запуск Docker
+и настоящий цикл Gemini. [Протокол →](docs/ROLE_4_VALIDATION.md)
 
-## Ограничения данных
+Шаблон автоматических проверок: [`docs/github-tests.yml`](docs/github-tests.yml).
+GitHub Actions пока не включён: для публикации workflow нужно соответствующее
+право GitHub-токена.
 
-Цены в CU синтетические и не являются ценами магазинов. Исходный набор не
-содержит инструкций приготовления. Часть количеств обозначена `pcs`, поэтому
-интерфейс явно показывает единицы и предупреждение о качестве данных. Если цены
-или единицы несовместимы, итоговая стоимость остаётся неизвестной, а Python
-возвращает отдельное нарушение.
+## Команда
 
-Контракты: [docs/CONTRACTS.md](docs/CONTRACTS.md). Интеграция роли 4:
-[docs/ROLE_4.md](docs/ROLE_4.md). Сценарий Project Proposal:
-[docs/PROJECT_PROPOSAL.md](docs/PROJECT_PROPOSAL.md). Готовая презентация:
-[docs/Smart_Grocery_Agents_Project_Proposal.pptx](docs/Smart_Grocery_Agents_Project_Proposal.pptx).
-Проверка требований:
-[docs/COURSE_REQUIREMENTS_AUDIT.md](docs/COURSE_REQUIREMENTS_AUDIT.md). Требования курса:
-https://github.com/AlgazinovAleksandr/LLM-Agents-Course/blob/main/GROUP_PROJECT.md
+| Участник | GitHub | Ответственность |
+|---|---|---|
+| Афонин Максим Константинович | [@jeweller9](https://github.com/jeweller9) | Данные и поиск рецептов |
+| Уразметова Маргарита Руслановна | [@marritau](https://github.com/marritau) | LLM-планировщик меню |
+| Федорова Александра Вадимовна | [@fedorova-av](https://github.com/fedorova-av) | Корзина, проверка и LLM-критик |
+| Сергеева Анастасия Вадимовна | [@asastyy](https://github.com/asastyy) | Интеграция, интерфейс, Docker и тестирование |
+
+## Документация и защита
+
+| Материал | Содержание |
+|---|---|
+| [Навигатор документации](docs/README.md) | Все инструкции по разделам |
+| [Архитектура](docs/ARCHITECTURE.md) | Процесс и принятые решения |
+| [Контракты](docs/CONTRACTS.md) | Форматы данных между модулями |
+| [Google Slides](https://docs.google.com/presentation/d/1QU-fQJcm-VKNGzv8_Ejyq7r1cKUuGAjGJn_jeBWml0M/edit) | Рабочая презентация команды |
+| [Презентация PPTX](docs/Smart_Grocery_Agents_Project_Proposal.pptx) | Копия для скачивания |
+| [Сценарий выступления](docs/PRESENTATION_SCRIPT.txt) | Кто выступает и что говорит |
+| [Требования курса](https://github.com/AlgazinovAleksandr/LLM-Agents-Course/blob/main/GROUP_PROJECT.md) | Критерии проекта и защиты |
+
+Хотите внести изменение? [Порядок работы с репозиторием →](CONTRIBUTING.md)
+
+Код проекта распространяется по [лицензии MIT](LICENSE). Источник данных
+и сведения об их подготовке приведены отдельно в документации.

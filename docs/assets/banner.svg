@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+<title id="title">Smart Grocery Agents</title>
+<desc id="desc">Меню и покупки с учётом ваших условий</desc>
+<rect width="1280" height="360" rx="20" fill="#f5f8f6"/>
+<rect y="36" width="6" height="288" rx="3" fill="#1f6f5b"/>
+<text x="64" y="73" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#1f6f5b">МЕНЮ И ПОКУПКИ</text>
+<text x="60" y="153" font-family="Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-2" fill="#171717">Smart Grocery Agents</text>
+<text x="64" y="207" font-family="Arial, sans-serif" font-size="25" fill="#52625b">Меню на несколько дней с учётом ваших условий</text>
+<line x1="64" y1="251" x2="1216" y2="251" stroke="#d7e2dc"/>
+<text x="64" y="300" font-family="Arial, sans-serif" font-size="19" fill="#52625b">Запасы · Бюджет · Питание · Время</text>
+<text x="1216" y="300" text-anchor="end" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1f6f5b">GEMINI + PYTHON</text>
+</svg>

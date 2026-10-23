@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+from html import escape
 from pathlib import Path
 import sys
 
@@ -29,7 +30,8 @@ st.markdown(
         --accent: #1f6f5b;
     }
     .stApp { background: #ffffff; color: var(--ink); }
-    .block-container { max-width: 1080px; padding-top: 2.6rem; padding-bottom: 5rem; }
+    .block-container { max-width: 1160px; padding-top: 3.4rem; padding-bottom: 5rem; }
+    [data-testid="stHeader"] { background: rgba(255,255,255,.95); }
     h1, h2, h3, p, label, [data-testid="stMetricLabel"], [data-testid="stMetricValue"] {
         color: var(--ink) !important;
     }
@@ -37,9 +39,10 @@ st.markdown(
     h2 { font-size: 1.55rem !important; letter-spacing: -0.025em; }
     h3 { font-size: 1.15rem !important; }
     [data-testid="stCaptionContainer"] { color: var(--muted); }
-    [data-testid="stForm"], [data-testid="stExpander"] {
+    [data-testid="stExpander"] {
         border: 1px solid var(--line); border-radius: 12px; background: #fff;
     }
+    [data-testid="stForm"] { border: 0; padding: 0; }
     [data-testid="stAlert"] { border-radius: 10px; border: 1px solid var(--line); }
     div[data-testid="stButton"] button, div[data-testid="stFormSubmitButton"] button {
         border-radius: 9px; min-height: 2.7rem; font-weight: 600;
@@ -54,6 +57,17 @@ st.markdown(
         background: var(--soft); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem;
     }
     [data-testid="stDataFrame"] { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+    [data-testid="stVerticalBlockBorderWrapper"] > div { border-color: var(--line); border-radius: 16px; }
+    [data-testid="stTabs"] button[role="tab"] { font-weight: 600; padding: .7rem 1.1rem; }
+    .sg-meal { padding: 1.3rem 1.4rem; border: 1px solid var(--line); border-radius: 14px; min-height: 176px; background: #fff; margin: .7rem 0; }
+    .sg-meal-slot { color: var(--accent); font-size: .75rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .sg-meal-title { font-size: 1.3rem; font-weight: 650; line-height: 1.35; margin: .7rem 0 1rem; overflow-wrap: anywhere; }
+    .sg-meal-meta { font-size: .86rem; color: var(--muted); }
+    .sg-empty { padding: 2.2rem; margin-top: 1.8rem; border-radius: 16px; background: var(--soft); text-align: center; }
+    .sg-empty strong { display: block; font-size: 1.2rem; margin-bottom: .5rem; }
+    .sg-empty span { color: var(--muted); font-size: .95rem; }
+    .sg-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+    @media (max-width: 640px) { h1 { font-size: 2.1rem !important; } .block-container { padding-top: 2rem; } }
     .sg-kicker { color: var(--accent); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
     .sg-lead { max-width: 720px; color: var(--muted); font-size: 1.08rem; line-height: 1.55; margin: .35rem 0 1.2rem; }
     .sg-rule { height: 1px; background: var(--line); margin: 1.4rem 0 2rem; }
@@ -61,10 +75,10 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-st.markdown('<div class="sg-kicker">Учебный проект</div>', unsafe_allow_html=True)
+st.markdown('<div class="sg-kicker">Планирование питания</div>', unsafe_allow_html=True)
 st.title("Smart Grocery Agents")
 st.markdown(
-    '<div class="sg-lead">Меню на несколько дней с учётом запасов, бюджета и времени приготовления.</div>',
+    '<div class="sg-lead">Ваши запасы и планы на неделю. Меню и покупки — в одном месте.</div>',
     unsafe_allow_html=True,
 )
 
@@ -111,8 +125,8 @@ if "pantry_items" not in st.session_state:
     st.session_state.pantry_items = {}
 
 pantry_col, request_col = st.columns([1, 1], gap="large")
-with pantry_col:
-    st.subheader("Запасы")
+with pantry_col, st.container(border=True):
+    st.subheader("Что есть дома")
     selected = st.selectbox(
         "Продукт",
         sorted(ingredients, key=lambda value: ingredients[value]["canonical_name"]),
@@ -122,7 +136,7 @@ with pantry_col:
         format_func=lambda value: ingredients[value]["canonical_name"],
     )
     selected_unit = ingredients[selected]["base_unit"] if selected else None
-    with st.form("add_pantry", clear_on_submit=True):
+    with st.form("add_pantry", clear_on_submit=True, border=False):
         quantity = st.number_input(
             f"Количество{', ' + unit_labels[selected_unit] if selected_unit else ''}",
             min_value=0.0,
@@ -149,16 +163,17 @@ with pantry_col:
             st.session_state.pantry_items = {}
             st.rerun()
     else:
-        st.caption("Можно оставить пустым.")
+        st.caption("Пока продуктов нет.")
 
-with request_col:
-    st.subheader("Параметры")
-    with st.form("request"):
+with request_col, st.container(border=True):
+    st.subheader("Ваш план")
+    st.caption("Вегетарианское меню · обед и ужин")
+    with st.form("request", border=False):
         budget = st.number_input("Бюджет, CU", min_value=0.0, value=25.0, key="budget")
         days = st.slider("Дни", 1, 7, 3, key="days")
         people = st.number_input("Люди", min_value=1, value=2, step=1, key="people")
         max_cook = st.number_input("Время приготовления, минут", min_value=1, value=30, key="max_cook")
-        submit = st.form_submit_button("Составить меню", type="primary", key="plan_menu")
+        submit = st.form_submit_button("Составить меню", type="primary", key="plan_menu", use_container_width=True)
 
 st.caption("Цены указаны в условных единицах CU.")
 
@@ -252,21 +267,43 @@ if run is not None:
     days_col.metric("Дни", run["request"]["days"])
     meals_col.metric("Блюда", len(run["plan"]["meals"]))
 
-    st.subheader("Меню")
+    st.markdown('<div class="sg-rule"></div>', unsafe_allow_html=True)
+    st.subheader("Ваше меню")
     meals = run["plan"]["meals"]
     if meals:
-        st.dataframe(
-            [
-                {
-                    "День": meal["day"],
-                    "Приём пищи": {"lunch": "Обед", "dinner": "Ужин"}.get(meal["slot"], meal["slot"]),
-                    "Блюдо": recipes_by_id.get(meal["recipe_id"], {}).get("title", meal["recipe_id"]),
-                    "Порций": meal["servings"],
-                }
-                for meal in meals
-            ],
-            hide_index=True,
-        )
+        day_numbers = sorted({meal["day"] for meal in meals})
+        for day, tab in zip(day_numbers, st.tabs([f"День {day}" for day in day_numbers])):
+            with tab:
+                day_meals = [meal for meal in meals if meal["day"] == day]
+                meal_columns = st.columns(2)
+                for index, meal in enumerate(day_meals):
+                    recipe = recipes_by_id.get(meal["recipe_id"], {})
+                    slot = {"lunch": "Обед", "dinner": "Ужин"}.get(meal["slot"], meal["slot"])
+                    title = recipe.get("title", meal["recipe_id"])
+                    minutes = recipe.get("cook_minutes")
+                    meta = f"{minutes} мин · " if minutes is not None else ""
+                    meta += f"Порций: {meal['servings']}"
+                    with meal_columns[index % 2]:
+                        st.markdown(
+                            f'<div class="sg-meal"><div class="sg-meal-slot">{escape(str(slot))}</div>'
+                            f'<div class="sg-meal-title">{escape(str(title))}</div>'
+                            f'<div class="sg-meal-meta">{escape(meta)}</div></div>',
+                            unsafe_allow_html=True,
+                        )
+        with st.expander("Всё меню таблицей"):
+            st.dataframe(
+                [
+                    {
+                        "День": meal["day"],
+                        "Приём пищи": {"lunch": "Обед", "dinner": "Ужин"}.get(meal["slot"], meal["slot"]),
+                        "Блюдо": recipes_by_id.get(meal["recipe_id"], {}).get("title", meal["recipe_id"]),
+                        "Порций": meal["servings"],
+                    }
+                    for meal in meals
+                ],
+                hide_index=True,
+                use_container_width=True,
+            )
     else:
         st.info("Меню не сформировано. Измените ограничения и повторите поиск.")
 
@@ -286,6 +323,7 @@ if run is not None:
                 for item in assessment["shopping_list"]
             ],
             hide_index=True,
+            use_container_width=True,
         )
     else:
         st.caption("Список пуст.")
@@ -312,3 +350,14 @@ if run is not None:
         file_name="smart-grocery-result.json",
         mime="application/json",
     )
+elif not st.session_state.get("workflow_error"):
+    st.markdown(
+        '<div class="sg-empty"><strong>Меньше планирования. Больше времени на себя.</strong>'
+        '<span>Задайте параметры — здесь появятся меню и список покупок.</span></div>',
+        unsafe_allow_html=True,
+    )
+
+st.markdown(
+    '<div class="sg-footer">Smart Grocery Agents · Учебный MVP · Цены в условных единицах CU</div>',
+    unsafe_allow_html=True,
+)
