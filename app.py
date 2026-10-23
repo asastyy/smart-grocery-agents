@@ -17,7 +17,7 @@ from smart_grocery.tools.recipes import load_ingredients, load_recipes
 from smart_grocery.workflow.foodcom import run_foodcom_workflow
 
 
-st.set_page_config(page_title="Умная корзина", page_icon="🥗", layout="wide")
+st.set_page_config(page_title="Smart Grocery Agents", page_icon="🥗", layout="wide")
 st.markdown(
     """
     <style>
@@ -62,7 +62,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 st.markdown('<div class="sg-kicker">Учебный проект</div>', unsafe_allow_html=True)
-st.title("Умная корзина")
+st.title("Smart Grocery Agents")
 st.markdown(
     '<div class="sg-lead">Меню на несколько дней с учётом запасов, бюджета и времени приготовления.</div>',
     unsafe_allow_html=True,
