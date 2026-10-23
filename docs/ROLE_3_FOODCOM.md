@@ -58,8 +58,8 @@ result = run_foodcom_workflow(request)
 # result = {plan, assessment, agent_trace}
 ```
 
-Старый runner и app.py используют отдельный `legacy_recipes.py`, чтобы
-оставаться воспроизводимым примером старого контракта. Это не путь к Food.com.
+Старый `runner.py` использует отдельный `legacy_recipes.py` для совместимости;
+после интеграции роли 4 основной `app.py` работает с Food.com workflow.
 Два конфликтовавших mock_candidates сохранены раздельно:
 `mock_candidates.json` — роль 1, `planner_candidates.json` — короткая фикстура роли 2.
 
@@ -71,7 +71,7 @@ result = run_foodcom_workflow(request)
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 $env:MOCK_LLM = 'true'
 .\.venv\Scripts\python.exe -B scripts/run_foodcom.py
-.\.venv\Scripts\python.exe -m streamlit run app_foodcom.py
+.\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
 Для браузера: бюджет 25, 3 дня, 2 человека, 30 минут, запасы `[]`.
@@ -91,8 +91,8 @@ Planner теперь автоматически читает `.env` (из PR #4)
 HTTP, количественный pantry, масштабирование порций, неполные цены,
 передачу feedback, новый workflow на данных Food.com и AppTest обоих экранов.
 `scripts/check_data.py`: 150 рецептов, 503 ингредиента, 503 цены.
-Пользователь подтвердил ручную проверку экрана в браузере. Docker не проверялся
-и пока запускает старый `app.py`, а не `app_foodcom.py`.
+Пользователь подтвердил ручную проверку экрана в браузере. После интеграции
+роли 4 Docker запускает основной Food.com-интерфейс `app.py`.
 
 Найдена проблема данных: в каталоге rice, water, milk и другие ингредиенты
 могут иметь единицу pcs. Например, tomato_juice в r001 имеет 46 pcs.

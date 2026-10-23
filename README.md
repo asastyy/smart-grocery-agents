@@ -1,120 +1,97 @@
 # Smart Grocery Agents
 
-## Food.com integration preview (roles 1–3)
+MVP планирует обеды и ужины по запасам, бюджету, числу людей и времени
+приготовления. Поиск работает на подготовленных данных Food.com: 150 рецептов,
+503 нормализованных ингредиента и демонстрационные цены в условных единицах CU.
 
-This branch integrates PRs #1, #3 and #4 without merging them into main.
-Run `python scripts/run_foodcom.py` for the prepared 150-recipe dataset, or
-`python -m streamlit run app_foodcom.py` for the Russian integration preview.
-The default mock mode makes no external API calls. See `docs/ROLE_3_FOODCOM.md`
-for request/assessment contracts, validation, dependencies and data limitations.
-The original `app.py` remains a separate legacy demo using example recipes.
+## Участники
 
-Multi-agent meal planning and grocery optimization from a pantry, budget and dietary constraints.
+| Роль | Участник | GitHub | Зона ответственности |
+|---|---|---|---|
+| Data & Recipe Search | Максим — уточнить полное ФИО | [@jeweller9](https://github.com/jeweller9) | данные и поиск рецептов |
+| Meal Planner | Рита — уточнить полное ФИО | [@marritau](https://github.com/marritau) | LLM-планировщик |
+| Shopping & Validator | Александра Федорова | [@fedorova-av](https://github.com/fedorova-av) | корзина, Python-проверка и LLM-критик |
+| Integration & UI | Анастасия Сергеева | [@asastyy](https://github.com/asastyy) | workflow, Streamlit, Docker и тестирование |
 
-## Team
-| Role | Full name | GitHub |
-|---|---|---|
-| Data & Recipe Search | TODO | TODO |
-| Meal Planner | TODO | TODO |
-| Shopping & Validator | TODO | TODO |
-| Orchestration & UI | TODO | TODO |
+## Как работает MVP
 
-## MVP (proposal)
-User enters pantry ingredients, budget, diet and number of days. The system retrieves recipes, proposes a menu, validates ingredients and computes a shopping list and cost. If validation fails, planner revises its proposal once.
+`search_recipes → LLM planner → Python validator → LLM critic → повторное планирование`
 
-The LLM is used for **planning and revising** a menu from retrieved recipe candidates, not inventing prices or performing arithmetic. The model is accessed via an OpenAI-compatible API (provider and model chosen using `LLM_BASE_URL` and `LLM_MODEL`). The default `MOCK_LLM=true` allows an offline runnable scaffold.
+- Поиск фильтрует рецепты по диете и времени приготовления.
+- Планировщик выбирает только ID из найденных кандидатов.
+- Python масштабирует количества, вычитает запасы, считает корзину и проверяет
+  бюджет, единицы, цены, диету и заполненность меню.
+- При нарушениях отдельный критик формирует рекомендации. Он не меняет расчёты.
+- Цикл ограничен двумя попытками; интерфейс показывает обе оценки.
 
-## Current status
-The Meal Planner supports strict JSON output, one retry for invalid model output, and a deterministic candidate-only fallback. It accepts both the starter and Food.com candidate formats. The full v2 integration remains a team task.
+По умолчанию включён `MOCK_LLM=true`: приложение полностью работает офлайн и
+не обращается к внешней модели. Mock нужен для разработки и автотестов; для
+демонстрации LLM нужно переключить Gemini по инструкции ниже.
 
-## Local setup
+## Локальный запуск
 
-Windows PowerShell:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-Copy-Item .env.example .env
-streamlit run app.py
-```
-
-macOS/Linux:
+Нужен Python 3.11 или новее. Из корня репозитория:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 cp .env.example .env
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
-## LLM configuration
+В Windows PowerShell используйте `\.venv\Scripts\Activate.ps1` и
+`Copy-Item .env.example .env`. Откройте http://localhost:8501.
 
-For the Food.com integration preview, Gemini was tested locally with
-`gemini-3.5-flash-lite` and the OpenAI-compatible endpoint
-`https://generativelanguage.googleapis.com/v1beta/openai/`. Set `MOCK_LLM=false`,
-`LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` and optionally `CRITIC_MODEL` in your
-local `.env`, then run `python -m streamlit run app_foodcom.py`.
-See `docs/CRITIC.md` for the exact configuration and live smoke test.
-The Groq configuration below is the earlier planner-specific setup.
+## Gemini
 
-
-Copy `.env.example` to `.env`. The checked-in default is offline mock mode and
-requires no key. For a live demo, the planner was verified with Groq and
-`qwen/qwen3.8-27b`:
+Получите ключ в [Google AI Studio](https://aistudio.google.com/apikey) и
+измените только локальный `.env`:
 
 ```dotenv
 MOCK_LLM=false
-LLM_API_KEY=your_groq_key
-LLM_BASE_URL=https://api.groq.com/openai/v1
-LLM_MODEL=qwen/qwen3.8-27b
+LLM_API_KEY=YOUR_LOCAL_GEMINI_KEY
+LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+LLM_MODEL=gemini-3.5-flash-lite
+CRITIC_MODEL=gemini-3.5-flash-lite
 ```
 
-Keep `.env` local: it is ignored by Git and must never contain a committed key.
-
-## Verify the planner
-
-```powershell
-$env:PYTHONPATH = "src"
-python -m pytest -q
-```
-
-All tests run without a live key. To verify the live provider, set
-`MOCK_LLM=false` in `.env` and start the application with the configuration
-above.
+Ключ нельзя добавлять в Git. `CRITIC_MODEL` можно оставить пустым: тогда критик
+использует `LLM_MODEL`. После изменения `.env` перезапустите приложение.
+Подробности и smoke-тест описаны в [docs/CRITIC.md](docs/CRITIC.md).
 
 ## Docker
 
-The current Docker command starts the legacy `app.py`. Packaging the Food.com
-preview with the role 4 UI remains an integration task.
+Запустите Docker Desktop, затем:
+
 ```bash
-docker build -t smart-grocery .
-docker run --rm -p 8501:8501 --env-file .env smart-grocery
+cp .env.example .env
+docker compose up --build
 ```
-Open http://localhost:8501
 
-## Architecture and contracts
-- `docs/CONTRACTS.md`: canonical input/output schemas; agree before editing code
-- `src/smart_grocery/schemas/models.py`: shared Pydantic objects
-- `src/smart_grocery/tools/recipes.py`: recipe lookup (Role 1)
-- `src/smart_grocery/agents/planner.py`: LLM planner (Role 2)
-- `src/smart_grocery/tools/budget.py` and `agents/validator.py`: shopping + rule checks (Role 3)
-- `src/smart_grocery/workflow/runner.py`, `app.py`, Docker (Role 4)
+Проверка: `curl --fail http://localhost:8501/_stcore/health`.
+Остановка: `docker compose down`.
 
-`tools` return factual / computed information. `agents` decide on actions. Future LangGraph integration can replace the scaffold runner without changing schemas.
+## Проверки
 
-## Dataset plan
-For proposal use a **curated 30–100 recipe subset** with normalized ingredient IDs, quantities and units plus a **clearly labeled synthetic price list**. Explore Food.com Recipes & Reviews (https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews), USDA FoodData Central (https://fdc.nal.usda.gov/), and Open Prices (https://prices.openfoodfacts.org/). Review their licenses and attribution requirements before redistributing dataset rows. Price data in this scaffold is fictional, not live store pricing.
+```bash
+python -m pytest -q
+python scripts/check_data.py
+python scripts/run_foodcom.py
+```
 
-## Acceptance criteria
-- Same JSON contracts used by all modules
-- Run 3-day menu for sample input end-to-end
-- No missing ingredients omitted from shopping list
-- Total spend recomputed from price table, never LLM guesses
-- Invalid recipes trigger revision/failure, with bounded retries
-- Docker clean start; `.env.example`; all team members identified
-- 3–5 documented scenarios, at least one failed-and-revised proposal
+Шаблон GitHub Actions лежит в `docs/github-tests.yml`. Чтобы включить CI, его
+нужно перенести в `.github/workflows/tests.yml` с GitHub-токеном, имеющим право
+`workflow`.
 
-## Source
-Course repository: https://github.com/AlgazinovAleksandr/LLM-Agents-Course
+## Ограничения данных
+
+Цены в CU синтетические и не являются ценами магазинов. Исходный набор не
+содержит инструкций приготовления. Часть количеств обозначена `pcs`, поэтому
+интерфейс явно показывает единицы и предупреждение о качестве данных. Если цены
+или единицы несовместимы, итоговая стоимость остаётся неизвестной, а Python
+возвращает отдельное нарушение.
+
+Контракты: [docs/CONTRACTS.md](docs/CONTRACTS.md). Интеграция роли 4:
+[docs/ROLE_4.md](docs/ROLE_4.md). Требования курса:
+https://github.com/AlgazinovAleksandr/LLM-Agents-Course/blob/main/GROUP_PROJECT.md

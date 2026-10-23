@@ -1,11 +1,11 @@
 {
-  "pantry": [],
-  "budget": 25,
-  "currency": "CU",
-  "days": 3,
-  "people": 2,
-  "diet": [
-    "vegan"
+  "pantry": [
+    "eggs",
+    "tomato"
   ],
-  "max_cook_minutes": 30
+  "budget": 15,
+  "days": 2,
+  "servings": 1,
+  "diet": "vegan",
+  "currency": "EUR"
 }
