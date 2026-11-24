@@ -82,6 +82,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+if st.toggle("Интеграционное демо", key="sprint_demo"):
+    from smart_grocery.sprint_ui import render_integration_demo
+
+    render_integration_demo()
+    st.stop()
+
 mock_mode = os.getenv("MOCK_LLM", "true").lower() == "true"
 if mock_mode:
     st.caption("Демонстрационный режим · без обращения к внешней модели")

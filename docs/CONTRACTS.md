@@ -1,5 +1,8 @@
 # CONTRACTS (заморожены 10.10)
 
+Предложение контрактов для расширения MVP и Golden Test Case описано в
+[интеграции трёхдневного спринта](SPRINT_INTEGRATION.md).
+
 ## Recipe format (источник истины)
 
     {

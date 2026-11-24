@@ -1,7 +1,7 @@
 """Bounded integration of role 1 search, role 2 planner and role 3 validator."""
 from smart_grocery.agents.planner import MAX_CANDIDATES, plan_meals
 from smart_grocery.agents.validator import validate_foodcom_plan
-from smart_grocery.tools.budget_v2 import Request
+from smart_grocery.schemas.foodcom import Request
 from smart_grocery.tools.recipes import load_prices, search_recipes
 
 
@@ -16,11 +16,21 @@ def run_foodcom_workflow(request):
                     "message": "No eligible recipes"}], "feedback": "Change dietary or cooking constraints."},
                 "agent_trace": []}
     catalog = {"recipes": candidates, "prices": load_prices()}
+
+    def assess(plan):
+        return validate_foodcom_plan(request, plan, catalog)
+
+    return run_candidate_loop(request, candidates, assess)
+
+
+def run_candidate_loop(request, candidates, assess, *, planner=None):
+    """Reuse the bounded planner and feedback loop with a choice of assessment."""
+    planner = plan_meals if planner is None else planner
     trace = []
     feedback = None
     for attempt in range(2):
-        plan = plan_meals(request, candidates, feedback, slots=("lunch", "dinner"))
-        assessment = validate_foodcom_plan(request, plan, catalog)
+        plan = planner(request, candidates, feedback, slots=("lunch", "dinner"))
+        assessment = assess(plan)
         trace.append({"attempt": attempt + 1, "plan": plan, "assessment": assessment})
         if assessment["valid"]:
             break

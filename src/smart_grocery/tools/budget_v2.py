@@ -1,87 +1,31 @@
 """Food.com contract: deterministic quantities and costs; no LLM arithmetic."""
 from collections import Counter, defaultdict
 from decimal import Decimal, ROUND_HALF_UP
-from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import ValidationError
 
-
-class Model(BaseModel):
-    model_config = ConfigDict(extra="ignore", allow_inf_nan=False)
-
-
-class Ingredient(Model):
-    ingredient_id: str = Field(min_length=1)
-    quantity: Decimal = Field(ge=0)
-    unit: Literal["g", "ml", "pcs"]
-
-
-class Request(Model):
-    pantry: list[Ingredient] = Field(default_factory=list)
-    budget: Decimal = Field(ge=0)
-    currency: str = "CU"
-    days: int = Field(ge=1, le=7)
-    people: int = Field(ge=1)
-    diet: list[str] = Field(default_factory=list)
-    max_cook_minutes: int = Field(default=30, ge=1)
-
-
-class Recipe(Model):
-    recipe_id: str
-    title: str
-    servings: Decimal = Field(gt=0)
-    cook_minutes: int = Field(ge=0)
-    tags: list[str]
-    ingredients: list[Ingredient] = Field(min_length=1)
-
-
-class Meal(Model):
-    day: int = Field(ge=1)
-    slot: str
-    recipe_id: str
-    servings: Decimal = Field(gt=0)
-
-
-class Plan(Model):
-    meals: list[Meal]
-
-
-class Price(Model):
-    unit: Literal["g", "ml", "pcs"]
-    price_per_unit: Decimal = Field(ge=0)
-    currency: str
+from smart_grocery.schemas.foodcom import IngredientBalance, Plan, Price, Recipe, Request, Violation
+# Preserve imports from the original Food.com module for existing callers.
+from smart_grocery.schemas.foodcom import Ingredient as Ingredient, Meal as Meal, Model as Model
 
 
 def money(value):
     return float(value.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
 
 
-def evaluate_plan(request, plan, catalog, *, slots=("lunch", "dinner")):
-    """catalog = {recipes: candidate list, prices: ID -> price record}.
-
-    Unknown quantities/prices never become zero-cost purchases: return null total,
-    a priced subtotal, and explicit violations. Unit conversions are not guessed.
-    """
-    violations = []
+def measure_plan(req: Request, parsed: Plan, raw_recipes, *, slots=("lunch", "dinner")):
+    """Validate meal slots and measure ingredient needs before applying prices."""
+    violations: list[Violation] = []
     incomplete = False
 
     def fail(code, message, partial=False):
         nonlocal incomplete
-        violations.append({"code": code, "message": message})
+        violations.append(Violation(code=code, message=message))
         incomplete |= partial
 
-    try:
-        req = Request.model_validate(request)
-        parsed = Plan.model_validate(plan)
-    except ValidationError:
-        return {"valid": False, "total_cost": None, "priced_subtotal": 0.0,
-                "shopping_list": [], "violations": [{"code": "invalid_input",
-                "message": "Invalid request or plan: check quantities, days, people and units."}],
-                "feedback": "Correct the request or plan before recalculating."}
-
     recipes = {}
-    for raw in catalog.get("recipes", []):
-        rid = raw.get("recipe_id")
+    for raw in raw_recipes:
+        rid = raw.recipe_id if isinstance(raw, Recipe) else raw.get("recipe_id")
         if rid in recipes:
             fail("duplicate_recipe", f"Duplicate recipe ID: {rid}", True)
         recipes[rid] = raw
@@ -121,16 +65,43 @@ def evaluate_plan(request, plan, catalog, *, slots=("lunch", "dinner")):
     for iid in sorted(mismatches):
         fail("unit_mismatch", f"Incompatible recipe/pantry units for {iid}; no conversion assumed.", True)
 
+    balances = [
+        IngredientBalance(ingredient_id=iid, unit=unit, required_quantity=qty,
+                          inventory_quantity=pantry[iid, unit], unit_compatible=iid not in mismatches)
+        for (iid, unit), qty in sorted(needed.items()) if qty
+    ]
+    return balances, violations, incomplete
+
+
+def evaluate_plan(request, plan, catalog, *, slots=("lunch", "dinner")):
+    """Estimate a Food.com plan using per-unit prices in the request currency."""
+    try:
+        req = Request.model_validate(request)
+        parsed = Plan.model_validate(plan)
+    except ValidationError:
+        return {"valid": False, "total_cost": None, "priced_subtotal": 0.0,
+                "shopping_list": [], "violations": [{"code": "invalid_input",
+                "message": "Invalid request or plan: check quantities, days, people and units."}],
+                "feedback": "Correct the request or plan before recalculating."}
+
+    balances, issues, incomplete = measure_plan(req, parsed, catalog.get("recipes", []), slots=slots)
+    violations = [issue.model_dump() for issue in issues]
+
+    def fail(code, message, partial=False):
+        nonlocal incomplete
+        violations.append({"code": code, "message": message})
+        incomplete |= partial
+
     shopping = []
     subtotal = Decimal(0)
-    for (iid, unit), qty in sorted(needed.items()):
-        missing = max(Decimal(0), qty - pantry[iid, unit])
+    for balance in balances:
+        iid, unit, missing = balance.ingredient_id, balance.unit, balance.missing_quantity
         if not missing:
             continue
         line = {"ingredient_id": iid, "quantity": float(missing), "unit": unit,
                 "unit_price": None, "cost": None}
         shopping.append(line)
-        if iid in mismatches:
+        if not balance.unit_compatible:
             continue
         raw = catalog.get("prices", {}).get(iid)
         if raw is None:

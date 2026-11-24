@@ -1,0 +1,210 @@
+{
+  "days": 5,
+  "profile": {
+    "user_id": "golden-demo",
+    "household_size": 2,
+    "allergies": [
+      "peanut"
+    ],
+    "dietary_pattern": [],
+    "disliked_ingredients": [
+      "cilantro"
+    ],
+    "preferred_cuisines": [
+      "asian",
+      "mediterranean"
+    ],
+    "goals": [
+      "high_protein"
+    ],
+    "budget": 5000,
+    "currency": "RUB",
+    "max_cooking_time": 30
+  },
+  "inventory": [
+    {
+      "ingredient_id": "rice",
+      "quantity": 500,
+      "unit": "g",
+      "display_name": "Рис",
+      "source": "manual",
+      "confidence": 1
+    },
+    {
+      "ingredient_id": "egg",
+      "quantity": 6,
+      "unit": "pcs",
+      "display_name": "Яйца",
+      "source": "manual",
+      "confidence": 1
+    },
+    {
+      "ingredient_id": "chicken_breast",
+      "quantity": 400,
+      "unit": "g",
+      "display_name": "Куриная грудка",
+      "source": "manual",
+      "confidence": 1
+    },
+    {
+      "ingredient_id": "milk",
+      "quantity": 1000,
+      "unit": "ml",
+      "display_name": "Молоко",
+      "source": "manual",
+      "confidence": 1
+    },
+    {
+      "ingredient_id": "tomato",
+      "quantity": 300,
+      "unit": "g",
+      "display_name": "Помидоры",
+      "source": "manual",
+      "confidence": 1
+    }
+  ],
+  "recipes": [
+    {
+      "recipe_id": "golden-rice",
+      "title": "Курица с рисом и яйцом",
+      "servings": 2,
+      "cook_minutes": 25,
+      "cuisine": "asian",
+      "tags": [
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "rice",
+          "quantity": 220,
+          "unit": "g"
+        },
+        {
+          "ingredient_id": "chicken_breast",
+          "quantity": 140,
+          "unit": "g"
+        },
+        {
+          "ingredient_id": "egg",
+          "quantity": 2,
+          "unit": "pcs"
+        }
+      ],
+      "source": "golden_fixture",
+      "allergens_status": "confirmed",
+      "allergens": [
+        "egg"
+      ]
+    },
+    {
+      "recipe_id": "golden-chicken",
+      "title": "Курица с помидорами в молочном соусе",
+      "servings": 2,
+      "cook_minutes": 25,
+      "cuisine": "mediterranean",
+      "tags": [
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "chicken_breast",
+          "quantity": 120,
+          "unit": "g"
+        },
+        {
+          "ingredient_id": "tomato",
+          "quantity": 125,
+          "unit": "g"
+        },
+        {
+          "ingredient_id": "milk",
+          "quantity": 120,
+          "unit": "ml"
+        },
+        {
+          "ingredient_id": "olive_oil",
+          "quantity": 20,
+          "unit": "ml"
+        }
+      ],
+      "source": "golden_fixture",
+      "allergens_status": "confirmed",
+      "allergens": [
+        "milk"
+      ]
+    },
+    {
+      "recipe_id": "golden-peanut",
+      "title": "Рис с арахисовым соусом",
+      "servings": 2,
+      "cook_minutes": 25,
+      "cuisine": "asian",
+      "tags": [],
+      "ingredients": [
+        {
+          "ingredient_id": "rice",
+          "quantity": 200,
+          "unit": "g"
+        },
+        {
+          "ingredient_id": "peanut_butter",
+          "quantity": 90,
+          "unit": "g"
+        }
+      ],
+      "source": "golden_fixture",
+      "allergens_status": "confirmed",
+      "allergens": [
+        "peanut"
+      ]
+    },
+    {
+      "recipe_id": "golden-cilantro",
+      "title": "Рис с кинзой",
+      "servings": 2,
+      "cook_minutes": 25,
+      "cuisine": "asian",
+      "tags": [],
+      "ingredients": [
+        {
+          "ingredient_id": "rice",
+          "quantity": 200,
+          "unit": "g"
+        },
+        {
+          "ingredient_id": "cilantro",
+          "quantity": 20,
+          "unit": "g"
+        }
+      ],
+      "source": "golden_fixture",
+      "allergens_status": "confirmed",
+      "allergens": []
+    },
+    {
+      "recipe_id": "golden-unknown",
+      "title": "Курица в готовом соусе",
+      "servings": 2,
+      "cook_minutes": 25,
+      "cuisine": "asian",
+      "tags": [
+        "high_protein"
+      ],
+      "ingredients": [
+        {
+          "ingredient_id": "chicken_breast",
+          "quantity": 200,
+          "unit": "g"
+        },
+        {
+          "ingredient_id": "sauce",
+          "quantity": 120,
+          "unit": "g"
+        }
+      ],
+      "source": "golden_fixture",
+      "allergens_status": "unknown",
+      "allergens": null
+    }
+  ]
+}

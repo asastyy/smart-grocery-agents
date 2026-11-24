@@ -101,13 +101,14 @@ def _plan_core(
     feedback: Sequence[str] | None,
     *,
     meal_count: int,
+    mock: bool = False,
 ) -> PlanResponse:
     """Return only validated candidate IDs; arithmetic stays outside the LLM."""
     if meal_count < 1 or meal_count > 14:
         raise ValueError("meal_count must be between 1 and 14")
     request_data = _as_dict(request)
     normalized = normalize_candidates(candidates)
-    if os.getenv("MOCK_LLM", "true").lower() == "true":
+    if mock or os.getenv("MOCK_LLM", "true").lower() == "true":
         return _mock_plan(normalized, meal_count)
 
     api_key = os.getenv("LLM_API_KEY")
@@ -185,6 +186,7 @@ def plan_meals(
     feedback: Sequence[str] | None = None,
     *,
     slots: Sequence[str] = ("dinner",),
+    mock: bool = False,
 ) -> dict[str, Any]:
     """v2 adapter for the Food.com contract without changing shared schemas yet."""
     request_data = _as_dict(request)
@@ -195,7 +197,7 @@ def plan_meals(
     if not slots or any(not isinstance(slot, str) or not slot for slot in slots):
         raise ValueError("slots must contain at least one non-empty name")
 
-    result = _plan_core(request_data, candidates, feedback, meal_count=days * len(slots))
+    result = _plan_core(request_data, candidates, feedback, meal_count=days * len(slots), mock=mock)
     servings = request_data.get("people", request_data.get("servings", 1))
     if not isinstance(servings, int) or servings < 1:
         raise ValueError("request.people or request.servings must be a positive integer")

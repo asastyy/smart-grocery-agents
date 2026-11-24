@@ -76,8 +76,12 @@ def search_recipes(
     recipes_path: Path | None = None,
 ) -> dict[str, list[dict[str, Any]]]:
     """Фильтр по diet и max_cook_minutes, сортировка по покрытию pantry."""
+    return {"candidates": rank_recipes(request, load_recipes(recipes_path))}
+
+
+def rank_recipes(request: Mapping[str, Any] | Any, recipes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Apply the Food.com filters and pantry ranking to a supplied catalogue."""
     req = _as_dict(request)
-    recipes = load_recipes(recipes_path)
 
     diet = req.get("diet") or []
     if isinstance(diet, str):
@@ -108,4 +112,4 @@ def search_recipes(
         ranked.append((-covered, missing, int(recipe["cook_minutes"]), recipe["recipe_id"], recipe))
 
     ranked.sort(key=lambda x: x[:4])
-    return {"candidates": [item[-1] for item in ranked]}
+    return [item[-1] for item in ranked]
