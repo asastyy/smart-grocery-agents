@@ -82,6 +82,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+if st.toggle("Товары магазинов", key="retail_demo"):
+    from smart_grocery.retail.ui import render_retail_demo
+
+    render_retail_demo()
+    st.stop()
+
 if st.toggle("Интеграционное демо", key="sprint_demo"):
     from smart_grocery.sprint_ui import render_integration_demo
 

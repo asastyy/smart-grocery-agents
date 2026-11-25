@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-25T19:54:45.224316+00:00",
+  "checks": {
+    "kuper_docs": {
+      "url": "https://docs.kuper.ru/api-products/sbermarket/description",
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 4251
+    },
+    "lavka_home": {
+      "url": "https://lavka.yandex.ru/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 563128
+    }
+  },
+  "interpretation": {
+    "lavka": "Homepage HTTP 200 is not authenticated product API access. No session or address configured; search/cart not tested.",
+    "kuper": "Public Client Apps documentation discovered; direct HTTP fetch returned 403 in this environment. No partner credentials or sandbox; catalogue/cart not tested."
+  }
+}

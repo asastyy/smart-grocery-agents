@@ -14,3 +14,4 @@ data/raw/
 .Spotlight-V100
 .Trashes
 .test-tmp*/
+/outputs/

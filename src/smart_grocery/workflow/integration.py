@@ -1,7 +1,7 @@
 """Join the shared profile, catalogue, planning and store boundaries."""
 from collections.abc import Sequence
 from datetime import date
-from decimal import ROUND_CEILING, ROUND_HALF_UP, Decimal
+from decimal import Decimal
 from functools import partial
 
 from smart_grocery.agents.planner import MAX_CANDIDATES, plan_meals
@@ -10,6 +10,8 @@ from smart_grocery.schemas.integration import IntegrationResult, InventoryItem, 
 from smart_grocery.tools.budget_v2 import measure_plan
 from smart_grocery.tools.grocery_provider import GroceryProvider, ProviderUnavailable
 from smart_grocery.tools.recipes import rank_recipes
+from smart_grocery.retail.models import RetailOffer
+from smart_grocery.retail.purchasing import eligibility_reasons, quote_packages
 from smart_grocery.workflow.foodcom import run_candidate_loop
 
 
@@ -78,8 +80,11 @@ def _shop_for_ingredients(
                     or offer.availability != "in_stock" or offer.price is None
                     or not _meets_allergy_constraint(offer, allergies)):
                 continue
-            count = int((missing / offer.package_quantity).to_integral_value(rounding=ROUND_CEILING))
-            cost = (count * offer.price).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+            if isinstance(offer, RetailOffer) and eligibility_reasons(
+                    offer, unit=line.unit, currency=profile.currency, allergies=tuple(profile.allergies)):
+                continue
+            quote = quote_packages(offer, missing)
+            count, cost = quote.package_count, quote.total
             choices.append((cost, count * offer.package_quantity - missing, offer.retailer, offer.product_id, count, offer))
         if not choices:
             violations.append(Violation(
