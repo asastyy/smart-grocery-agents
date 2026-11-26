@@ -1,0 +1,33 @@
+{
+  "allergens_confirmed": 0,
+  "catalog_records": 3674,
+  "fully_quantified": 155,
+  "has_cuisine": 642,
+  "has_instructions": 3674,
+  "has_meal_type": 124,
+  "has_nutrition": 0,
+  "has_nutrition_source": 84,
+  "has_servings": 532,
+  "has_total_time": 546,
+  "human_reviewed": 0,
+  "ingredient_ids": 3048,
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "planning_ready": 4,
+  "quality_issues": {
+    "additional_wait_time_requires_review": 33,
+    "source_quality_warning": 50,
+    "unknown_servings": 3142,
+    "unknown_total_time": 3128,
+    "unresolved_instruction_template": 20,
+    "unresolved_quantities_or_units": 3519,
+    "unsupported_ingredient_structure": 3
+  },
+  "rejected_or_duplicate": 128,
+  "rejection_reasons": {
+    "missing_ingredients_or_instructions": 128
+  },
+  "review_queue": 50,
+  "source_pages": 3802,
+  "source_snapshot_sha256": "8c369d4cb399a587331c108ad528424c98221b27c4bafdb1b2bd8dc783c20d95"
+}
