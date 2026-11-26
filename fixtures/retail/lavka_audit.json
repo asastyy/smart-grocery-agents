@@ -1,0 +1,84 @@
+{
+  "checked_at": "2026-11-26T06:31:20.690539+00:00",
+  "method": "Manual browser UI observation; not MCP execution",
+  "location": {
+    "label": "НИУ ВШЭ, Канатный цех",
+    "address": "Санкт-Петербург, 25-я линия Васильевского острова, 6к1",
+    "public_location": true,
+    "source": "https://spb.hse.ru/library/teamwork/"
+  },
+  "signed_in": false,
+  "delivery_zone_confirmed_by_ui": true,
+  "searches_verified": [
+    "рис",
+    "молоко"
+  ],
+  "products": [
+    {
+      "ingredient_id": "rice",
+      "title": "Рис Краснодарский Prosto в варочных пакетах",
+      "package_quantity": 500,
+      "package_unit": "g",
+      "displayed_price_rub": 84,
+      "displayed_regular_price_rub": 169,
+      "promotion_eligibility": "unknown",
+      "url": "https://lavka.yandex.ru/good/ris-krasnodarskij-prosto-v-varochnyh-paketah-8-h-625-g-500-gram",
+      "nutrition_per_100g": {
+        "kcal": 360,
+        "protein": 6.5,
+        "fat": 0.5,
+        "carbs": 83
+      },
+      "ingredients": "Крупа рисовая шлифованная. Сорт первый.",
+      "allergens_status": "unknown",
+      "stock_quantity": null
+    },
+    {
+      "ingredient_id": "milk",
+      "title": "Молоко 3,2% Домик в деревне",
+      "package_quantity": 930,
+      "package_unit": "ml",
+      "displayed_price_rub": 62,
+      "displayed_regular_price_rub": 125,
+      "promotion_eligibility": "unknown",
+      "url": "https://lavka.yandex.ru/good/moloko-32percent-domik-v-derevne-pasterizovannoe-955-millilitre",
+      "warning": "UI says 930 ml while URL slug says 955 ml. URL must not be package data source."
+    }
+  ],
+  "api_probe": {
+    "checked_at": "2026-11-26T06:28:53.848868+00:00",
+    "mode": "anonymous_no_location",
+    "personal_cookies_used": false,
+    "checks": [
+      {
+        "operation": "homepage",
+        "status": 200,
+        "csrf_present": true
+      },
+      {
+        "operation": "search_rice_without_location",
+        "status": 401,
+        "content_type": "application/json; charset=utf-8",
+        "response_type": null,
+        "top_level_keys": [
+          "data"
+        ],
+        "products_count": 0,
+        "interpretation": "No address configured: not evidence of address-scoped availability, even if products are returned."
+      }
+    ]
+  },
+  "not_tested": [
+    "authenticated API",
+    "MCP execution",
+    "cart mutations",
+    "checkout",
+    "payment"
+  ],
+  "upstream_review": {
+    "repository": "https://github.com/Dudude-bit/yandex-lavka-mcp",
+    "file": "src/yandex_lavka_mcp/client.py",
+    "function": "LavkaClient._trim_product",
+    "issue": "Missing available/in_stock/inStock defaults to True; our normalization must preserve unknown."
+  }
+}
