@@ -2,9 +2,10 @@
 from collections.abc import Sequence
 from datetime import date
 from decimal import Decimal
+from typing import Literal
 from uuid import uuid4
 
-from smart_grocery.schemas.foodcom import Ingredient
+from smart_grocery.schemas.foodcom import Ingredient, Unit
 from smart_grocery.schemas.integration import InventoryItem
 from smart_grocery.schemas.personalization import (
     ConsumptionPlan,
@@ -34,8 +35,8 @@ def suggest_inventory_from_purchase(
     display_name: str,
     *,
     quantity: Decimal | None = None,
-    unit: str | None = None,
-    source: str = "purchase_history",
+    unit: Unit | None = None,
+    source: Literal["purchase_history", "receipt", "barcode", "photo"] = "purchase_history",
     confidence: Decimal = Decimal("0.7"),
 ) -> InventorySuggestion:
     return InventorySuggestion(
@@ -53,7 +54,7 @@ def confirm_inventory_suggestion(
     suggestion: InventorySuggestion,
     *,
     quantity: Decimal | None = None,
-    unit: str | None = None,
+    unit: Unit | None = None,
 ) -> InventoryItem:
     confirmed_quantity = quantity if quantity is not None else suggestion.quantity
     confirmed_unit = unit if unit is not None else suggestion.unit
@@ -79,6 +80,9 @@ def plan_consumption(
 ) -> ConsumptionPlan:
     """Allocate confirmed stock FEFO; incompatible units are never converted."""
     usable = available_inventory(inventory, as_of=as_of)
+    explicit_ids = [item.inventory_item_id for item in usable if item.inventory_item_id is not None]
+    if len(explicit_ids) != len(set(explicit_ids)):
+        raise ValueError("inventory_item_id must be unique")
     remaining = {id(item): item.quantity for item in usable}
     allocations: list[InventoryAllocation] = []
     shortages: list[InventoryShortage] = []
@@ -88,7 +92,11 @@ def plan_consumption(
             item for item in usable
             if item.ingredient_id == requirement.ingredient_id and item.unit == requirement.unit
         ]
-        candidates.sort(key=lambda item: (item.expiry_date or date.max, item.inventory_item_id or ""))
+        candidates.sort(key=lambda item: (
+            item.expiry_date or date.max,
+            item.opened is not True,
+            item.inventory_item_id or "",
+        ))
         for item in candidates:
             if needed <= 0:
                 break

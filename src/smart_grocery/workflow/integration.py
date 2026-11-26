@@ -100,6 +100,11 @@ def run_integration_workflow(
                 for item in available_inventory(inventory, as_of=today)],
     )
     request_data = request.model_dump(mode="json")
+    request_data.update({
+        "preferred_cuisines": profile.preferred_cuisines,
+        "goals": profile.goals,
+        "candidate_order": "descending_personalization_score_with_diversity",
+    })
     personalization = personalize_recipes(
         profile, recipes, inventory, as_of=today, limit=MAX_CANDIDATES
     )

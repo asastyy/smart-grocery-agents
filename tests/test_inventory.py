@@ -79,3 +79,18 @@ def test_incompatible_units_are_not_silently_converted():
     plan = plan_consumption(inventory, [requirement], as_of=TODAY)
     assert plan.allocations == []
     assert plan.shortages[0].quantity == 100
+
+
+def test_duplicate_batch_ids_are_rejected_before_allocation():
+    inventory = [item("duplicate", 50), item("duplicate", 50)]
+    requirement = Ingredient(ingredient_id="rice", quantity=80, unit="g")
+    with pytest.raises(ValueError, match="must be unique"):
+        plan_consumption(inventory, [requirement], as_of=TODAY)
+
+
+def test_opened_batch_wins_when_expiry_dates_are_equal():
+    closed = item("closed", 50)
+    opened = item("opened", 50).model_copy(update={"opened": True})
+    requirement = Ingredient(ingredient_id="rice", quantity=20, unit="g")
+    plan = plan_consumption([closed, opened], [requirement], as_of=TODAY)
+    assert plan.allocations[0].inventory_item_id == "opened"

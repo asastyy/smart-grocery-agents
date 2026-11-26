@@ -75,6 +75,13 @@ def test_hard_constraints_are_applied_before_ranking():
     assert reasons["slow"] == ["cooking_time_exceeded"]
 
 
+def test_allergen_is_blocked_when_it_is_an_explicit_ingredient_even_if_metadata_is_wrong():
+    unsafe = recipe("unsafe", ["peanut"], allergens=[])
+    decision = evaluate_recipe(profile(allergies=["peanut"]), unsafe, as_of=TODAY)
+    assert not decision.eligible
+    assert decision.hard_reasons == ["allergen_ingredient_conflict"]
+
+
 def test_missing_soft_metadata_is_neutral_and_stable():
     result = personalize_recipes(profile(preferred_cuisines=["asian"]), [
         recipe("without-cuisine", ["rice"]),
@@ -91,6 +98,25 @@ def test_inventory_and_expiry_are_soft_ranking_signals():
     )
     assert [item.recipe_id for item in result.ranked_recipes] == ["rice", "beans"]
     assert "uses_expiring_inventory" in result.decisions[0].soft_reasons
+
+
+def test_incompatible_inventory_unit_does_not_increase_score():
+    pantry = InventoryItem(
+        inventory_item_id="rice-pieces", ingredient_id="rice", display_name="Rice",
+        quantity=2, unit="pcs", source="manual", confidence=1,
+    )
+    decision = evaluate_recipe(profile(), recipe("rice", ["rice"]), [pantry], as_of=TODAY)
+    assert "uses_inventory" not in decision.soft_reasons
+
+
+def test_diversity_is_a_soft_tie_breaker_for_the_ranked_preview():
+    recipes = [
+        recipe("asian-a", ["rice"], cuisine="asian"),
+        recipe("asian-b", ["beans"], cuisine="asian"),
+        recipe("italian", ["tomato"], cuisine="italian"),
+    ]
+    result = personalize_recipes(profile(), recipes, as_of=TODAY)
+    assert [item.recipe_id for item in result.ranked_recipes] == ["asian-a", "italian", "asian-b"]
 
 
 def test_five_profiles_produce_auditable_different_rankings():

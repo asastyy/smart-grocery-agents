@@ -26,7 +26,9 @@ def evaluate_recipe(
     allergies = set(profile.allergies)
 
     if allergies:
-        if recipe.allergens_status != "confirmed" or recipe.allergens is None:
+        if allergies.intersection(ingredient_ids):
+            hard_reasons.append("allergen_ingredient_conflict")
+        elif recipe.allergens_status != "confirmed" or recipe.allergens is None:
             hard_reasons.append("allergen_data_unknown")
         elif allergies.intersection(recipe.allergens):
             hard_reasons.append("allergen_conflict")
@@ -53,19 +55,25 @@ def evaluate_recipe(
 
     today = as_of or date.today()
     usable = available_inventory(inventory, as_of=today)
-    stocked_ids = {item.ingredient_id for item in usable}
-    covered = ingredient_ids.intersection(stocked_ids)
+    recipe_keys = {(item.ingredient_id, item.unit) for item in recipe.ingredients}
+    stocked_keys = {(item.ingredient_id, item.unit) for item in usable}
+    covered = recipe_keys.intersection(stocked_keys)
     if covered:
         score += Decimal(len(covered))
         soft_reasons.append("uses_inventory")
-    expiring_ids = {
-        item.ingredient_id for item in usable
+    expiring_keys = {
+        (item.ingredient_id, item.unit) for item in usable
         if item.expiry_date is not None and 0 <= (item.expiry_date - today).days <= 3
     }
-    if ingredient_ids.intersection(expiring_ids):
-        score += Decimal(2 * len(ingredient_ids.intersection(expiring_ids)))
+    expiring = recipe_keys.intersection(expiring_keys)
+    if expiring:
+        score += Decimal(2 * len(expiring))
         soft_reasons.append("uses_expiring_inventory")
-    score -= Decimal(len(ingredient_ids - stocked_ids)) / Decimal("10")
+    opened_keys = {(item.ingredient_id, item.unit) for item in usable if item.opened is True}
+    if recipe_keys.intersection(opened_keys):
+        score += Decimal("0.5")
+        soft_reasons.append("uses_opened_inventory")
+    score -= Decimal(len(recipe_keys - stocked_keys)) / Decimal("10")
     return RecipeDecision(
         recipe_id=recipe.recipe_id,
         eligible=True,
@@ -84,9 +92,29 @@ def personalize_recipes(
 ) -> PersonalizationResult:
     """Return an auditable result; an LLM may only arrange the returned recipes."""
     pairs = [(recipe, evaluate_recipe(profile, recipe, inventory, as_of=as_of)) for recipe in recipes]
-    eligible = [(recipe, decision) for recipe, decision in pairs if decision.eligible]
-    eligible.sort(key=lambda pair: (-pair[1].score, pair[0].cook_minutes, pair[0].recipe_id))
-    ranked = [recipe for recipe, _ in eligible]
+    remaining = [(recipe, decision) for recipe, decision in pairs if decision.eligible]
+    ranked: list[Recipe] = []
+    cuisine_counts: dict[str, int] = {}
+    meal_type_counts: dict[str, int] = {}
+    while remaining:
+        def rank_key(pair):
+            recipe, decision = pair
+            cuisine = (recipe.cuisine or "").casefold()
+            meal_type = (recipe.meal_type or "").casefold()
+            diversity_penalty = Decimal("0.5") * cuisine_counts.get(cuisine, 0) if cuisine else Decimal(0)
+            diversity_penalty += Decimal("0.25") * meal_type_counts.get(meal_type, 0) if meal_type else Decimal(0)
+            return (-(decision.score - diversity_penalty), recipe.cook_minutes, recipe.recipe_id)
+
+        chosen = min(remaining, key=rank_key)
+        remaining.remove(chosen)
+        recipe, _ = chosen
+        ranked.append(recipe)
+        if recipe.cuisine:
+            key = recipe.cuisine.casefold()
+            cuisine_counts[key] = cuisine_counts.get(key, 0) + 1
+        if recipe.meal_type:
+            key = recipe.meal_type.casefold()
+            meal_type_counts[key] = meal_type_counts.get(key, 0) + 1
     if limit is not None:
         ranked = ranked[:limit]
     decisions_by_id = {decision.recipe_id: decision for _, decision in pairs}
