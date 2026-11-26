@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-26T11:11:27.553627+00:00",
+  "sources": [
+    {
+      "name": "Food.com Recipes and Reviews",
+      "url": "https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews",
+      "api": "https://www.kaggle.com/api/v1/datasets/list?search=foodcom%20recipes%20and%20reviews",
+      "observed_status": 200,
+      "version": 2,
+      "license_reported_by_uploader": "CC0: Public Domain",
+      "declared_scope": "over 500000 recipes and 1400000 reviews",
+      "decision": "Audited existing 150-record export; no new Food.com data imported. Uploader license label is not an independent audit of underlying rights."
+    },
+    {
+      "name": "Wikibooks Cookbook",
+      "url": "https://en.wikibooks.org/wiki/Category:Recipes",
+      "api": "https://en.wikibooks.org/w/api.php",
+      "observed_status": 200,
+      "license": "CC-BY-SA-4.0",
+      "license_policy": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+      "decision": "Bulk imported text via API, retained attribution/revision/history/license; images not downloaded."
+    },
+    {
+      "name": "TheMealDB",
+      "url": "https://www.themealdb.com/api.php",
+      "terms": "https://www.themealdb.com/terms_of_use.php",
+      "observed_status": 200,
+      "observed_chicken_search_results": 25,
+      "constraints": [
+        "Educational/development test access available",
+        "API data copying/modification allowed under service terms; attribution/notices retained",
+        "Appstore publication requires paid subscription",
+        "Free access does not provide an unconditional open-data license",
+        "No reliable cooking-time, portions or allergen fields in observed schema"
+      ],
+      "decision": "Researched as optional recipe/image enrichment source, not bulk imported or presented as CC0."
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "accepted_by_source": {
+    "Food.com": 4979,
+    "Wikibooks": 3702
+  },
+  "allergens_confirmed": 0,
+  "by_source": {
+    "Food.com": {
+      "allergens_confirmed": 0,
+      "fully_quantified": 0,
+      "has_cook_minutes": 3187,
+      "has_cuisine": 376,
+      "has_instructions": 4979,
+      "has_meal_type": 42,
+      "has_nutrition_source": 4979,
+      "has_servings": 3570,
+      "planning_ready": 0,
+      "records": 4979
+    },
+    "Wikibooks": {
+      "allergens_confirmed": 0,
+      "fully_quantified": 155,
+      "has_cook_minutes": 547,
+      "has_cuisine": 649,
+      "has_instructions": 3702,
+      "has_meal_type": 126,
+      "has_nutrition_source": 84,
+      "has_servings": 532,
+      "planning_ready": 4,
+      "records": 3702
+    }
+  },
+  "catalog_records": 8681,
+  "foodcom_input_sha256": "a8777b5407dd22cc461668cce81559feb72452dc8ea3b4ce7a86631a2354ed75",
+  "human_reviewed": 0,
+  "logical_sha256": "11896d041230f03fbd4102cbb70942cbba1c660364c321117330fc1896591954",
+  "quality_issues": {
+    "additional_wait_time_requires_review": 33,
+    "ingredient_quantity_alignment": 3739,
+    "source_quality_warning": 69,
+    "unknown_servings": 4579,
+    "unknown_total_time": 4947,
+    "unresolved_instruction_template": 20,
+    "unresolved_quantities_or_units": 8526,
+    "unsupported_ingredient_structure": 3
+  },
+  "rejected_or_duplicate": 21,
+  "rejection_reasons": {
+    "Food.com:duplicate_content": 1,
+    "Food.com:invalid_source_record": 20
+  },
+  "rejection_samples": [
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "412"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "808"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "846"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "884"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "2554"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "2747"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "2756"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "2947"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3161"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3264"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3794"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3808"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3940"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3941"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "4149"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "4526"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "5154"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "7304"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "7375"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "7412"
+    },
+    {
+      "reason": "duplicate_content",
+      "recipe_id": "fc_7624"
+    }
+  ],
+  "schema_version": 1,
+  "seed_source_rows": 0,
+  "source_rows": {
+    "Food.com": 5000,
+    "Wikibooks": 3702
+  },
+  "source_scope": "Bundled Food.com sample; full Wikibooks snapshot",
+  "wiki_input_sha256": "2781cb80ad783cfaf39b6a3bf6e7701c893e3b6580f326127932690850e454d4"
+}

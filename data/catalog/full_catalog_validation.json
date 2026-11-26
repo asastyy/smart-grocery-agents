@@ -1,0 +1,35 @@
+{
+  "records": 522798,
+  "planning_ready": 4,
+  "allergens_confirmed": 0,
+  "searches": [
+    {
+      "query": "chicken rice",
+      "matches": 9161,
+      "seconds": 0.1878,
+      "page_size": 50
+    },
+    {
+      "query": "pasta tomato",
+      "matches": 7316,
+      "seconds": 0.0502,
+      "page_size": 50
+    },
+    {
+      "query": "vegan",
+      "matches": 3584,
+      "seconds": 0.0148,
+      "page_size": 50
+    }
+  ],
+  "source_rows_reparsed": 100,
+  "browser_checks": {
+    "total_records_visible": 522798,
+    "search": "pasta tomato",
+    "matches_all_sources": 7316,
+    "page_2_confirmed": true,
+    "wikibooks_filter_matches": 43,
+    "filter_resets_page_to_1": true,
+    "ingredients_and_instructions_visible": true
+  }
+}

@@ -4,3 +4,5 @@ openai>=1.40,<3
 python-dotenv>=1.0,<2
 pytest>=8,<10
 python-dotenv>=1,<2
+
+mwparserfromhell>=0.7,<0.8

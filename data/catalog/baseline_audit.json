@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-26T11:11:27.552997+00:00",
+  "recipes": 150,
+  "ingredients": 503,
+  "missing": {
+    "instructions": 150,
+    "source": 150,
+    "nutrition": 150,
+    "cuisine": 150,
+    "meal_type": 150
+  },
+  "allergens_confirmed": 0,
+  "boundary_units": {
+    "rice": "pcs",
+    "egg": "pcs",
+    "tomato": "pcs",
+    "olive_oil": "pcs",
+    "milk": "pcs"
+  },
+  "code_findings": [
+    "parse_qty_unit defaults unknown units to pcs",
+    "convert_to_base defaults density to 1 when converting mass/volume",
+    "missing servings defaults to 2",
+    "high_protein inferred from ingredient substring, not nutrition"
+  ],
+  "legacy_files_modified": false
+}
