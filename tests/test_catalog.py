@@ -122,7 +122,7 @@ def test_rebuild_is_deterministic(tmp_path):
 
 
 def test_real_exports_match_shared_contract_and_strict_allergy(tmp_path):
-    records=[json.loads(line) for line in (ROOT/'data/catalog/catalog.jsonl').read_text().splitlines()]
+    records=[json.loads(line) for line in (ROOT/'data/catalog/catalog.jsonl').read_text(encoding="utf-8").splitlines()]
     assert len(records)>=500
     assert len({r['recipe_id'] for r in records})==len(records)
     assert all(r['allergens'] is None and r['allergens_status']=='unknown' for r in records)

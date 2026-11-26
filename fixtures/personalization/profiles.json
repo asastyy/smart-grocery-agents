@@ -1,0 +1,62 @@
+[
+  {
+    "user_id": "quick-asian",
+    "household_size": 2,
+    "allergies": [],
+    "dietary_pattern": [],
+    "disliked_ingredients": [],
+    "preferred_cuisines": ["asian"],
+    "goals": ["high_protein"],
+    "budget": 3500,
+    "currency": "RUB",
+    "max_cooking_time": 25
+  },
+  {
+    "user_id": "mediterranean-family",
+    "household_size": 4,
+    "allergies": [],
+    "dietary_pattern": [],
+    "disliked_ingredients": [],
+    "preferred_cuisines": ["mediterranean"],
+    "goals": [],
+    "budget": 6000,
+    "currency": "RUB",
+    "max_cooking_time": 45
+  },
+  {
+    "user_id": "peanut-allergy",
+    "household_size": 1,
+    "allergies": ["peanut"],
+    "dietary_pattern": [],
+    "disliked_ingredients": [],
+    "preferred_cuisines": ["asian"],
+    "goals": [],
+    "budget": 2500,
+    "currency": "RUB",
+    "max_cooking_time": 30
+  },
+  {
+    "user_id": "no-cilantro",
+    "household_size": 2,
+    "allergies": [],
+    "dietary_pattern": [],
+    "disliked_ingredients": ["cilantro"],
+    "preferred_cuisines": [],
+    "goals": [],
+    "budget": 3000,
+    "currency": "RUB",
+    "max_cooking_time": 30
+  },
+  {
+    "user_id": "high-protein",
+    "household_size": 2,
+    "allergies": [],
+    "dietary_pattern": [],
+    "disliked_ingredients": [],
+    "preferred_cuisines": [],
+    "goals": ["high_protein"],
+    "budget": 4000,
+    "currency": "RUB",
+    "max_cooking_time": 35
+  }
+]

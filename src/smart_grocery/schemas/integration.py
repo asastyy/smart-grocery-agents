@@ -27,8 +27,11 @@ class UserProfile(Model):
 
 
 class InventoryItem(Ingredient):
+    inventory_item_id: str | None = None
     display_name: str = Field(min_length=1)
     expiry_date: date | None = None
+    opened: bool | None = None
+    status: Literal["available", "reserved", "depleted", "discarded"] = "available"
     source: str = Field(min_length=1)
     confidence: Decimal = Field(ge=0, le=1)
 
