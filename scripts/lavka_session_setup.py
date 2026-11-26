@@ -2,11 +2,14 @@
 import getpass
 import json
 import os
+import sys
 from http.cookies import SimpleCookie
 from pathlib import Path
 
 
 def main():
+    if not sys.stdin.isatty():
+        raise SystemExit("Run in your own interactive terminal; piped input is disabled.")
     target = Path(__file__).resolve().parents[1] / "outputs/lavka-private/config.json"
     if target.exists():
         raise SystemExit("Config already exists; it was not overwritten.")
