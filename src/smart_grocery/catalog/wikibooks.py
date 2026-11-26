@@ -210,9 +210,12 @@ def parse_page(page: dict) -> dict:
     return record
 
 
-def fetch_pages(limit: int, cache: Path, refresh: bool = False) -> list[dict]:
+def fetch_pages(limit: int, cache: Path, refresh: bool = False, all_pages: bool = False) -> list[dict]:
+    known = {}
     if cache.exists() and not refresh:
-        with gzip.open(cache,"rt",encoding="utf-8") as f: return [json.loads(line) for line in f if line.strip()][:limit]
+        with gzip.open(cache,"rt",encoding="utf-8") as f: cached = [json.loads(line) for line in f if line.strip()]
+        if not all_pages: return cached[:limit]
+        known = {p["pageid"]:p for p in cached}
     pages=[]; members=[]; continuation={}
     with httpx.Client(timeout=30, headers={"User-Agent":"SmartGroceryAgents/0.1 (academic Cookbook catalog; https://github.com/asastyy/smart-grocery-agents)"}, follow_redirects=False) as client:
         def request(params):
@@ -220,12 +223,15 @@ def fetch_pages(limit: int, cache: Path, refresh: bool = False) -> list[dict]:
             if "error" in d: raise RuntimeError("MediaWiki error: "+str(d["error"].get("code")))
             return d
         while len(members)<limit:
-            data=request({"action":"query","list":"categorymembers","cmtitle":"Category:Recipes","cmnamespace":102,"cmlimit":min(500,limit-len(members)),**continuation})
-            members.extend(data["query"]["categorymembers"])
+            params = ({"action":"query","list":"allpages","apnamespace":102,"apfilterredir":"nonredirects","aplimit":min(500,limit-len(members))} if all_pages else {"action":"query","list":"categorymembers","cmtitle":"Category:Recipes","cmnamespace":102,"cmlimit":min(500,limit-len(members))})
+            data=request({**params,**continuation})
+            members.extend(data["query"]["allpages" if all_pages else "categorymembers"])
             continuation=data.get("continue",{})
             if not continuation: break
-        for start in range(0,len(members),50):
-            ids="|".join(str(p["pageid"]) for p in members[start:start+50])
+        pages = [known[p["pageid"]] for p in members if p["pageid"] in known]
+        missing = [p for p in members if p["pageid"] not in known]
+        for start in range(0,len(missing),50):
+            ids="|".join(str(p["pageid"]) for p in missing[start:start+50])
             data=request({"action":"query","pageids":ids,"prop":"revisions","rvprop":"ids|timestamp|content","rvslots":"main"})
             pages.extend(p for p in data["query"]["pages"] if p.get("revisions"))
             print(f"Fetched {len(pages)}/{len(members)} Cookbook pages",flush=True)

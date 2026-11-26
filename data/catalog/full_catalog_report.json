@@ -1,0 +1,210 @@
+{
+  "accepted_by_source": {
+    "Food.com": 519096,
+    "Wikibooks": 3702
+  },
+  "allergens_confirmed": 0,
+  "by_source": {
+    "Food.com": {
+      "allergens_confirmed": 0,
+      "fully_quantified": 0,
+      "has_cook_minutes": 516979,
+      "has_cuisine": 38817,
+      "has_instructions": 519096,
+      "has_meal_type": 7565,
+      "has_nutrition_source": 519096,
+      "has_servings": 337302,
+      "planning_ready": 0,
+      "records": 519096
+    },
+    "Wikibooks": {
+      "allergens_confirmed": 0,
+      "fully_quantified": 155,
+      "has_cook_minutes": 547,
+      "has_cuisine": 649,
+      "has_instructions": 3702,
+      "has_meal_type": 126,
+      "has_nutrition_source": 84,
+      "has_servings": 532,
+      "planning_ready": 4,
+      "records": 3702
+    }
+  },
+  "catalog_records": 522798,
+  "foodcom_input_sha256": "7d564e2fabb9d50d101c4605bddec2612b5e10225778ab015ab68490452788c2",
+  "human_reviewed": 0,
+  "logical_sha256": "49fc6d870f5da4ae35c8c0b8cc4b52adba8be64ebc9478d23788b08b21bf4ee2",
+  "quality_issues": {
+    "additional_wait_time_requires_review": 33,
+    "ingredient_quantity_alignment": 404410,
+    "source_quality_warning": 69,
+    "unknown_servings": 184964,
+    "unknown_total_time": 5272,
+    "unresolved_instruction_template": 20,
+    "unresolved_quantities_or_units": 522643,
+    "unsupported_ingredient_structure": 3
+  },
+  "rejected_or_duplicate": 3421,
+  "rejection_reasons": {
+    "Food.com:duplicate_content": 574,
+    "Food.com:invalid_source_record": 2847
+  },
+  "rejection_samples": [
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "412"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "808"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "846"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "884"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "2554"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "2747"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "2756"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "2947"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3161"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3264"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3794"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3808"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3940"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "3941"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "4149"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "4526"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "5154"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "7304"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "7375"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "7412"
+    },
+    {
+      "reason": "duplicate_content",
+      "recipe_id": "fc_7624"
+    },
+    {
+      "reason": "duplicate_content",
+      "recipe_id": "fc_8221"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "8440"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "8817"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "8882"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "9062"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "9524"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "9984"
+    },
+    {
+      "error_type": "JSONDecodeError",
+      "reason": "invalid_source_record",
+      "recipe_id": "11629"
+    },
+    {
+      "error_type": "ValueError",
+      "reason": "invalid_source_record",
+      "recipe_id": "12412"
+    }
+  ],
+  "schema_version": 1,
+  "seed_source_rows": 5000,
+  "source_rows": {
+    "Food.com": 522517,
+    "Wikibooks": 3702
+  },
+  "source_scope": "Food.com v2 full local CSV",
+  "wiki_input_sha256": "2781cb80ad783cfaf39b6a3bf6e7701c893e3b6580f326127932690850e454d4"
+}
