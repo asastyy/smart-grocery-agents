@@ -1,0 +1,350 @@
+{
+  "plan": {
+    "meals": [
+      {
+        "day": 1,
+        "slot": "lunch",
+        "recipe_id": "golden-rice",
+        "servings": "2"
+      },
+      {
+        "day": 1,
+        "slot": "dinner",
+        "recipe_id": "golden-chicken",
+        "servings": "2"
+      },
+      {
+        "day": 2,
+        "slot": "lunch",
+        "recipe_id": "golden-rice",
+        "servings": "2"
+      },
+      {
+        "day": 2,
+        "slot": "dinner",
+        "recipe_id": "golden-chicken",
+        "servings": "2"
+      },
+      {
+        "day": 3,
+        "slot": "lunch",
+        "recipe_id": "golden-rice",
+        "servings": "2"
+      },
+      {
+        "day": 3,
+        "slot": "dinner",
+        "recipe_id": "golden-chicken",
+        "servings": "2"
+      },
+      {
+        "day": 4,
+        "slot": "lunch",
+        "recipe_id": "golden-rice",
+        "servings": "2"
+      },
+      {
+        "day": 4,
+        "slot": "dinner",
+        "recipe_id": "golden-chicken",
+        "servings": "2"
+      },
+      {
+        "day": 5,
+        "slot": "lunch",
+        "recipe_id": "golden-rice",
+        "servings": "2"
+      },
+      {
+        "day": 5,
+        "slot": "dinner",
+        "recipe_id": "golden-chicken",
+        "servings": "2"
+      }
+    ],
+    "days": 5,
+    "planned_ingredients": [
+      {
+        "ingredient_id": "chicken_breast",
+        "quantity": "1300",
+        "unit": "g"
+      },
+      {
+        "ingredient_id": "egg",
+        "quantity": "10",
+        "unit": "pcs"
+      },
+      {
+        "ingredient_id": "milk",
+        "quantity": "600",
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": "olive_oil",
+        "quantity": "100",
+        "unit": "ml"
+      },
+      {
+        "ingredient_id": "rice",
+        "quantity": "1100",
+        "unit": "g"
+      },
+      {
+        "ingredient_id": "tomato",
+        "quantity": "625",
+        "unit": "g"
+      }
+    ],
+    "reasoning_summary": "Mock plan; no LLM call was made."
+  },
+  "shopping_list": {
+    "currency": "RUB",
+    "lines": [
+      {
+        "ingredient_id": "chicken_breast",
+        "unit": "g",
+        "required_quantity": "1300",
+        "inventory_quantity": "400",
+        "missing_quantity": "900",
+        "matched_offers": [
+          {
+            "allergens_status": "unknown",
+            "allergens": null,
+            "retailer": "vkusvill",
+            "product_id": "83024",
+            "ingredient_id": "chicken_breast",
+            "title": "Филе грудки цыпленка-бройлера на зерновом откорме",
+            "brand": null,
+            "package_quantity": "700.000",
+            "package_unit": "g",
+            "price": "661",
+            "currency": "RUB",
+            "availability": "unknown",
+            "url": "https://vkusvill.ru/goods/file-grudki-tsyplenka-broylera-na-zernovom-otkorme-83024/",
+            "retrieved_at": "2026-11-25T19:54:50.385703Z",
+            "ingredients": "ООО \"ИНТЕРСОЮЗ\":Филе грудки цыпленка бройлера на зерновом откорме; ИП Сергина Светлана Глава КФХ:мясо птицы натуральное - филе грудки цыпленка-бройлера;",
+            "nutrition": {
+              "carbohydrate_g": "0"
+            }
+          }
+        ],
+        "selected_offer": null,
+        "package_count": null,
+        "estimated_total": null
+      },
+      {
+        "ingredient_id": "egg",
+        "unit": "pcs",
+        "required_quantity": "10",
+        "inventory_quantity": "6",
+        "missing_quantity": "4",
+        "matched_offers": [
+          {
+            "allergens_status": "unknown",
+            "allergens": null,
+            "retailer": "vkusvill",
+            "product_id": "15544",
+            "ingredient_id": "egg",
+            "title": "Яйцо куриное С1",
+            "brand": null,
+            "package_quantity": "10",
+            "package_unit": "pcs",
+            "price": "129",
+            "currency": "RUB",
+            "availability": "unknown",
+            "url": "https://vkusvill.ru/goods/yaytso-kurinoe-s1-15544/",
+            "retrieved_at": "2026-11-25T19:54:49.127941Z",
+            "ingredients": "АО \"ПТИЦЕФАБРИКА РОСКАР\":Яйцо куриное пищевое; АО \"АГРОФИРМА \"СЕЙМОВСКАЯ\":яйцо  куриное пищевое; ООО \"ПТИЦЕФАБРИКА \"СМЕТАНИНО\":яйцо куриное пищевое; АО \"ПТИЦЕФАБРИКА СИНЯВИНСКАЯ\":яйца куриные пищевые; АО \"ПТИЦЕФАБРИКА \"БОРОВСКАЯ\":яйцо куриное; АО \"ГАЛИЧСКОЕ\" ПО ПТИЦЕВОДСТВУ:яйцо куриное; ООО \"АНАТРЕЙД\":яйцо куриное пищевое; АО \"ПТИЦЕФАБРИКА \"БАШКИРСКАЯ\":Яйцо куриное пищевое;",
+            "nutrition": null
+          },
+          {
+            "allergens_status": "unknown",
+            "allergens": null,
+            "retailer": "vkusvill",
+            "product_id": "22658",
+            "ingredient_id": "egg",
+            "title": "Яйцо куриное С0",
+            "brand": null,
+            "package_quantity": "10",
+            "package_unit": "pcs",
+            "price": "155",
+            "currency": "RUB",
+            "availability": "unknown",
+            "url": "https://vkusvill.ru/goods/yaytso-kurinoe-s0-22658/",
+            "retrieved_at": "2026-11-25T19:54:49.127941Z",
+            "ingredients": "АО \"ПТИЦЕФАБРИКА ЧЕЛЯБИНСКАЯ\":Яйцо куриное пищевое; АО \"ПТИЦЕФАБРИКА РОСКАР\":Яйцо куриное пищевое; АО \"АГРОФИРМА \"СЕЙМОВСКАЯ\":куриные яйца; ООО \"ПТИЦЕФАБРИКА \"СМЕТАНИНО\":яйцо куриное пищевое; АО \"ПТИЦЕФАБРИКА СИНЯВИНСКАЯ\":яйцо куриное пищевое; АО \"ПТИЦЕФАБРИКА \"БОРОВСКАЯ\":яйцо куриное; ООО \"АНАТРЕЙД\":яйцо куриное пищевое; АО \"ГАЛИЧСКОЕ\" ПО ПТИЦЕВОДСТВУ:яйцо куриное; АО \"ПТИЦЕФАБРИКА \"БАШКИРСКАЯ\":Яйцо куриное пищевое;",
+            "nutrition": null
+          },
+          {
+            "allergens_status": "unknown",
+            "allergens": null,
+            "retailer": "vkusvill",
+            "product_id": "59422",
+            "ingredient_id": "egg",
+            "title": "Яйцо куриное С0, 20 шт",
+            "brand": null,
+            "package_quantity": "20.000",
+            "package_unit": "pcs",
+            "price": "308",
+            "currency": "RUB",
+            "availability": "unknown",
+            "url": "https://vkusvill.ru/goods/yaytso-kurinoe-s0-59422/",
+            "retrieved_at": "2026-11-25T19:54:49.127941Z",
+            "ingredients": "ООО \"ПТИЦЕФАБРИКА \"СМЕТАНИНО\":яйца куриные пищевые;",
+            "nutrition": {
+              "protein_g": "12.7",
+              "fat_g": "11.5",
+              "carbohydrate_g": "0.7",
+              "energy_kcal": "157.1"
+            }
+          }
+        ],
+        "selected_offer": null,
+        "package_count": null,
+        "estimated_total": null
+      },
+      {
+        "ingredient_id": "olive_oil",
+        "unit": "ml",
+        "required_quantity": "100",
+        "inventory_quantity": "0",
+        "missing_quantity": "100",
+        "matched_offers": [],
+        "selected_offer": null,
+        "package_count": null,
+        "estimated_total": null
+      },
+      {
+        "ingredient_id": "rice",
+        "unit": "g",
+        "required_quantity": "1100",
+        "inventory_quantity": "500",
+        "missing_quantity": "600",
+        "matched_offers": [
+          {
+            "allergens_status": "unknown",
+            "allergens": null,
+            "retailer": "vkusvill",
+            "product_id": "59756",
+            "ingredient_id": "rice",
+            "title": "Рис круглозерный шлифованный, 900 г",
+            "brand": null,
+            "package_quantity": "900.000",
+            "package_unit": "g",
+            "price": "146",
+            "currency": "RUB",
+            "availability": "unknown",
+            "url": "https://vkusvill.ru/goods/ris-kruglozernyy-shlifovannyy-59756/",
+            "retrieved_at": "2026-11-25T19:54:48.101598Z",
+            "ingredients": "ООО \"ТД\"ИНВЕСТПРОМ-ОПТ\":рис круглозерный шлифованный первого сорта; ООО \"ВИТОЛИНКА\":рис круглозерный шлифованный 1 сорт.; ООО \"АГРО-АЛЬЯНС\":Крупа рисовая шлифованная (рис круглозерный);",
+            "nutrition": null
+          },
+          {
+            "allergens_status": "unknown",
+            "allergens": null,
+            "retailer": "vkusvill",
+            "product_id": "65824",
+            "ingredient_id": "rice",
+            "title": "Рис длиннозерный шлифованный пропаренный",
+            "brand": null,
+            "package_quantity": "500.000",
+            "package_unit": "g",
+            "price": "94",
+            "currency": "RUB",
+            "availability": "unknown",
+            "url": "https://vkusvill.ru/goods/ris-dlinnozernyy-shlifovannyy-proparennyy-65824/",
+            "retrieved_at": "2026-11-25T19:54:48.101598Z",
+            "ingredients": "ООО \"АВГУСТ\":рис длиннозерный шлифованный пропаренный; ООО \"ВИТОЛИНКА\":рис длиннозерный шлифованный пропаренный.;",
+            "nutrition": null
+          },
+          {
+            "allergens_status": "unknown",
+            "allergens": null,
+            "retailer": "vkusvill",
+            "product_id": "28616",
+            "ingredient_id": "rice",
+            "title": "Рис \"Жасмин\"",
+            "brand": null,
+            "package_quantity": "500.000",
+            "package_unit": "g",
+            "price": "155",
+            "currency": "RUB",
+            "availability": "unknown",
+            "url": "https://vkusvill.ru/goods/ris-zhasmin-28616/",
+            "retrieved_at": "2026-11-25T19:54:48.101598Z",
+            "ingredients": "ООО \"АВГУСТ\":рис длиннозерный шлифованный; ООО \"ВИТОЛИНКА\":рис шлифованный длиннозёрный «Жасмин»; ООО \"АГРО-АЛЬЯНС\":крупа рисовая шлифованная (рис жасмин).;",
+            "nutrition": null
+          }
+        ],
+        "selected_offer": null,
+        "package_count": null,
+        "estimated_total": null
+      },
+      {
+        "ingredient_id": "tomato",
+        "unit": "g",
+        "required_quantity": "625",
+        "inventory_quantity": "300",
+        "missing_quantity": "325",
+        "matched_offers": [
+          {
+            "allergens_status": "unknown",
+            "allergens": null,
+            "retailer": "vkusvill",
+            "product_id": "69992",
+            "ingredient_id": "tomato",
+            "title": "Томаты сливка Фламенко, 450 г",
+            "brand": null,
+            "package_quantity": "450.000",
+            "package_unit": "g",
+            "price": "265",
+            "currency": "RUB",
+            "availability": "unknown",
+            "url": "https://vkusvill.ru/goods/tomaty-slivka-flamenko-69992/",
+            "retrieved_at": "2026-11-25T19:54:52.709581Z",
+            "ingredients": "ООО \"ТОРГОВЫЙ ДОМ \"РОСТ\":Томаты свежие;",
+            "nutrition": {
+              "protein_g": "1.1",
+              "fat_g": "0.2",
+              "carbohydrate_g": "3.8",
+              "energy_kcal": "21.4"
+            }
+          }
+        ],
+        "selected_offer": null,
+        "package_count": null,
+        "estimated_total": null
+      }
+    ],
+    "priced_subtotal": "0.00",
+    "estimated_total": null
+  },
+  "candidate_ids": [
+    "golden-rice",
+    "golden-chicken"
+  ],
+  "violations": [
+    {
+      "code": "no_compatible_offer",
+      "message": "No eligible priced offer for chicken_breast."
+    },
+    {
+      "code": "no_compatible_offer",
+      "message": "No eligible priced offer for egg."
+    },
+    {
+      "code": "no_compatible_offer",
+      "message": "No eligible priced offer for olive_oil."
+    },
+    {
+      "code": "no_compatible_offer",
+      "message": "No eligible priced offer for rice."
+    },
+    {
+      "code": "no_compatible_offer",
+      "message": "No eligible priced offer for tomato."
+    }
+  ],
+  "attempts": 2,
+  "valid": false
+}

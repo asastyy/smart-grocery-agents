@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-11-26T09:58:17.513530+00:00",
+  "package": "yandex-lavka-mcp",
+  "version": "0.1.6",
+  "mcp_sdk": "1.30.0",
+  "transport": "stdio",
+  "session_source": "explicit empty isolated config",
+  "browser_cookies_read": false,
+  "cart_or_order_calls": false,
+  "initialize": {
+    "protocol_version": "2025-11-25",
+    "server_name": "yandex-lavka",
+    "server_version": "1.30.0"
+  },
+  "tool_names": [
+    "lavka_status",
+    "set_location",
+    "list_addresses",
+    "use_address",
+    "set_delivery_address",
+    "search_products",
+    "get_product",
+    "list_categories",
+    "get_category_group",
+    "get_category_products",
+    "view_cart",
+    "add_to_cart",
+    "update_cart_item",
+    "clear_cart",
+    "checkout_preview",
+    "confirm_order",
+    "cancel_order",
+    "list_payment_methods",
+    "set_payment_method",
+    "active_orders",
+    "order_history",
+    "get_order"
+  ],
+  "results": {
+    "lavka_status": {
+      "is_error": false,
+      "response": [
+        {
+          "authenticated": false,
+          "location_set": false,
+          "location": null,
+          "base_url": "default"
+        }
+      ]
+    },
+    "search_products": {
+      "is_error": false,
+      "response": [
+        {
+          "ok": false,
+          "error": "Not signed in. Run the one-time cookie capture (see README) and set your session with the setup tooling first."
+        }
+      ]
+    },
+    "get_product": {
+      "is_error": false,
+      "response": [
+        {
+          "ok": false,
+          "error": "Not signed in. Run the one-time cookie capture (see README) and set your session with the setup tooling first."
+        }
+      ]
+    }
+  },
+  "wheel_sha256": "ce0457725472cdcac405eb8fbe8194f96c36dda76e3f491541f20e1cc20c4dd2"
+}

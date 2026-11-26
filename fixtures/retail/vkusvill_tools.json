@@ -1,0 +1,380 @@
+{
+  "tools": [
+    {
+      "name": "vkusvill_orders_history",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "description": "Номер страницы",
+            "default": 1,
+            "minimum": 1,
+            "maximum": 99999
+          }
+        }
+      },
+      "description": "Список заказов пользователя во ВкусВилл за последние 30 дней. Возвращает id, id_general (отображаемый номер заказа), created_at (timestamp создания заказа), service (Доставка/Самовывоз), status_name (текущий статус заказа), price, products: id, name. Limit фиксирован 10/страница; используйте page."
+    },
+    {
+      "name": "vkusvill_shops",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "description": "Номер страницы",
+            "default": 1,
+            "minimum": 1,
+            "maximum": 99999
+          },
+          "id_region_filter": {
+            "type": "integer",
+            "description": "ID региона для фильтра",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 999999999
+          },
+          "id_city_filter": {
+            "type": "integer",
+            "description": "ID города для фильтра",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 999999999
+          },
+          "id_subway_filter": {
+            "type": "integer",
+            "description": "ID метро для фильтра",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 999999999
+          },
+          "id_feature_filter": {
+            "type": "integer",
+            "description": "ID особенности для фильтра",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 999999999
+          }
+        }
+      },
+      "description": "Поиск магазинов ВкусВилл. Возвращает адрес, координаты, контакты, режим работы, особенности. Для получения списка доступных фильтров вызвать с параметром page=1. Limit фиксирован 10/страница; используйте page."
+    },
+    {
+      "name": "vkusvill_products_search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string",
+            "description": "Поисковый запрос",
+            "default": "",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "page": {
+            "type": "integer",
+            "description": "Номер страницы",
+            "default": 1,
+            "minimum": 1,
+            "maximum": 99999
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Количество на странице",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 10
+          },
+          "category_id": {
+            "type": "integer",
+            "description": "Ищет и возвращает список товаров ВкусВилл по id категории. Список категорий возвращается в facets[categories] при выполнении поиска",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 999999
+          },
+          "sort": {
+            "type": "string",
+            "description": "Сортировка товаров, варианты: price_asc - цена по возврастанию, price_desc - цена по убыванию, rating - сначала товары с высоким рейтингом, popularity - сначала самый популярные товары, new - сначала новинки",
+            "default": "popularity",
+            "enum": [
+              "price_asc",
+              "price_desc",
+              "rating",
+              "popularity",
+              "new"
+            ]
+          },
+          "vvonly": {
+            "type": "integer",
+            "description": "Искать только товары бренда ВкусВилл",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1
+          },
+          "mode": {
+            "type": "string",
+            "description": "Режим набора полей: full - все поля, short - краткий набор, custom - выбранные поля",
+            "default": "short",
+            "enum": [
+              "full",
+              "short",
+              "custom"
+            ]
+          },
+          "fields": {
+            "type": "array",
+            "description": "Поля товара для режима custom",
+            "default": [],
+            "items": {
+              "type": "string",
+              "enum": [
+                "id",
+                "name",
+                "slug",
+                "description",
+                "price",
+                "unit",
+                "weight",
+                "rating",
+                "url",
+                "images",
+                "category",
+                "properties"
+              ]
+            },
+            "minItems": 0
+          }
+        }
+      },
+      "description": "Поиск товаров ВкусВилл по текстовому запросу. Возвращает id, описание, цену, наличие (только для авторизованного), рейтинг, состав, пищевую ценность (КБЖУ) и фото товаров. mode: full|short|custom. Для custom передайте fields из: id, name, slug, description, price, available_quantity, unit, weight, rating, url, images, category, properties. sort: popularity|rating|price_asc|price_desc|new. Используйте page и limit."
+    },
+    {
+      "name": "vkusvill_product_details",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID товара ВкусВилл",
+            "minimum": 1,
+            "maximum": 999999999
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "description": "Возвращает детальную информацию о товаре ВкусВилл по его id, который присылает vkusvill_products_search: состав, пищевая ценность (КБЖУ), фото, рейтинг, цена товара, наличие (только для авторизованного). Для подбора товаров под особые требования."
+    },
+    {
+      "name": "vkusvill_product_barcode",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "barcode": {
+            "type": "string",
+            "description": "Штрихкод товара в формате EAN-13. Должен состоять строго из 13 цифр. Разрешены ведущие нули.",
+            "pattern": "^\\d{13}$"
+          }
+        },
+        "required": [
+          "barcode"
+        ]
+      },
+      "description": "Возвращает детальную информацию о товаре ВкусВилл по его штрихкоду: состав, пищевая ценность (КБЖУ), фото, рейтинг, цена товара, наличие (только для авторизованного)."
+    },
+    {
+      "name": "vkusvill_product_analogs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID товара ВкусВилл",
+            "minimum": 1,
+            "maximum": 999999999
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "description": "Возвращает аналоги товара ВкусВилл по его id, который присылает vkusvill_products_search. Возвращает id, описание, цену, наличие (только для авторизованного), рейтинг, состав, пищевую ценность (КБЖУ) и фото товаров."
+    },
+    {
+      "name": "vkusvill_cart_link_create",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "description": "Массив объектов товаров",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 999999999
+                },
+                "q": {
+                  "type": "number",
+                  "format": "float",
+                  "minimum": 0.01,
+                  "maximum": 40
+                }
+              }
+            },
+            "maxItems": 100
+          }
+        },
+        "required": [
+          "products"
+        ]
+      },
+      "description": "Создаёт ссылку на корзину ВкусВилл. Вход: products(1..100), item: {id:int>0, q:number 0.01..40}."
+    },
+    {
+      "name": "vkusvill_products_discount",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Тип скидки, варианты: card - скидка по карте лояльности, quantity - скидка при покупке от нескольких товаров",
+            "default": "card",
+            "enum": [
+              "card",
+              "quantity"
+            ]
+          },
+          "page": {
+            "type": "integer",
+            "description": "Номер страницы",
+            "default": 1,
+            "minimum": 1,
+            "maximum": 99999
+          },
+          "sort": {
+            "type": "string",
+            "description": "Сортировка товаров, варианты: price_asc - цена по возврастанию, price_desc - цена по убыванию, rating - сначала товары с высоким рейтингом, popularity - сначала самый популярные товары, new - сначала новинки, name_asc - по алфавиту А-Я, name_desc - по алфавиту Я-А,",
+            "default": "popularity",
+            "enum": [
+              "price_asc",
+              "price_desc",
+              "rating",
+              "popularity",
+              "new",
+              "name_asc",
+              "name_desc"
+            ]
+          },
+          "vvonly": {
+            "type": "integer",
+            "description": "Возвращать только товары бренда ВкусВилл",
+            "default": 1,
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      },
+      "description": "Получение списка акционных товаров (скидок) ВкусВилл по текстовому запросу. Возвращает id, описание, цену, рейтинг, состав, пищевую ценность (КБЖУ) и фото товаров. sort: popularity|rating|price_asc|price_desc|new. Limit фиксирован 10/страница; используйте page."
+    },
+    {
+      "name": "vkusvill_product_lp",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "description": "Возвращает Любимый продукт пользователя."
+    },
+    {
+      "name": "vkusvill_discounts_personal",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "description": "Возвращает товары со скидкой на основе ваших предпочтений (акция 6 скидок). В корзине скидка будет максимум на 6 товаров типа personal. Первый вызов в сутки вернет 18 товаров, последующие разы или если в других каналах пользователь уже обновлял 6 скидок, вернет последние 6. Все сгенерированные скидки отображаются в поиске."
+    },
+    {
+      "name": "vkusvill_recipes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sort": {
+            "type": "string",
+            "description": "Сортировка рецептов, варианты: popularity - сначала самый популярные рецепты, new - сначала новинки",
+            "enum": [
+              "popularity",
+              "new"
+            ]
+          },
+          "page": {
+            "type": "integer",
+            "description": "Номер страницы",
+            "minimum": 1,
+            "maximum": 99999
+          },
+          "q": {
+            "type": "string",
+            "description": "Поисковый запрос",
+            "minLength": 0,
+            "maxLength": 255
+          },
+          "id_feature_filter": {
+            "type": "integer",
+            "description": "ID особенности для фильтра",
+            "minimum": 0,
+            "maximum": 999999999
+          },
+          "id_cooking_time_filter": {
+            "type": "integer",
+            "description": "ID времени готовки для фильтра",
+            "minimum": 0,
+            "maximum": 999999999
+          },
+          "id_cooking_method_filter": {
+            "type": "integer",
+            "description": "ID способа приготовления для фильтра",
+            "minimum": 0,
+            "maximum": 999999999
+          },
+          "id_complexity_filter": {
+            "type": "integer",
+            "description": "ID сложности для фильтра",
+            "minimum": 0,
+            "maximum": 999999999
+          },
+          "id_category_filter": {
+            "type": "integer",
+            "description": "ID категории для фильтра",
+            "minimum": 0,
+            "maximum": 999999999
+          },
+          "id_exclude_allergens_filter": {
+            "type": "array",
+            "description": "Массив ID аллергенов, которые нужно исключить",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 999999999
+            }
+          }
+        },
+        "required": [
+          "sort",
+          "page",
+          "q",
+          "id_feature_filter",
+          "id_cooking_time_filter",
+          "id_cooking_method_filter",
+          "id_complexity_filter",
+          "id_category_filter",
+          "id_exclude_allergens_filter"
+        ]
+      },
+      "description": "Поиск рецептов ВкусВилл по текстовому запросу и по фильтрам. Возвращает список ингредиентов, пищевую ценность на 100г, пошаговое описание процесса приготовления, фото. Для получения списка доступных фильтров вызвать с параметром page=1. Limit фиксирован 10/страница; используйте page."
+    }
+  ]
+}
