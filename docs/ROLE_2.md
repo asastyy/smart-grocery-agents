@@ -17,33 +17,15 @@ invalid response. The LLM does not calculate prices or decide validity.
 
 ## Provider configuration
 
-The implementation uses the existing OpenAI-compatible client and does not
-lock the project to one provider. The live integration was verified with Groq:
+The implementation uses a provider-neutral Chat Completions client. Configure
+the endpoint and model in the local `.env`:
 
 ```dotenv
 MOCK_LLM=false
-LLM_API_KEY=YOUR_GROQ_API_KEY
-LLM_BASE_URL=https://api.groq.com/openai/v1
-LLM_MODEL=qwen/qwen3.8-27b
+LLM_API_KEY=YOUR_LOCAL_API_KEY
+LLM_BASE_URL=https://provider.example/v1
+LLM_MODEL=provider-model-name
 ```
 
-Gemini through Google AI Studio:
-
-```dotenv
-MOCK_LLM=false
-LLM_API_KEY=YOUR_GEMINI_API_KEY
-LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
-LLM_MODEL=gemini-3.8-flash
-```
-
-Qwen through DashScope / QwenCloud:
-
-```dotenv
-MOCK_LLM=false
-LLM_API_KEY=YOUR_DASHSCOPE_API_KEY
-LLM_BASE_URL=https://maas.qwencloudapi.com/compatible-mode/v1
-LLM_MODEL=qwen3.8-max
-```
-
-Store the key only in a local `.env`; never commit it. Before the presentation,
-the team must perform one real request with the chosen provider and model.
+Store the key only in a local `.env`; never commit it. `MOCK_LLM=true` runs
+the deterministic offline scenario without a network request.

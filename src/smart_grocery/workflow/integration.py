@@ -9,7 +9,8 @@ from smart_grocery.schemas.foodcom import AllergenMetadata, Ingredient, Ingredie
 from smart_grocery.schemas.integration import IntegrationResult, InventoryItem, MealPlan, ShoppingLine, ShoppingList, UserProfile
 from smart_grocery.tools.budget_v2 import measure_plan
 from smart_grocery.tools.grocery_provider import GroceryProvider, ProviderUnavailable
-from smart_grocery.tools.recipes import rank_recipes
+from smart_grocery.tools.inventory import available_inventory
+from smart_grocery.tools.personalization import personalize_recipes
 from smart_grocery.workflow.foodcom import run_candidate_loop
 
 
@@ -19,24 +20,6 @@ def _meets_allergy_constraint(item: AllergenMetadata, allergies: set[str]) -> bo
         and item.allergens is not None
         and allergies.isdisjoint(item.allergens)
     )
-
-
-def _select_candidates(profile: UserProfile, request: dict, recipes: Sequence[Recipe]) -> list[Recipe]:
-    allergies = set(profile.allergies)
-    excluded = allergies | set(profile.disliked_ingredients)
-    eligible = [
-        recipe for recipe in recipes
-        if _meets_allergy_constraint(recipe, allergies)
-        and excluded.isdisjoint(item.ingredient_id for item in recipe.ingredients)
-    ]
-    ranked = rank_recipes(request, [recipe.model_dump() for recipe in eligible])
-    cuisines = {cuisine.casefold() for cuisine in profile.preferred_cuisines}
-    goals = set(profile.goals)
-    ranked.sort(key=lambda item: (
-        (item["cuisine"] or "").casefold() not in cuisines,
-        -len(goals.intersection(item["tags"])),
-    ))
-    return [Recipe.model_validate(item) for item in ranked[:MAX_CANDIDATES]]
 
 
 def _shop_for_ingredients(
@@ -113,13 +96,19 @@ def run_integration_workflow(
     request = Request(
         days=days, people=profile.household_size, budget=profile.budget, currency=profile.currency,
         diet=profile.dietary_pattern, max_cook_minutes=profile.max_cooking_time,
-        pantry=[
-            Ingredient.model_validate(item, from_attributes=True) for item in inventory
-            if item.confidence == 1 and item.quantity > 0 and (item.expiry_date is None or item.expiry_date >= today)
-        ],
+        pantry=[Ingredient.model_validate(item, from_attributes=True)
+                for item in available_inventory(inventory, as_of=today)],
     )
     request_data = request.model_dump(mode="json")
-    candidates = _select_candidates(profile, request_data, recipes)
+    request_data.update({
+        "preferred_cuisines": profile.preferred_cuisines,
+        "goals": profile.goals,
+        "candidate_order": "descending_personalization_score_with_diversity",
+    })
+    personalization = personalize_recipes(
+        profile, recipes, inventory, as_of=today, limit=MAX_CANDIDATES
+    )
+    candidates = personalization.ranked_recipes
     if not candidates:
         return IntegrationResult(violations=[
             Violation(code="no_candidates", message="No recipes match the profile and confirmed ingredient data.")
