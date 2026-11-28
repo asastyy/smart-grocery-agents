@@ -10,7 +10,7 @@ COPY data/ data/
 COPY examples/ examples/
 COPY fixtures/ fixtures/
 COPY scripts/ scripts/
-RUN useradd --create-home appuser
+RUN useradd --create-home appuser && mkdir -p /app/outputs && chown appuser:appuser /app/outputs
 USER appuser
 EXPOSE 8501
 HEALTHCHECK --interval=10s --timeout=3s --start-period=20s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=2)"

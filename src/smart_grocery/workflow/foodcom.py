@@ -23,7 +23,7 @@ def run_foodcom_workflow(request):
     return run_candidate_loop(request, candidates, assess)
 
 
-def run_candidate_loop(request, candidates, assess, *, planner=None):
+def run_candidate_loop(request, candidates, assess, *, planner=None, feedback_enricher=None):
     """Reuse the bounded planner and feedback loop with a choice of assessment."""
     planner = plan_meals if planner is None else planner
     trace = []
@@ -35,4 +35,6 @@ def run_candidate_loop(request, candidates, assess, *, planner=None):
         if assessment["valid"]:
             break
         feedback = assessment["feedback"].splitlines()
+        if attempt == 0 and feedback_enricher is not None:
+            feedback.extend(feedback_enricher(assessment))
     return {"plan": plan, "assessment": assessment, "agent_trace": trace}

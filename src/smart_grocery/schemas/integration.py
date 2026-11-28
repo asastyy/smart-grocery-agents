@@ -27,8 +27,11 @@ class UserProfile(Model):
 
 
 class InventoryItem(Ingredient):
+    inventory_item_id: str | None = None
     display_name: str = Field(min_length=1)
     expiry_date: date | None = None
+    opened: bool | None = None
+    status: Literal["available", "reserved", "depleted", "discarded"] = "available"
     source: str = Field(min_length=1)
     confidence: Decimal = Field(ge=0, le=1)
 
@@ -80,5 +83,6 @@ class IntegrationResult(Model):
     shopping_list: ShoppingList | None = None
     candidate_ids: list[str] = Field(default_factory=list)
     violations: list[Violation] = Field(default_factory=list)
+    recommendations: list[str] = Field(default_factory=list)
     attempts: int = Field(default=0, ge=0)
     valid: bool = False

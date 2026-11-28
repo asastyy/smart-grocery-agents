@@ -48,21 +48,18 @@ docker compose down
 текущий GitHub-токен не имеет права `workflow`; владелец репозитория может
 перенести файл в `.github/workflows/tests.yml`.
 
-## Gemini
+## Сетевой режим
 
-Официальный OpenAI-compatible endpoint позволяет оставить общий клиент роли 2
-и роли 3. Рекомендуемая конфигурация:
+Роли 2 и 3 используют общий совместимый Chat Completions API. Пример
+конфигурации:
 
 ```dotenv
 MOCK_LLM=false
-LLM_API_KEY=YOUR_LOCAL_GEMINI_KEY
-LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
-LLM_MODEL=gemini-3.5-flash-lite
-CRITIC_MODEL=gemini-3.5-flash-lite
+LLM_API_KEY=YOUR_LOCAL_API_KEY
+LLM_BASE_URL=https://provider.example/v1
+LLM_MODEL=provider-model-name
+CRITIC_MODEL=provider-model-name
 ```
-
-Документация: https://ai.google.dev/gemini-api/docs/openai/
-Модель: https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite
 
 Ключ хранится только в `.env`. Для живой проверки сначала запустите обычный
 запрос, затем запрос с пустыми запасами и бюджетом 0 CU. Во втором результате
@@ -72,7 +69,7 @@ Python-оценка. Невыполнимый бюджет может остат
 ## Что показать на защите
 
 1. Mock-сценарий как воспроизводимый запуск проекта.
-2. Live-сценарий Gemini с названием модели в верхней части интерфейса.
+2. Сетевой сценарий с названием модели в верхней части интерфейса.
 3. Меню и рассчитанную корзину.
 4. Бюджет 0 CU, нарушения, совет отдельного критика и вторую попытку.
 5. Объяснение, что LLM выбирает и советует, а цены и валидность считает Python.
@@ -83,4 +80,4 @@ Python-оценка. Невыполнимый бюджет может остат
 - Пошаговых инструкций приготовления в наборе нет.
 - Часть исходных количеств хранится в `pcs`; несовместимые единицы не
   конвертируются автоматически.
-- Live-проверка требует локального Gemini API-ключа.
+- Сетевая проверка требует локального API-ключа выбранного провайдера.

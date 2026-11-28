@@ -125,7 +125,7 @@ def test_expired_and_unconfirmed_inventory_and_mismatched_units(golden):
 
 def test_streamlit_golden_and_profile_update(golden):
     app = AppTest.from_file(ROOT / "app.py", default_timeout=30).run()
-    app.toggle(key="sprint_demo").set_value(True).run()
+    app.radio(key="section").set_value("Профиль и запасы").run()
     app.button(key="sprint_submit").click().run()
     assert not app.exception
     assert app.metric[0].value == "1710.00 ₽"

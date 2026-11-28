@@ -8,3 +8,5 @@ __pycache__
 .pytest_cache
 work
 outputs
+
+data/raw

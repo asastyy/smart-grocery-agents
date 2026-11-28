@@ -1,6 +1,9 @@
 """Streamlit controls for the offline integration demo."""
+import os
+
 import streamlit as st
 from pydantic import ValidationError
+from openai import OpenAIError
 
 from smart_grocery.schemas.integration import UserProfile
 from smart_grocery.workflow.golden import load_golden_case
@@ -12,7 +15,7 @@ VIOLATIONS = {
     "no_candidates": "По этому профилю нет подходящих рецептов с нужными данными о составе.",
     "no_compatible_offer": "Для части продуктов нет подходящего предложения.",
     "provider_unavailable": "Поиск некоторых товаров недоступен.",
-    "over_budget": "Оценённая стоимость превышает бюджет.",
+    "over_budget": "Оцененная стоимость превышает бюджет.",
     "unit_mismatch": "Для части продуктов единицы рецепта и запасов различаются.",
 }
 
@@ -26,6 +29,15 @@ def render_integration_demo() -> None:
     profile = case.profile
     st.caption("Учебный сценарий. Рецепты, сведения о составе и цены заданы в тестовых данных.")
     st.subheader("Профиль и запасы")
+    recipe_source = st.selectbox("Рецепты", ["Тестовый набор", "Каталог источников"], key="sprint_recipe_source")
+    store_source = st.selectbox("Цены", ["Тестовый магазин", "ВкусВилл: сохраненный снимок", "ВкусВилл: свежий запрос"], key="sprint_store_source")
+    if recipe_source == "Каталог источников":
+        from smart_grocery.catalog.loader import planning_recipes
+        case.recipes = planning_recipes()
+        st.caption("В подбор попадают только записи без структурных блокеров. При аллергиях неподтвержденный состав исключается.")
+    llm_available = os.getenv("MOCK_LLM", "true").lower() == "false" and bool(os.getenv("LLM_API_KEY")) and bool(os.getenv("LLM_MODEL"))
+    use_llm = st.checkbox("Планирование через настроенную модель", value=False, disabled=not llm_available, key="sprint_use_llm")
+    st.caption(f"Планировщик: {os.getenv('LLM_MODEL')}" if use_llm else "Планировщик: автономный алгоритм")
     profile_col, inventory_col = st.columns(2)
     with inventory_col:
         st.write("Запасы для сценария")
@@ -62,25 +74,67 @@ def render_integration_demo() -> None:
         except ValidationError:
             st.error("Проверьте параметры профиля. Для аллергенов и исключений используйте идентификаторы вроде peanut.")
         else:
-            st.session_state.sprint_result = run_integration_workflow(
-                submitted_profile, case.inventory, case.recipes, provider, days=days, mock_planner=True,
-            )
+            live_provider = None
+            if store_source == "ВкусВилл: сохраненный снимок":
+                from smart_grocery.retail.snapshot import snapshot_provider
+                provider = snapshot_provider()
+            elif store_source == "ВкусВилл: свежий запрос":
+                from smart_grocery.retail.mcp import MCPClient
+                from smart_grocery.retail.vkusvill import VkusVillProvider
+                live_provider = VkusVillProvider(MCPClient(token=os.getenv("VKUSVILL_ACCESS_TOKEN")))
+                provider = live_provider
+            try:
+                with st.spinner("Составляем меню и рассчитываем покупки…"):
+                    st.session_state.sprint_result = run_integration_workflow(
+                        submitted_profile, case.inventory, case.recipes, provider, days=days,
+                        mock_planner=not use_llm,
+                    )
+                st.session_state.sprint_titles = {recipe.recipe_id: recipe for recipe in case.recipes}
+            except OpenAIError:
+                st.error("Модель сейчас недоступна. Проверьте локальные настройки или выберите автономный планировщик.")
+            finally:
+                if live_provider is not None:
+                    live_provider.close()
 
+    signature = (recipe_source, store_source, use_llm)
+    if submit:
+        st.session_state.sprint_sources = signature
+    elif st.session_state.get("sprint_sources") != signature:
+        st.session_state.pop("sprint_result", None)
     result = st.session_state.get("sprint_result")
     if result is None:
         return
+    if result.recommendations:
+        with st.expander("Рекомендации критика"):
+            for recommendation in result.recommendations:
+                st.write(recommendation)
     for issue in result.violations:
         st.warning(VIOLATIONS.get(issue.code, issue.message))
     if result.plan is None or result.shopping_list is None:
         return
 
-    titles = {recipe.recipe_id: recipe.title for recipe in case.recipes}
+    result_recipes = st.session_state.get("sprint_titles", {})
+    titles = {key: recipe.title for key, recipe in result_recipes.items()}
     st.subheader("Меню")
     st.dataframe([
-        {"День": meal.day, "Приём пищи": "Обед" if meal.slot == "lunch" else "Ужин",
+        {"День": meal.day, "Прием пищи": "Обед" if meal.slot == "lunch" else "Ужин",
          "Блюдо": titles[meal.recipe_id], "Порций": int(meal.servings)}
         for meal in result.plan.meals
     ], hide_index=True)
+
+    with st.expander("Рецепты выбранных блюд"):
+        for recipe_id in dict.fromkeys(meal.recipe_id for meal in result.plan.meals):
+            recipe = result_recipes.get(recipe_id)
+            if recipe is None:
+                continue
+            st.markdown(f"**{recipe.title}**")
+            if recipe.instructions:
+                for number, instruction in enumerate(recipe.instructions, 1):
+                    st.write(f"{number}. {instruction}")
+            else:
+                st.caption("Инструкции отсутствуют в этом наборе.")
+            if recipe.source:
+                st.link_button("Источник рецепта", recipe.source)
 
     st.subheader("Покупки")
     shopping = result.shopping_list
