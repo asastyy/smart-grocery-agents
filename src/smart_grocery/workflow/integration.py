@@ -96,7 +96,10 @@ def run_integration_workflow(
     days: int,
     as_of: date | None = None,
     mock_planner: bool = False,
+    slots: tuple[str, ...] = ("lunch", "dinner"),
 ) -> IntegrationResult:
+    if not slots or len(set(slots)) != len(slots) or not set(slots) <= {"breakfast", "lunch", "dinner"}:
+        raise ValueError("Invalid requested meal slots")
     today = as_of if as_of is not None else date.today()
     request = Request(
         days=days, people=profile.household_size, budget=profile.budget, currency=profile.currency,
@@ -110,8 +113,12 @@ def run_integration_workflow(
         "goals": profile.goals,
         "candidate_order": "descending_personalization_score_with_diversity",
     })
+    # A common candidate pool must fit every requested slot. Separate breakfast
+    # planning is supported; mixed-slot assignment requires a future per-slot planner.
+    slot_recipes = [recipe for recipe in recipes
+                    if not recipe.meal_slots or set(slots) <= set(recipe.meal_slots)]
     personalization = personalize_recipes(
-        profile, recipes, inventory, as_of=today, limit=MAX_CANDIDATES
+        profile, slot_recipes, inventory, as_of=today, limit=MAX_CANDIDATES
     )
     candidates = personalization.ranked_recipes
     if not candidates:
@@ -121,7 +128,7 @@ def run_integration_workflow(
 
     def assess(raw_plan: dict) -> dict:
         parsed = Plan.model_validate(raw_plan)
-        balances, violations, incomplete = measure_plan(request, parsed, candidates)
+        balances, violations, incomplete = measure_plan(request, parsed, candidates, slots=slots)
         shopping_list = _shop_for_ingredients(profile, balances, provider, violations, incomplete)
         return {
             "valid": not violations,
@@ -153,7 +160,7 @@ def run_integration_workflow(
 
     planner = partial(plan_meals, mock=True) if mock_planner else None
     run = run_candidate_loop(request_data, candidates, assess, planner=planner,
-                             feedback_enricher=enrich_feedback)
+                             feedback_enricher=enrich_feedback, slots=slots)
     final = run["assessment"]
     return IntegrationResult(
         plan=MealPlan.model_validate({**run["plan"], "days": days, "planned_ingredients": final["planned_ingredients"]}),

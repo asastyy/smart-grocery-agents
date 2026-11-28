@@ -1,0 +1,54 @@
+[
+  {
+    "source": "https://medlineplus.gov/recipes/chicken-soup-with-tortilla/",
+    "source_sha256": "6ff73462208ae9de81bb162151ef474bac79e964de88145080c360de544f333d",
+    "title": "Chicken Soup with Tortilla",
+    "status": "excluded",
+    "issue": "liquid_ounce_dimension_ambiguous",
+    "source_lines": [
+      "2 cans (14.5 ounces each) fat-free chicken broth (see notes)"
+    ],
+    "normalized_quantity": null,
+    "normalized_unit": null,
+    "reason": "The source does not distinguish fluid ounces from mass ounces for this liquid. Do not guess a density or a can volume."
+  },
+  {
+    "source": "https://medlineplus.gov/recipes/curried-pumpkin-soup/",
+    "source_sha256": "3df05784d4389bc12a2669514ddb01d7444b7fc313cdb7c170d112d1f459a6ca",
+    "title": "Curried Pumpkin Soup",
+    "status": "excluded",
+    "issue": "liquid_ounce_dimension_ambiguous",
+    "source_lines": [
+      "1 can (12 ounces) evaporated milk"
+    ],
+    "normalized_quantity": null,
+    "normalized_unit": null,
+    "reason": "The source does not distinguish fluid ounces from mass ounces for this liquid. Do not guess a density or a can volume."
+  },
+  {
+    "source": "https://medlineplus.gov/recipes/ham-and-vegetable-chowder/",
+    "source_sha256": "6e1898f77a2e69a6cc8ef7ee47aa06fefce5bbab5405a9975931c364bcdf4d8c",
+    "title": "Ham and Vegetable Chowder",
+    "status": "excluded",
+    "issue": "liquid_ounce_dimension_ambiguous",
+    "source_lines": [
+      "2 cans (14.5 ounces each) low-sodium chicken broth*"
+    ],
+    "normalized_quantity": null,
+    "normalized_unit": null,
+    "reason": "The source does not distinguish fluid ounces from mass ounces for this liquid. Do not guess a density or a can volume."
+  },
+  {
+    "source": "https://medlineplus.gov/recipes/minestrone-soup/",
+    "source_sha256": "8e4788bcce08ffabd2db65ac94d2657b3d97827f7f3e206b49cf2a9560687a58",
+    "title": "Minestrone Soup",
+    "status": "excluded",
+    "issue": "liquid_ounce_dimension_ambiguous",
+    "source_lines": [
+      "2 cans (15 ounces each) low-sodium broth*"
+    ],
+    "normalized_quantity": null,
+    "normalized_unit": null,
+    "reason": "The source does not distinguish fluid ounces from mass ounces for this liquid. Do not guess a density or a can volume."
+  }
+]

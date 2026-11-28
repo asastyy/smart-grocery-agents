@@ -29,12 +29,19 @@ def render_integration_demo() -> None:
     profile = case.profile
     st.caption("Учебный сценарий. Рецепты, сведения о составе и цены заданы в тестовых данных.")
     st.subheader("Профиль и запасы")
-    recipe_source = st.selectbox("Рецепты", ["Тестовый набор", "Каталог источников"], key="sprint_recipe_source")
+    recipe_source = st.selectbox("Рецепты", ["Тестовый набор", "Каталог источников", "Рецепты с проверенными данными · 50"], key="sprint_recipe_source")
     store_source = st.selectbox("Цены", ["Тестовый магазин", "ВкусВилл: сохраненный снимок", "ВкусВилл: свежий запрос"], key="sprint_store_source")
     if recipe_source == "Каталог источников":
         from smart_grocery.catalog.loader import planning_recipes
         case.recipes = planning_recipes()
         st.caption("В подбор попадают только записи без структурных блокеров. При аллергиях неподтвержденный состав исключается.")
+    requested_slots = ("lunch", "dinner")
+    if recipe_source == "Рецепты с проверенными данными · 50":
+        from smart_grocery.catalog.reviewed import reviewed_planning_recipes
+        case.recipes = reviewed_planning_recipes()
+        meal_mode = st.selectbox("Приемы пищи", ["Обед и ужин", "Только завтрак"], key="sprint_meal_mode")
+        requested_slots = ("breakfast",) if meal_mode == "Только завтрак" else ("lunch", "dinner")
+        st.caption("Проверка по источнику, без пробного приготовления. Любая активная аллергия блокирует этот набор. Реальные цены на большинство ингредиентов пока отсутствуют.")
     llm_available = os.getenv("MOCK_LLM", "true").lower() == "false" and bool(os.getenv("LLM_API_KEY")) and bool(os.getenv("LLM_MODEL"))
     use_llm = st.checkbox("Планирование через настроенную модель", value=False, disabled=not llm_available, key="sprint_use_llm")
     st.caption(f"Планировщик: {os.getenv('LLM_MODEL')}" if use_llm else "Планировщик: автономный алгоритм")
@@ -87,7 +94,7 @@ def render_integration_demo() -> None:
                 with st.spinner("Составляем меню и рассчитываем покупки…"):
                     st.session_state.sprint_result = run_integration_workflow(
                         submitted_profile, case.inventory, case.recipes, provider, days=days,
-                        mock_planner=not use_llm,
+                        mock_planner=not use_llm, slots=requested_slots,
                     )
                 st.session_state.sprint_titles = {recipe.recipe_id: recipe for recipe in case.recipes}
             except OpenAIError:
@@ -96,7 +103,7 @@ def render_integration_demo() -> None:
                 if live_provider is not None:
                     live_provider.close()
 
-    signature = (recipe_source, store_source, use_llm)
+    signature = (recipe_source, store_source, use_llm, requested_slots)
     if submit:
         st.session_state.sprint_sources = signature
     elif st.session_state.get("sprint_sources") != signature:
@@ -117,7 +124,7 @@ def render_integration_demo() -> None:
     titles = {key: recipe.title for key, recipe in result_recipes.items()}
     st.subheader("Меню")
     st.dataframe([
-        {"День": meal.day, "Прием пищи": "Обед" if meal.slot == "lunch" else "Ужин",
+        {"День": meal.day, "Прием пищи": {"breakfast": "Завтрак", "lunch": "Обед", "dinner": "Ужин"}[meal.slot],
          "Блюдо": titles[meal.recipe_id], "Порций": int(meal.servings)}
         for meal in result.plan.meals
     ], hide_index=True)

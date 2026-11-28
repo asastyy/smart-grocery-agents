@@ -50,6 +50,7 @@ class Recipe(AllergenMetadata):
     instructions: list[str] | None = None
     cuisine: str | None = None
     meal_type: str | None = None
+    meal_slots: list[Literal["breakfast", "lunch", "dinner"]] = Field(default_factory=list)
     nutrition: dict[str, Decimal] | None = None
     source: str | None = None
 

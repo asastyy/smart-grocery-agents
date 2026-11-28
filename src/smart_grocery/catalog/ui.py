@@ -25,6 +25,11 @@ def cached_search(query,provider,quality,page,db_mtime):
 
 
 def render_catalog():
+    dataset = st.radio('Набор рецептов', ['Подготовленные 50', 'Поисковый каталог'], index=1, horizontal=True, key='catalog_dataset')
+    if dataset == 'Подготовленные 50':
+        from smart_grocery.catalog.reviewed_ui import render_reviewed_catalog
+        render_reviewed_catalog()
+        return
     st.subheader('Рецепты')
     if not DEFAULT_DB.exists() and list(DEFAULT_DB.parent.glob('catalog*.building.sqlite')):
         st.info('Идет подготовка поискового индекса каталога.');return

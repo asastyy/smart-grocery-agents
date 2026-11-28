@@ -1,0 +1,469 @@
+{
+  "checked_on": "2026-11-28",
+  "recipes": 50,
+  "source_audited_not_cooking_tested": true,
+  "human_cooking_validation": "not_performed",
+  "allergen_confirmed": 0,
+  "allergy_profiles_blocked": 6,
+  "dish_types": {
+    "breakfast": 6,
+    "main": 32,
+    "soup": 10,
+    "salad": 2
+  },
+  "scaling_and_missing_cases": 200,
+  "portion_sizes_checked": [
+    1,
+    2,
+    4,
+    7
+  ],
+  "sources_unchanged": true,
+  "prices": "not_verified_and_not_fabricated",
+  "details": [
+    {
+      "recipe_id": "ml_baked_berry_oatmeal",
+      "source_servings": "6",
+      "ingredients": 10,
+      "meal_slots": [
+        "breakfast"
+      ]
+    },
+    {
+      "recipe_id": "ml_beef_and_broccoli",
+      "source_servings": "7",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_berry_blast_off",
+      "source_servings": "4",
+      "ingredients": 4,
+      "meal_slots": [
+        "breakfast"
+      ]
+    },
+    {
+      "recipe_id": "ml_cheesy_potato_soup",
+      "source_servings": "6",
+      "ingredients": 10,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_chicken_and_black_bean_salsa_burritos",
+      "source_servings": "8",
+      "ingredients": 10,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_chicken_and_rice",
+      "source_servings": "6",
+      "ingredients": 18,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_chicken_cabbage_stir_fry",
+      "source_servings": "6",
+      "ingredients": 8,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_chicken_creole",
+      "source_servings": "10",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_chicken_mole",
+      "source_servings": "7",
+      "ingredients": 12,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_spinach_and_chicken_italian",
+      "source_servings": "7",
+      "ingredients": 6,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_creamy_potato_leek_soup",
+      "source_servings": "8",
+      "ingredients": 7,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_breakfast_banana_split",
+      "source_servings": "2",
+      "ingredients": 4,
+      "meal_slots": [
+        "breakfast"
+      ]
+    },
+    {
+      "recipe_id": "ml_fish_and_spinach_bake",
+      "source_servings": "4",
+      "ingredients": 7,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_green_pea_soup",
+      "source_servings": "4",
+      "ingredients": 6,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_green_salad_with_peas",
+      "source_servings": "6",
+      "ingredients": 5,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_spring_fling_vegetable_chowder",
+      "source_servings": "8",
+      "ingredients": 10,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_indian_lentils_and_pasta",
+      "source_servings": "6",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_kale_and_white_bean_soup",
+      "source_servings": "5",
+      "ingredients": 8,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_meatball_soup",
+      "source_servings": "9",
+      "ingredients": 12,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_squash_blossom_quesadilla",
+      "source_servings": "6",
+      "ingredients": 9,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_mushroom_bulgur_pilaf",
+      "source_servings": "6",
+      "ingredients": 8,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_one_pan_chicken_alfredo",
+      "source_servings": "8",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_one_pan_spaghetti",
+      "source_servings": "10",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_overnight_oatmeal",
+      "source_servings": "4",
+      "ingredients": 5,
+      "meal_slots": [
+        "breakfast"
+      ]
+    },
+    {
+      "recipe_id": "ml_pasta_caprese",
+      "source_servings": "4",
+      "ingredients": 7,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_pineapple_veggie_chicken",
+      "source_servings": "10",
+      "ingredients": 13,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_pozole_with_chicken",
+      "source_servings": "6",
+      "ingredients": 9,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_quick_beef_casserole",
+      "source_servings": "8",
+      "ingredients": 12,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_quick_lasagna",
+      "source_servings": "9",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_rice_bowl_southwestern_style",
+      "source_servings": "2",
+      "ingredients": 5,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_rice_with_black_beans_and_sausage",
+      "source_servings": "8",
+      "ingredients": 9,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_rice_with_chicken_and_vegetables",
+      "source_servings": "7",
+      "ingredients": 13,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_salsa_chicken",
+      "source_servings": "12",
+      "ingredients": 2,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_sauteed_mung_beans",
+      "source_servings": "8",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_savory_oatmeal",
+      "source_servings": "5",
+      "ingredients": 6,
+      "meal_slots": [
+        "breakfast"
+      ]
+    },
+    {
+      "recipe_id": "ml_skillet_mac_and_cheese",
+      "source_servings": "4",
+      "ingredients": 8,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_tasty_hamburger_skillet",
+      "source_servings": "9",
+      "ingredients": 13,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_tofu_scramble",
+      "source_servings": "5",
+      "ingredients": 9,
+      "meal_slots": [
+        "breakfast"
+      ]
+    },
+    {
+      "recipe_id": "ml_turkey_ginger_rice_lettuce_wraps",
+      "source_servings": "8",
+      "ingredients": 12,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_turkey_pumpkin_chili",
+      "source_servings": "10",
+      "ingredients": 13,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_vegetable_beef_soup",
+      "source_servings": "12",
+      "ingredients": 18,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_vegetarian_chili",
+      "source_servings": "8",
+      "ingredients": 15,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_vegetarian_cowboy_salad",
+      "source_servings": "15",
+      "ingredients": 10,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_vegetarian_tofu_enchiladas",
+      "source_servings": "8",
+      "ingredients": 12,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_tuna_veggie_melt",
+      "source_servings": "3",
+      "ingredients": 8,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_veggie_stew",
+      "source_servings": "8",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_west_african_peanut_soup",
+      "source_servings": "8",
+      "ingredients": 11,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_white_chicken_chili",
+      "source_servings": "8",
+      "ingredients": 13,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_zesty_tomato_soup",
+      "source_servings": "4",
+      "ingredients": 6,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    },
+    {
+      "recipe_id": "ml_zucchini_pizza_boats",
+      "source_servings": "6",
+      "ingredients": 4,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ]
+    }
+  ]
+}
